@@ -1,7 +1,7 @@
 <html><meta name="google-site-verification" content="yVBREuOQjIvgGFAbYlHg-vaOeA9K_ILnUuGNWBkD4Kc" />
   <body style="font-family:sans-serif;"><center><h1>rungus zone!</h1><br><h3>the site is loading, please wait</h3></body>
   <script>
-  setTimeout(function(){
+ window.onload = setTimeout(function(){
     var randNum = Math.floor(Math.random() * 500);
     var randURLs = [
         "https://www.youtube.com/watch?v=fCmvXCgZr74",
@@ -46,7 +46,7 @@
         var randURL = Math.floor(Math.random() * randURLs.length);
 
         window.open(randURLs[randURL]);
-    }}, 2000);
-    
+    }
+  }, 2000);    
 </script>
     <foot>&copy; rungus</foot></html>
