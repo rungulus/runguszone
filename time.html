@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name=viewport>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <style>
-
   .nav-main {
     padding: 0
   }
@@ -522,7 +522,7 @@
       <h1>You don't have JavaScript enabled...</h1>
     </center><br>
     <p>It's required to load all of the times on this page. <br>
-        <p>Anyway, please reconsider whitelisting this page or this site. Or not. Up to you.</p>
+      <p>Anyway, please reconsider whitelisting this page or this site. Or not. Up to you.</p>
   </div>
 </noscript>
 <div class=container>
@@ -549,12 +549,20 @@
 <body style=padding-top:110px>
   <div class=container>
     <div class=jumbotron>
-      <h1 id=clocksingle style=font-size:400%>Loading...</h1>
-      <center><p class=lead>Thats the current time for where you are, according to your device.</p></center>
+      <center>
+        <h1 id=clocksingle style=font-size:400%>Loading...</h1>
+      </center>
+      <center>
+        <p class=lead>Thats the current time for where you are, according to your device.</p>
+      </center>
     </div>
   </div>
-  <center><h2 id=ist>Loading...</h2>
-    <p class=lead>Internet Standard Time (use this for easier planning)</p></center><div class=container>
+  <center>
+    <h2 id=ist>Loading...</h2>
+    <p class=lead>Internet Standard Time (use this for easier planning)</p>
+  </center>
+  <center>
+    <div class=container>
       <div class=row>
         <div class=col>
           <h3>
@@ -611,14 +619,16 @@
           </h3><abbr title="the lame part">The Rest of Australia</abbr>
         </div>
       </div>
-    </div><br><center><button class="btn btn-primary" onclick=solveSmaller() type=button>Update Times Manually</button></center>
-    <hr>
+    </div>
+  </center><br>
+  <center><button class="btn btn-primary" onclick=solveSmaller() type=button>Update Times Manually</button></center>
+  <hr>
 </body>
 
 </html>
-<!--    
+<!--
 --legal stuff--
 bootswatch v3.3.7 - Homepage: http://bootswatch.com - Copyright 2012-2017 Thomas Park - Licensed under MIT - Based on Bootstrap
-Bootstrap v3.3.7 (http://getbootstrap.com) - Copyright 2011-2016 Twitter, Inc. - Licensed under MIT 
-normalize.css v3.0.3 - MIT License - github.com/necolas/normalize.css 
+Bootstrap v3.3.7 (http://getbootstrap.com) - Copyright 2011-2016 Twitter, Inc. - Licensed under MIT
+normalize.css v3.0.3 - MIT License - github.com/necolas/normalize.css
 -->
