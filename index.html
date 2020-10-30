@@ -10,6 +10,7 @@
       <img src="pfp.png">
     </center>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142190168-1"></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -17,8 +18,9 @@
 
   gtag('config', 'UA-142190168-1');
 </script>
-
+<script src="https://www.google.com/recaptcha/api.js?render=6LfUJd0ZAAAAANNCBOqbnK_EW7g2J5xGwq4chheR"></script>
     <script>
+
       function goAway(){
           var randURLs = [
             "https://www.youtube.com/watch?v=fCmvXCgZr74",
@@ -87,8 +89,15 @@
     			];
         var randURL = Math.floor(Math.random() * randURLs.length);
         window.open(randURLs[randURL],"_self");
-  	}  
-    window.onload = setTimeout(goAway, 1420);
+  	}
+    function onClick(e) {
+        e.preventDefault();
+        grecaptcha.ready(function() {
+          grecaptcha.execute('6LfUJd0ZAAAAANNCBOqbnK_EW7g2J5xGwq4chheR', {action: 'submit'}).then(function(token) {
+                  setTimeout(goAway, 1420);
+          });
+        });
+      }
   </script>
   </body>
   <center><p><a href="terms">terms of service</a></p></center>
