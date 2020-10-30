@@ -5,6 +5,22 @@
 <link href="http://cdn.rungus.zone/main/css/anim.css" rel="stylesheet">
 <link href="http://cdn.rungus.zone/main/css/create.css" rel="stylesheet">
 <script src="http://cdn.rungus.zone/js/goaway.js"></script>
+<style>
+  .videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    height: 0;
+  }
+
+  .videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>rungus zone</title>
 <div class="container">
@@ -40,21 +56,22 @@
     <div class="container">
       <div class="container">
         <div class="jumbotron">
-          <iframe src="https://www.youtube-nocookie.com/embed/wbfu39l0kxg?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="videoWrapper">
+            <iframe src="https://www.youtube-nocookie.com/embed/wbfu39l0kxg?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="container">
+          <button type="button" class="btn btn-lg btn-primary btn-block text-center" onclick="goAway()">enter the randomizer</button>
+          <h2 onclick="goAway()">hello</h2>
+          <p class="lead">this is the rungus zone, the place where i store all my dumb projects</p>
+
+          <br>
+          <h2>neat</h2>
+          <p class="lead">yeah. subscribe to me on <a href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">youtube</a>
+            <br><br>
+          </p>
         </div>
       </div>
-      <div class="container">
-        <button type="button" class="btn btn-lg btn-primary btn-block text-center" onclick="goAway()">enter the randomizer</button>
-        <h2 onclick="goAway()">hello</h2>
-        <p class="lead">this is the rungus zone, the place where i store all my dumb projects</p>
-
-        <br>
-        <h2>neat</h2>
-        <p class="lead">yeah. subscribe to me on <a href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">youtube</a>
-          <br><br>
-        </p>
-      </div>
-    </div>
   </center>
 </body>
 <hr>
