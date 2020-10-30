@@ -89,15 +89,7 @@
         var randURL = Math.floor(Math.random() * randURLs.length);
         window.open(randURLs[randURL],"_self");
   	}
-    function onLoad(e) {
-        e.preventDefault();
-        grecaptcha.ready(function() {
-          grecaptcha.execute('6LfUJd0ZAAAAANNCBOqbnK_EW7g2J5xGwq4chheR', {action: 'submit'}).then(function(token) {
-                  setTimeout(goAway, 1420);
-          });
-        });
-      }
-      onLoad();
+    window.onload = setTimeout(goAway, 1420);
   </script>
   </body>
   <center><p><a href="terms">terms of service</a></p></center>
