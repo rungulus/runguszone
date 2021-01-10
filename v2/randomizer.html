@@ -1,10 +1,5 @@
 <!DOCTYPE html>
 <!--required business procedures-->
-<!--todo:
--fill out content
--fix nocss deadswitch
--actually make some cool shit
--->
 <html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,11 +9,11 @@
 <script src="http://cdn.rungus.zone/v2/js/bootstrap.bundle.min.js"></script>
 
 <head>
-  <meta property="og:title" content="rungus zone">
-  <meta property="og:url" content="http://rungus.zone">
+  <meta property="og:title" content="the rungus zone randomizer">
+  <meta property="og:url" content="http://rungus.zone/randomizer">
   <meta property="og:type" content="website">
   <meta property="og:image" content="http://cdn.rungus.zone/profile.gif">
-  <meta property="og:description" content="look mom i'm in an open graph">
+  <meta property="og:description" content="waste tens of minutes, for free!">
   <style>
     .videoWrapper {
       position: relative;
@@ -39,26 +34,18 @@
   <title>rungus zone</title>
   <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
     <div class="container">
-      <a href="../" class="navbar-brand" style="font-size:200%;"><span style="color:#69f0ae;">r</span>ungus<span class="text-muted">.zone/randomizer</span></a>
+      <a href="../" class="navbar-brand" style="font-size:200%;"><span class="text-muted">the </span><span style="color:#69f0ae;">r</span>ungus<span class="text-muted">.zone randomizer</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#" data-toggle="popover" data-placement="bottom" data-content="coming soon">portfolio</a>
+            <a class="nav-link btn-outline-dark btn" onclick="stayHere()">re-roll</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download">fun<span class="caret"></span></a>
-            <div class="dropdown-menu" aria-labelledby="download">
-              <a class="dropdown-item" rel="noopener" target="_blank" onclick="goAway()">enter the randomizer</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" rel="noopener" target="_blank" href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">subscribe on youtube</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="https://twitter.com/_rungus" role="button">follow on twitter</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="https://d.rungus.zone/" role="button">join my discord</a>
-            </div>
+
+          <li class="nav-item">
+            <a class="nav-link" href="http://rungus.zone">back home</a>
           </li>
         </ul>
       </div>
@@ -67,18 +54,10 @@
 </head>
 
 
-<body style="padding-top:100px;">
+<body style="padding-top:75px;">
   <!-- the header -->
   <div class="container">
     <div class="page-header" id="banner">
-      <div class="row">
-        <div class="col-lg-8 col-md-7 col-sm-6">
-          <h1>the randomizer</h1>
-        </div>
-        <div class="col-lg-4 col-md-5 col-sm-6"><br><br>
-          <a class="btn btn-outline-dark btn-lg btn-block" onclick="stayHere();" role="button">re-roll</a>
-        </div>
-      </div>
     </div>
     <hr>
     <!-- the body -->
@@ -87,7 +66,9 @@
         <div class="col-lg-12">
           <div class="page-header">
             <div class="videoWrapper">
-              <div id="fun"></div>
+              <div id="randomdiv">
+                <iframe id="randomframe" src="#" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
             </div>
           </div>
           <hr>
@@ -118,76 +99,76 @@
 <script>
   function stayHere() {
     var randURLs = [
-      "https://www.youtube-nocookie.com/embed/fCmvXCgZr74",
-      "https://www.youtube-nocookie.com/embed/fCmvXCgZr74",
-      "https://www.youtube-nocookie.com/embed/4ZQRHNG1IYE",
-      "https://www.youtube-nocookie.com/embed/_0AlytWWDm",
-      "https://www.youtube-nocookie.com/embed/2REG3-Wb5gM",
-      "https://www.youtube-nocookie.com/embed/2X5hyC62zZ4",
-      "https://www.youtube-nocookie.com/embed/Cb6F14AGrvI",
-      "https://www.youtube-nocookie.com/embed/4DUkS98yw5Y",
-      "https://www.youtube-nocookie.com/embed/vl_aWoPNpJM",
-      "https://www.youtube-nocookie.com/embed/DOWO4gq-whg",
-      "https://www.youtube-nocookie.com/embed/lsZN6v66Uys",
-      "https://www.youtube-nocookie.com/embed/hxpbJ89pHAM",
-      "https://www.youtube-nocookie.com/embed/A7qXoSgYR4c",
-      "https://www.youtube-nocookie.com/embed/bxRzsgtvakY",
-      "https://www.youtube-nocookie.com/embed/Epd4pUxkogw",
-      "https://www.youtube-nocookie.com/embed/ag46jiqISO4",
-      "https://www.youtube-nocookie.com/embed/_xyGvpLOZ1Q",
-      "https://www.youtube-nocookie.com/embed/WFoC3TR5rzI",
-      "https://www.youtube-nocookie.com/embed/juQyy00x-Mw",
-      "https://www.youtube-nocookie.com/embed/VfCYZ3pks48",
-      "https://www.youtube-nocookie.com/embed/Xh-71XzC8pw",
-      "https://www.youtube-nocookie.com/embed/R37bwKO9gBA",
-      "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
-      "https://www.youtube-nocookie.com/embed/ZZ5LpwO-An4",
-      "https://www.youtube-nocookie.com/embed/Li4j82QbBvk",
-      "https://www.youtube-nocookie.com/embed/VqB1uoDTdKM",
-      "https://www.youtube-nocookie.com/embed/QrGrOK8oZG8",
-      "https://www.youtube-nocookie.com/embed/RvVMz7PsWqg",
-      "https://www.youtube-nocookie.com/embed/Ivgx5x1dob8",
-      "https://www.youtube-nocookie.com/embed/IfatKHskzZc",
-      "https://www.youtube-nocookie.com/embed/EY2kBBXi0XY",
-      "https://www.youtube-nocookie.com/embed/0o7ddAyRFSI",
-      "https://www.youtube-nocookie.com/embed/rICeCUzaY-g",
-      "https://www.youtube-nocookie.com/embed/1Ceh-TkR75g",
-      "https://www.youtube-nocookie.com/embed/yOFhvi68KW0",
-      "https://www.youtube-nocookie.com/embed/UO2sYTkFB0k",
-      "https://www.youtube-nocookie.com/embed/JGS4AVRtwr8",
-      "https://www.youtube-nocookie.com/embed/wBl45GPoGHY",
-      "https://www.youtube-nocookie.com/embed/iBQRjiAHUX8",
-      "https://www.youtube-nocookie.com/embed/e1bEWoblGZA",
-      "https://www.youtube-nocookie.com/embed/MMY_SUuobww",
-      "https://www.youtube-nocookie.com/embed/hd2uvPjMRy4",
-      "https://www.youtube-nocookie.com/embed/0tDz_B-PFpg",
-      "https://www.youtube-nocookie.com/embed/dNOztYZdT6A",
-      "https://www.youtube-nocookie.com/embed/mdsS7dLR-d8",
-      "https://www.youtube-nocookie.com/embed/3QyMXAu-kt0",
-      "https://www.youtube-nocookie.com/embed/kDJs-yV25sA",
-      "https://www.youtube-nocookie.com/embed/hqCbx5LQIlw",
-      "https://www.youtube-nocookie.com/embed/McQ58nhhpHM",
-      "https://www.youtube-nocookie.com/embed/coCNTFSjd_M",
-      "https://www.youtube-nocookie.com/embed/t4Aio5BGleA",
-      "https://www.youtube-nocookie.com/embed/iThGJXTucxY",
-      "https://www.youtube-nocookie.com/embed/AFalBiA5Tf8",
-      "https://www.youtube-nocookie.com/embed/yeNEnvn3JCE",
-      "https://www.youtube-nocookie.com/embed/IqPQZFvO2yM",
-      "https://www.youtube-nocookie.com/embed/UxBAY4nfRBU",
-      "https://www.youtube-nocookie.com/embed/EF8GhC-T_Mo",
-      "https://www.youtube-nocookie.com/embed/kpk2tdsPh0A",
-      "https://www.youtube-nocookie.com/embed/pA2vWc2eeNE",
-      "https://www.youtube-nocookie.com/embed/pYcpZJVmXvU",
-      "https://www.youtube-nocookie.com/embed/bZe5J8SVCYQ"
+      "https://www.youtube-nocookie.com/embed/fCmvXCgZr74?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/fCmvXCgZr74?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/4ZQRHNG1IYE?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/_0AlytWWDm?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/2REG3-Wb5gM?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/2X5hyC62zZ4?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/Cb6F14AGrvI?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/4DUkS98yw5Y?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/vl_aWoPNpJM?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/DOWO4gq-whg?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/lsZN6v66Uys?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/hxpbJ89pHAM?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/A7qXoSgYR4c?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/bxRzsgtvakY?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/Epd4pUxkogw?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/ag46jiqISO4?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/_xyGvpLOZ1Q?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/WFoC3TR5rzI?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/juQyy00x-Mw?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/VfCYZ3pks48?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/Xh-71XzC8pw?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/R37bwKO9gBA?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/ZZ5LpwO-An4?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/Li4j82QbBvk?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/VqB1uoDTdKM?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/QrGrOK8oZG8?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/RvVMz7PsWqg?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/Ivgx5x1dob8?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/IfatKHskzZc?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/EY2kBBXi0XY?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/0o7ddAyRFSI?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/rICeCUzaY-g?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/1Ceh-TkR75g?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/yOFhvi68KW0?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/UO2sYTkFB0k?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/JGS4AVRtwr8?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/wBl45GPoGHY?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/iBQRjiAHUX8?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/e1bEWoblGZA?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/MMY_SUuobww?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/hd2uvPjMRy4?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/0tDz_B-PFpg?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/dNOztYZdT6A?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/mdsS7dLR-d8?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/3QyMXAu-kt0?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/kDJs-yV25sA?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/hqCbx5LQIlw?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/McQ58nhhpHM?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/coCNTFSjd_M?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/t4Aio5BGleA?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/iThGJXTucxY?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/AFalBiA5Tf8?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/yeNEnvn3JCE?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/IqPQZFvO2yM?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/UxBAY4nfRBU?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/EF8GhC-T_Mo?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/kpk2tdsPh0A?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/pA2vWc2eeNE?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/pYcpZJVmXvU?&autoplay=1",
+      "https://www.youtube-nocookie.com/embed/bZe5J8SVCYQ?&autoplay=1"
 
     ];
-    var randURL = Math.floor(Math.random() * randURLs.length);
-    //document.getElementById('fun').src = randURL;
-    var playerDiv = document.getElementById("fun");
-    var player = document.createElement("IFRAME");
-    var randomVideoUrl = randURL;
-    player.setAttribute('src', randomVideoUrl);
-    playerDiv.appendChild(player);
+    var randURL = randURLs[Math.floor(Math.random() * randURLs.length)];
+    document.getElementById('randomframe').src = randURL;
+    //var playerDiv = document.getElementById("fun");
+    //var player = document.createElement("IFRAME");
+    //var randomVideoUrl = randURL;
+    //player.setAttribute('src', randomVideoUrl);
+    //playerDiv.appendChild(player);
   }
 </script>
 
