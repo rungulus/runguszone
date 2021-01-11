@@ -1,100 +1,128 @@
-<html>
-<meta name="google-site-verification" content="yVBREuOQjIvgGFAbYlHg-vaOeA9K_ILnUuGNWBkD4Kc" />
-<link href="http://cdn.rungus.zone/main/css/bootstrap.min.css" rel="stylesheet">
-<link href="http://cdn.rungus.zone/main/css/darkbootstrap.css" rel="stylesheet">
-<link href="http://cdn.rungus.zone/main/css/anim.css" rel="stylesheet">
-<link href="http://cdn.rungus.zone/main/css/create.css" rel="stylesheet">
+<!DOCTYPE html>
+<!--required business procedures-->
+<!--todo:
+-fill out content
+-fix nocss deadswitch
+-actually make some cool shit
+-->
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://cdn.rungus.zone/v2/css/darkbootstrap.min.css">
 <script src="http://cdn.rungus.zone/js/goaway.js"></script>
-<style>
-  .videoWrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    /* 16:9 */
-    height: 0;
-  }
+<script src="http://cdn.rungus.zone/v2/js/jquery.min.js"></script>
+<script src="http://cdn.rungus.zone/v2/js/bootstrap.bundle.min.js"></script>
 
-  .videoWrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-</style>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>rungus zone</title>
-<div class="container">
-  <div class="nocss">
-    <center>
-      <h1>somethings fucked up</h1>
-      <br>
-      <p>the css isnt loaded
-        <!--or you're looking at the code. owo--> so this page is looking all sorts of sad
-      </p>
-      <br>
-      <p>click <a href="http://rungus.zone">here</a> to try to refresh the page</p>
-    </center>
-  </div>
-
-  <head>
-    <div class="navbar-fixed-top" id="nav" style="background:#060606;">
-      <div class="container">
-        <div class="center">
-          <h3 style=float:left><span style=color:#fff class="slide-in-blurred-left"><span style="color:#69f0ae">r</span>ungus</span></h3>
-          <h3 style="float:left" class="text-muted">.zone</h3>
-        </div>
-        <!--text-flicker-in-glow-->
+<head>
+  <meta property="og:title" content="rungus zone">
+  <meta property="og:url" content="http://rungus.zone">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="http://cdn.rungus.zone/profile.gif">
+  <meta property="og:description" content="look mom i'm in an open graph">
+  <!-- the meat and potatoes-->
+  <title>rungus zone</title>
+  <div class="navbar navbar-expand-lg fixed-bottom navbar-dark bg-dark">
+    <div class="container">
+      <a href="../" class="navbar-brand" style="font-size:200%;"><span style="color:#69f0ae;">r</span>ungus<span class="text-muted">.zone</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav">
+          <li style="padding-left:3px;" class="nav-item">
+            <a class="nav-link btn btn-outline-dark" href="#" data-toggle="popover" data-placement="bottom" data-content="coming soon">portfolio</a>
+          </li>
+          <li style="padding-left:3px;" class="nav-item dropdown dropup">
+            <a class="nav-link dropdown-toggle btn btn-outline-dark" data-toggle="dropdown" href="#" id="download">experiments <span class="caret"></span></a>
+            <div class="dropdown-menu" aria-labelledby="download">
+              <a class="dropdown-item" rel="noopener" target="_blank" href="randomizer">enter the randomizer</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="time" rel="noopener" target="_blank">time</a>
+            </div>
+          </li>
+          <li style="padding-left:3px;" class="nav-item dropdown dropup">
+            <a class="nav-link dropdown-toggle btn btn-outline-dark" data-toggle="dropdown" href="#" id="download">socials <span class="caret"></span></a>
+            <div class="dropdown-menu" aria-labelledby="download">
+              <a class="dropdown-item" rel="noopener" target="_blank" href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">subscribe on youtube</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="https://twitter.com/_rungus" role="button">follow on twitter</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="https://d.rungus.zone/" role="button">join my discord</a>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
-    <!-- meta tags and favicon -->
-  </head>
-</div>
+  </div>
+</head>
 
-<body style="padding-top:110px">
-  <center>
-    <div class="container">
-      <div class="container">
-        <div class="jumbotron">
-          <div class="videoWrapper">
-            <iframe src="https://www.youtube-nocookie.com/embed/wbfu39l0kxg?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
+<body style="padding-top:30px;">
+  <!-- the header -->
+  <div class="container">
+    <div class="page-header" id="banner">
+      <div class="row">
+        <div class="col-lg-9 col-md-9 col-sm-6">
+          <h1>welcome to the rungus zone</span></h1>
+          <p class="lead">my humble corner of the internet</p>
         </div>
-        <div class="container">
-          <button type="button" class="btn btn-lg btn-primary btn-block text-center" onclick="goAway()">enter the randomizer</button>
-          <h2 onclick="goAway()">hello</h2>
-          <p class="lead">this is the rungus zone, the place where i store all my dumb projects</p>
-
-          <br>
-          <h2>neat</h2>
-          <p class="lead">yeah. subscribe to me on <a href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">youtube</a>
+      </div>
+    </div>
+    <hr>
+    <!-- the body -->
+    <div class="bs-docs-section clearfix">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            <h1>hey</h1>
+          </div>
+          <p class="lead">welcome to the rungus zone, premier access of all things rungus, this site holds some random web experiments and other cool fun things, like my portfolio (eventually)</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            <h3>experiments</h3>
+          </div>
+          <p class="lead">for now i only have a couple here, the main one i'm working on is <a href="randomizer">the randomizer</a>, it gives you a random video from a list (not that impressive)
             <br><br>
+            i also have <a href="time">time</a> a quick time converter, this one frustrated me to no end.
           </p>
         </div>
       </div>
-  </center>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            <h3>third section heading</h3>
+          </div>
+          <p class="lead">i dont really know what else to put here, so <a href="https://twitter.com/_rungus" role="button">follow me on twitter</a>, or <a href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA" role="button">susbcribe to me
+              on youtube</a> or <a href="https://d.rungus.zone">join the rungus zone discord</a>
+            <br><br><br> ok bye
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <!-- the footnotes -->
+    <div class="container">
+      <footer id="footer">
+        <div class="row">
+          <div class="col-lg-12">
+            <p>
+
+              <a href="http://rungus.zone/terms">terms of service</a> -
+              <a href="https://d.rungus.zone">discord</a> -
+              <a href="https://twitter.com/_rungus">twitter</a> -
+              <a href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">youtube</a> -
+              <a href="cdn.rungus.zone">cdn</a>
+              <span class="float-lg-right">&copy; 2021 rungus</span>
+            </p>
+          </div>
+        </div>
+    </div>
+    </footer>
+  </div>
+
+
 </body>
-<hr>
-<foot>
-  <p>&copy; 2020 rungus</p> <a href="terms"> terms of service</a>
-  <br>
-  <hr>
-  <p>and thats all i wrote</p>
-</foot>
-<!-- scripts -->
-<script>
-  (function(i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r;
-    i[r] = i[r] || function() {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date();
-    a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0];
-    a.async = 1;
-    a.src = g;
-    m.parentNode.insertBefore(a, m)
-  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-  ga('create', 'UA-104172809-1', 'auto');
-  ga('send', 'pageview');
-</script>
 
 </html>
