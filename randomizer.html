@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://cdn.rungus.zone/v2/css/darkbootstrap.min.css">
-<script src="http://cdn.rungus.zone/js/stayHere.js"></script>
 <script src="http://cdn.rungus.zone/v2/js/jquery.min.js"></script>
 <script src="http://cdn.rungus.zone/v2/js/bootstrap.bundle.min.js"></script>
 
@@ -100,6 +99,7 @@
 
 
 </body>
+<!-- i tried-->
 <script>
   function stayHere() {
     var randURLs = [
@@ -163,16 +163,31 @@
       "https://www.youtube-nocookie.com/embed/kpk2tdsPh0A",
       "https://www.youtube-nocookie.com/embed/pA2vWc2eeNE",
       "https://www.youtube-nocookie.com/embed/pYcpZJVmXvU",
-      "https://www.youtube-nocookie.com/embed/bZe5J8SVCYQ"
-
+      "https://www.youtube-nocookie.com/embed/bZe5J8SVCYQ",
+      "https://www.youtube-nocookie.com/embed/cJtrHIMmMy4",
+      "https://www.youtube-nocookie.com/embed/xxprbbytUQI",
+      "https://www.youtube-nocookie.com/embed/XKBwItDNrEU",
+      "https://www.youtube-nocookie.com/embed/dKx1wnXClcI",
+      "https://www.youtube-nocookie.com/embed/VyvsXRBHwTA",
+      "https://www.youtube-nocookie.com/embed/2Qu3hZnvfGg",
+      "https://www.youtube-nocookie.com/embed/KgtRRBtSjuo",
+      "https://www.youtube-nocookie.com/embed/0tDz_B-PFpg",
+      "https://www.youtube-nocookie.com/embed/iUJ8r4ReHog",
+      "https://www.youtube-nocookie.com/embed/D1Uhk-QN11M",
+      "https://www.youtube-nocookie.com/embed/5tFZof9EDhc",
+      "https://www.youtube-nocookie.com/embed/EShUeudtaFg",
+      "https://www.youtube-nocookie.com/embed/_-Rji3mip4A",
+      "https://www.youtube-nocookie.com/embed/z5qLgL-E7uY",
+      "https://www.youtube-nocookie.com/embed/_B13yISVHWI",
+      "https://www.youtube-nocookie.com/embed/Q0K_zvlDzmI",
+      "https://www.youtube-nocookie.com/embed/o7SdP-gnfIc",
+      "https://www.youtube-nocookie.com/embed/T-w0h3g07aE",
+      "https://www.youtube-nocookie.com/embed/pC6HZPJH6wE"
+      //"https://www.youtube-nocookie.com/embed/x",
     ];
     var randURL = randURLs[Math.floor(Math.random() * randURLs.length)];
+    console.log = "video url:" + randURL;
     document.getElementById('randomframe').src = randURL + "?&autoplay=1";
-    //var playerDiv = document.getElementById("fun");
-    //var player = document.createElement("IFRAME");
-    //var randomVideoUrl = randURL;
-    //player.setAttribute('src', randomVideoUrl);
-    //playerDiv.appendChild(player);
   }
   window.onload = stayHere();
 </script>
