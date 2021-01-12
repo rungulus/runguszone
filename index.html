@@ -12,6 +12,11 @@
 <script src="https://cdn.rungus.zone/js/goaway.js"></script>
 <script src="https://cdn.rungus.zone/v2/js/jquery.min.js"></script>
 <script src="https://cdn.rungus.zone/v2/js/bootstrap.bundle.min.js"></script>
+<script>
+  $(function() {
+    $('[data-toggle="popover"]').popover()
+  })
+</script>
 
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SD2H63G7CK"></script>
@@ -34,39 +39,41 @@
 
   <!-- the meat and potatoes-->
   <title>rungus zone</title>
-  <div class="navbar navbar-expand-lg fixed-bottom navbar-dark bg-dark">
-    <div class="container">
-      <a href="../" class="navbar-brand" style="font-size:200%;"><span style="color:#69f0ae;">r</span>ungus<span class="text-muted">.zone</span></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav">
-          <li style="padding-left:3px;" class="nav-item">
-            <a class="nav-link btn btn-outline-dark" href="https://blog.rungus.zone">blog</a>
-          </li>
-          <li style="padding-left:3px;" class="nav-item dropdown dropup">
-            <a class="nav-link dropdown-toggle btn btn-outline-dark" data-toggle="dropdown" href="#" id="download">experiments <span class="caret"></span></a>
-            <div class="dropdown-menu" aria-labelledby="download">
-              <a class="dropdown-item" rel="noopener" target="_blank" href="randomizer">enter the randomizer</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="time" rel="noopener" target="_blank">time</a>
-            </div>
-          </li>
-          <li style="padding-left:3px;" class="nav-item dropdown dropup">
-            <a class="nav-link dropdown-toggle btn btn-outline-dark" data-toggle="dropdown" href="#" id="download">socials <span class="caret"></span></a>
-            <div class="dropdown-menu" aria-labelledby="download">
-              <a class="dropdown-item" rel="noopener" target="_blank" href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">subscribe on youtube</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="https://twitter.com/_rungus" role="button">follow on twitter</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="https://d.rungus.zone/" role="button">join my discord</a>
-            </div>
-          </li>
-        </ul>
-      </div>
+  <nav class="navbar navbar-expand-lg fixed-bottom navbar-dark bg-dark">
+    <a href="../" class="navbar-brand" style="font-size:200%;"><span style="color:#69f0ae;">r</span>ungus<span class="text-muted">.zone</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://blog.rungus.zone">blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="popover" title="my portfolio is coming soon" data-placement="top"
+            data-content="ok look i just started this website and i have to consolidate so many other ones for this so give me some time thank you">portfolio</a>
+        </li>
+        <li class="nav-item dropdown dropup">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download">experiments <span class="caret"></span></a>
+          <div class="dropdown-menu" aria-labelledby="download">
+            <a class="dropdown-item" rel="noopener" target="_blank" href="randomizer">enter the randomizer</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="time" rel="noopener" target="_blank">time</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown dropup">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download">socials <span class="caret"></span></a>
+          <div class="dropdown-menu" aria-labelledby="download">
+            <a class="dropdown-item" rel="noopener" target="_blank" href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">subscribe on youtube</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://twitter.com/_rungus" role="button">follow on twitter</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://d.rungus.zone/" role="button">join my discord</a>
+          </div>
+        </li>
+      </ul>
     </div>
-  </div>
+  </nav>
 </head>
 
 <body style="padding-top:30px;">
@@ -74,9 +81,12 @@
   <div class="container">
     <div class="page-header" id="banner">
       <div class="row">
-        <div class="col-lg-9 col-md-9 col-sm-6">
-          <h1>welcome</span></h1>
-          <p class="lead">this is my humble corner of the internet</p>
+        <div class="col-lg-8 col-md-7 col-sm-9">
+          <h1 style="font-size:150px">hello.</span></h1>
+          <h3>welcome to the rungus zone</h3>
+        </div>
+        <div class="col-lg-4 col-md-5 col-sm-3">
+          <img src="https://cdn.rungus.zone/profile.gif">
         </div>
       </div>
     </div>
@@ -86,9 +96,10 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="page-header">
-            <h1>hey</h1>
+            <h1>i'm rungus</h1>
           </div>
-          <p class="lead">welcome to the rungus zone, premier access of all things rungus, this site holds my blog, some random web experiments and other cool fun things, like my portfolio (eventually)</p>
+          <p class="lead">welcome to my humble website. i'm a web developer/designer and i'd love if you'd employ my services. <br>
+            here you can find my portfolio, some random web experiments i've done, and some other random stuff.</p>
         </div>
       </div>
       <div class="row">
@@ -105,7 +116,16 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="page-header">
-            <h3>third section heading</h3>
+            <h3>things i can do</h3>
+          </div>
+          <p class="lead">
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            <h3>fourth section heading</h3>
           </div>
           <p class="lead">i dont really know what else to put here, so <a href="https://twitter.com/_rungus" role="button">follow me on twitter</a>, or <a href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA" role="button">susbcribe to me
               on youtube</a> or <a href="https://d.rungus.zone">join the rungus zone discord</a>
