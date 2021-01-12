@@ -490,154 +490,161 @@
     color: #fff
   }
 </style>
-<script>
-  var masterTimeUTC = new Date,
-    utcHours = masterTimeUTC.getUTCHours(),
-    utcMinutes = masterTimeUTC.getUTCMinutes(),
-    utcSeconds = masterTimeUTC.getUTCSeconds(),
-    utcMinutesLead = masterTimeUTC.getUTCMinutes();
-
-  function manualTime() {
-    var e = new Date,
-      t = e.getHours(),
-      m = e.getMinutes(),
-      s = e.getSeconds(),
-      o = masterTimeUTC.getUTCHours();
-    masterTimeUTC.getUTCMinutes(), masterTimeUTC.getUTCSeconds(), m < 10 && (m = "0" + m), 0 === m && (m = "00"), s < 10 && (s = "0" + s), t < 10 && (t = "0" + t);
-    var T = "am";
-    12 < o % 24 && (T = "pm");
-    var i = (o + 11) % 12 + 1 + ":" + m + " " + T;
-    document.getElementById("clocksingle").innerHTML = t + ":" + m + "." + s, document.getElementById("ist").innerHTML = i, setTimeout(manualTime, 1e3), setTimeout(solveSmaller, 1e3), console.log("manualTime complete")
-  }
-
-  function solveSmaller() {
-    solveTime(-8), solveTime(-7), solveTime(-6), solveTime(-5), solveTime(0), solveTime(8), solveTime(9), solveTime(10), solveTime(1), solveTime(2), console.log("solveSmaller complete")
-  }
-
-  function solveTime(e) {
-    var t = new Date,
-      m = t.getUTCHours(),
-      s = t.getUTCMinutes(),
-      o = s;
-    if (s < 10 && (o = "0" + utcMinutesLead), (s = 0) && (o = "00"), e < 0) var T = 24 + e;
-    else T = e;
-    var i = "am";
-    12 < (m + T) % 24 && (i = "pm");
-    var l = (m + e + 11) % 12 + 1 + ":" + o + " " + i;
-    document.getElementById(e).innerHTML = l
-  }
-  setTimeout(manualTime, 1e3), setTimeout(solveSmaller, 1e3), window.onload = solveSmaller
-</script>
-<title>time - rungus.zone</title><noscript>
-  <div class=noscript>
-    <center>
-      <h1>You don't have JavaScript enabled...</h1>
-    </center><br>
-    <p>It's required to load all of the times on this page. <br>
-    <p>Anyway, please reconsider whitelisting this page or this site. Or not. Up to you.</p>
+<d class="container">
+  <div class="alert alert-dark" role="alert">
+    <h2 class="alert-heading">hey, listen</h2>
+    <h4>this page hasn't been updated with my new styling (rungus zone v2), so it's going to look out of place until i do that<br>
+      thank you for understanding</h4>
   </div>
-</noscript>
-<div class=container>
-  <div class=nocss>
-    <center>
-      <h1>It seems something has gone wrong</h1>
-    </center>
-    <h2>Your browser is not properly rendering this page, or the CDN is down</h2><br>
-    <p>Something has messed up, and you're viewing this page without any styling. This could be because the CDN is down, something blocked the stylesheet from loading, or something else entirely.</p><br>
-    <p>Anyway, click <a href=https://rungus.zone/time>here </a> to try to refresh the page, and maybe it'll be fine.
   </div>
-  <div class=navbar-fixed-top id=nav style=background:#060606>
-    <div class=container>
-      <nav class=nav-main>
-        <div class=nav-title>
-          <h3 style=float:left><span style=color:#fff>rungus</span></h3>
-          <h3 style=float:left class=text-muted>.zone</h3>
-        </div>
-        <div class=nav-items><a href="https://rungus.zone" class="btn btn-default" role=button>back home</a></div>
-      </nav>
+  <script>
+    var masterTimeUTC = new Date,
+      utcHours = masterTimeUTC.getUTCHours(),
+      utcMinutes = masterTimeUTC.getUTCMinutes(),
+      utcSeconds = masterTimeUTC.getUTCSeconds(),
+      utcMinutesLead = masterTimeUTC.getUTCMinutes();
+
+    function manualTime() {
+      var e = new Date,
+        t = e.getHours(),
+        m = e.getMinutes(),
+        s = e.getSeconds(),
+        o = masterTimeUTC.getUTCHours();
+      masterTimeUTC.getUTCMinutes(), masterTimeUTC.getUTCSeconds(), m < 10 && (m = "0" + m), 0 === m && (m = "00"), s < 10 && (s = "0" + s), t < 10 && (t = "0" + t);
+      var T = "am";
+      12 < o % 24 && (T = "pm");
+      var i = (o + 11) % 12 + 1 + ":" + m + " " + T;
+      document.getElementById("clocksingle").innerHTML = t + ":" + m + "." + s, document.getElementById("ist").innerHTML = i, setTimeout(manualTime, 1e3), setTimeout(solveSmaller, 1e3), console.log("manualTime complete")
+    }
+
+    function solveSmaller() {
+      solveTime(-8), solveTime(-7), solveTime(-6), solveTime(-5), solveTime(0), solveTime(8), solveTime(9), solveTime(10), solveTime(1), solveTime(2), console.log("solveSmaller complete")
+    }
+
+    function solveTime(e) {
+      var t = new Date,
+        m = t.getUTCHours(),
+        s = t.getUTCMinutes(),
+        o = s;
+      if (s < 10 && (o = "0" + utcMinutesLead), (s = 0) && (o = "00"), e < 0) var T = 24 + e;
+      else T = e;
+      var i = "am";
+      12 < (m + T) % 24 && (i = "pm");
+      var l = (m + e + 11) % 12 + 1 + ":" + o + " " + i;
+      document.getElementById(e).innerHTML = l
+    }
+    setTimeout(manualTime, 1e3), setTimeout(solveSmaller, 1e3), window.onload = solveSmaller
+  </script>
+  <title>time - rungus.zone</title><noscript>
+    <div class=noscript>
+      <center>
+        <h1>You don't have JavaScript enabled...</h1>
+      </center><br>
+      <p>It's required to load all of the times on this page. <br>
+      <p>Anyway, please reconsider whitelisting this page or this site. Or not. Up to you.</p>
     </div>
-    <hr>
-  </div>
-</div>
-
-<body style=padding-top:110px>
+  </noscript>
   <div class=container>
-    <div class=jumbotron>
+    <div class=nocss>
       <center>
-        <h1 id=clocksingle style=font-size:400%>Loading...</h1>
+        <h1>It seems something has gone wrong</h1>
       </center>
-      <center>
-        <p class=lead>Thats the current time for where you are, according to your device.</p>
-      </center>
+      <h2>Your browser is not properly rendering this page, or the CDN is down</h2><br>
+      <p>Something has messed up, and you're viewing this page without any styling. This could be because the CDN is down, something blocked the stylesheet from loading, or something else entirely.</p><br>
+      <p>Anyway, click <a href=https://rungus.zone/time>here </a> to try to refresh the page, and maybe it'll be fine.
+    </div>
+    <div class=navbar-fixed-top id=nav style=background:#060606>
+      <div class=container>
+        <nav class=nav-main>
+          <div class=nav-title>
+            <h3 style=float:left><span style=color:#fff>rungus</span></h3>
+            <h3 style=float:left class=text-muted>.zone</h3>
+          </div>
+          <div class=nav-items><a href="https://rungus.zone" class="btn btn-default" role=button>back home</a></div>
+        </nav>
+      </div>
+      <hr>
     </div>
   </div>
-  <center>
-    <h2 id=ist>Loading...</h2>
-    <p class=lead>Internet Standard Time (use this for easier planning)</p>
-  </center>
-  <center>
+
+  <body style=padding-top:110px>
     <div class=container>
-      <div class=row>
-        <div class=col>
-          <h3>
-            <div id=-8>Loading...</div>
-          </h3>US West
-        </div>
-        <div class=col>
-          <h3>
-            <div id=-7>Loading...</div>
-          </h3>US Mountain
-        </div>
-        <div class=col>
-          <h3>
-            <div id=-6>Loading...</div>
-          </h3>US Central
-        </div>
-        <div class=col>
-          <h3>
-            <div id=-5>Loading...</div>
-          </h3>US East
-        </div>
-      </div>
-      <div class=row>
-        <div class=col-sm-4>
-          <h3>
-            <div id=0>Loading...</div>
-          </h3>United Kingdom
-        </div>
-        <div class=col-sm-4>
-          <h3>
-            <div id=2>Loading...</div>
-          </h3>France
-        </div>
-        <div class=col-sm-4>
-          <h3>
-            <div id=1>Loading...</div>
-          </h3>Netherlands
-        </div>
-      </div>
-      <div class=row>
-        <div class=col-sm-4>
-          <h3>
-            <div id=8>Loading...</div>
-          </h3>Western Australia
-        </div>
-        <div class=col-sm-4>
-          <h3>
-            <div id=9>Loading...</div>
-          </h3>Adelaide
-        </div>
-        <div class=col-sm-4>
-          <h3>
-            <div id=10>Loading...</div>
-          </h3><abbr title="the lame part">The Rest of Australia</abbr>
-        </div>
+      <div class=jumbotron>
+        <center>
+          <h1 id=clocksingle style=font-size:400%>Loading...</h1>
+        </center>
+        <center>
+          <p class=lead>Thats the current time for where you are, according to your device.</p>
+        </center>
       </div>
     </div>
-  </center><br>
-  <center><button class="btn btn-primary" onclick=solveSmaller() type=button>Update Times Manually</button></center>
-  <hr>
-</body>
+    <center>
+      <h2 id=ist>Loading...</h2>
+      <p class=lead>Internet Standard Time (use this for easier planning)</p>
+    </center>
+    <center>
+      <div class=container>
+        <div class=row>
+          <div class=col>
+            <h3>
+              <div id=-8>Loading...</div>
+            </h3>US West
+          </div>
+          <div class=col>
+            <h3>
+              <div id=-7>Loading...</div>
+            </h3>US Mountain
+          </div>
+          <div class=col>
+            <h3>
+              <div id=-6>Loading...</div>
+            </h3>US Central
+          </div>
+          <div class=col>
+            <h3>
+              <div id=-5>Loading...</div>
+            </h3>US East
+          </div>
+        </div>
+        <div class=row>
+          <div class=col-sm-4>
+            <h3>
+              <div id=0>Loading...</div>
+            </h3>United Kingdom
+          </div>
+          <div class=col-sm-4>
+            <h3>
+              <div id=2>Loading...</div>
+            </h3>France
+          </div>
+          <div class=col-sm-4>
+            <h3>
+              <div id=1>Loading...</div>
+            </h3>Netherlands
+          </div>
+        </div>
+        <div class=row>
+          <div class=col-sm-4>
+            <h3>
+              <div id=8>Loading...</div>
+            </h3>Western Australia
+          </div>
+          <div class=col-sm-4>
+            <h3>
+              <div id=9>Loading...</div>
+            </h3>Adelaide
+          </div>
+          <div class=col-sm-4>
+            <h3>
+              <div id=10>Loading...</div>
+            </h3><abbr title="the lame part">The Rest of Australia</abbr>
+          </div>
+        </div>
+      </div>
+    </center><br>
+    <center><button class="btn btn-primary" onclick=solveSmaller() type=button>Update Times Manually</button></center>
+    <hr>
+  </body>
 
 </html>
 <!--
