@@ -43,6 +43,23 @@
 
     gtag('config', 'G-SD2H63G7CK');
   </script>
+  <!-- exclusive styling just for this page -->
+  <style>
+    .videoWrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      /* 16:9 */
+      height: 0;
+    }
+
+    .videoWrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
   <div class="nocss" style="font-family:sans-serif;">
     <hr>
     <center>
@@ -115,7 +132,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="page-header">
-            <div class="videoWrapper">
+            <div class="videoWrapper container-flex">
               <div id="randomdiv">
                 <iframe id="randomframe" src="https://cdn.rungus.zone/profile.gif" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
@@ -242,7 +259,7 @@
       //"https://www.youtube-nocookie.com/embed/x",
     ];
     var randURL = randURLs[Math.floor(Math.random() * randURLs.length)];
-    console.log = "video url:" + randURL;
+    console.log("video url:" + randURL);
     document.getElementById('randomframe').src = randURL + "?&autoplay=1";
   }
   window.onload = stayHere();
