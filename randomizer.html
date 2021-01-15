@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <!--required business procedures-->
-<!--required business procedures-->
 <html lang="en">
 
 <head>
@@ -43,23 +42,6 @@
 
     gtag('config', 'G-SD2H63G7CK');
   </script>
-  <!-- exclusive styling just for this page -->
-  <style>
-    .videoWrapper {
-      position: relative;
-      padding-bottom: 56.25%;
-      /* 16:9 */
-      height: 0;
-    }
-
-    .videoWrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
   <div class="nocss" style="font-family:sans-serif;">
     <hr>
     <center>
@@ -122,53 +104,78 @@
 <body style="padding-top:30px;">
   <!-- the header -->
   <div class="container">
-    <div class="page-header" id="banner">
-      <h3>the randomizer</h3>
+    <div class="row">
+      <div class="col">
+        <div class="page-header" id="banner">
+          <h3>the randomizer</h3>
+        </div>
+      </div>
     </div>
-    <!-- the body -->
-    <button class="btn btn-block btn-outline-dark" onclick="stayHere()">re-roll</button>
-    <br>
+    <div class="row">
+      <div class="col">
+        <span class="d-inline-block" data-toggle="popover" data-content="coming soon" data-placement="bottom">
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" disabled id="randomSwitch">
+            <label class="custom-control-label" for="randomSwitch" id="randomLabel">true random</label>
+          </div>
+        </span>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- the body -->
+
+
+  <br>
+  <div class="container">
     <div class="bs-docs-section clearfix">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col">
           <div class="page-header">
-            <div class="videoWrapper container-flex">
+            <div class="embed-responsive embed-responsive-16by9">
               <div id="randomdiv">
-                <iframe id="randomframe" src="https://cdn.rungus.zone/profile.gif" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class="embed-responsive-item" id="randomframe" src="https://cdn.rungus.zone/profile.gif" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
               </div>
             </div>
-            <br>
-            <h4>what is this?</h4>
-            <p class="lead">this is the randomizer, every time you open this page (or hit the re-roll button) it will randomly pull a youtube video from my list
-              <br><br>
-              most of them are kinda funny, some are sad and some are weird. thanks for visiting
-              <br><br>
-              share with your friends please, i need them clicks
-            </p>
-            <h4>ok can i submit videos too</h4>
-            <p class="lead">hell yeah brother, send me a message on discord (stormy#0001) or on twitter (@_rungus) and i can add it for ya.<br><br> it has to be weird, funny, or strange. if you get all 3 you win.
+          </div>
+        </div>
+      </div>
+      <br>
+      <button class="btn btn-block btn-outline-dark" onclick="stayHere()">re-roll</button>
+      <br>
+      <h4>what is this?</h4>
+      <p class="lead">this is the randomizer, every time you open this page (or hit the re-roll button) it will randomly pull a youtube video from my list
+        <br><br>
+        most of them are kinda funny, some are sad and some are weird. thanks for visiting
+        <br><br>
+        share with your friends please, i need them clicks
+      </p>
+      <h4>ok can i submit videos too</h4>
+      <p class="lead">hell yeah brother, send me a message on discord (stormy#0001) or on twitter (@_rungus) and i can add it for ya.<br><br> it has to be weird, funny, or strange. if you get all 3 you win.
+      </p>
+    </div>
+  </div>
+  <hr>
+  <!-- the footnotes -->
+  <footer style="padding-bottom: 100px;">
+    <div class="container">
+      <footer id="footer">
+        <div class="row">
+          <div class="col-lg-12">
+            <p>
+              <span class="float--right">&copy; 2021 rungus</span>
+              <a href="https://rungus.zone/terms">terms of service</a> -
+              <a href="https://d.rungus.zone">discord</a> -
+              <a href="https://twitter.com/_rungus">twitter</a> -
+              <a href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">youtube</a> -
+              <a href="https://cdn.rungus.zone">cdn</a>
             </p>
           </div>
-          <hr>
-          <!-- the footnotes -->
-          <footer style="padding-bottom: 100px;">
-            <div class="container">
-              <footer id="footer">
-                <div class="row">
-                  <div class="col-lg-12">
-                    <p>
-                      <span class="float--right">&copy; 2021 rungus</span>
-                      <a href="https://rungus.zone/terms">terms of service</a> -
-                      <a href="https://d.rungus.zone">discord</a> -
-                      <a href="https://twitter.com/_rungus">twitter</a> -
-                      <a href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">youtube</a> -
-                      <a href="https://cdn.rungus.zone">cdn</a>
-                    </p>
-                  </div>
-                </div>
-            </div>
-          </footer>
         </div>
+    </div>
+  </footer>
+  </div>
 
 
 </body>
@@ -176,90 +183,151 @@
 <script>
   function stayHere() {
     var randURLs = [
-      "https://www.youtube-nocookie.com/embed/fCmvXCgZr74",
-      "https://www.youtube-nocookie.com/embed/fCmvXCgZr74",
-      "https://www.youtube-nocookie.com/embed/4ZQRHNG1IYE",
-      "https://www.youtube-nocookie.com/embed/_0AlytWWDm",
-      "https://www.youtube-nocookie.com/embed/2REG3-Wb5gM",
-      "https://www.youtube-nocookie.com/embed/2X5hyC62zZ4",
-      "https://www.youtube-nocookie.com/embed/Cb6F14AGrvI",
-      "https://www.youtube-nocookie.com/embed/4DUkS98yw5Y",
-      "https://www.youtube-nocookie.com/embed/vl_aWoPNpJM",
-      "https://www.youtube-nocookie.com/embed/DOWO4gq-whg",
-      "https://www.youtube-nocookie.com/embed/hxpbJ89pHAM",
-      "https://www.youtube-nocookie.com/embed/A7qXoSgYR4c",
-      "https://www.youtube-nocookie.com/embed/bxRzsgtvakY",
-      "https://www.youtube-nocookie.com/embed/Epd4pUxkogw",
-      "https://www.youtube-nocookie.com/embed/ag46jiqISO4",
-      "https://www.youtube-nocookie.com/embed/_xyGvpLOZ1Q",
-      "https://www.youtube-nocookie.com/embed/WFoC3TR5rzI",
-      "https://www.youtube-nocookie.com/embed/juQyy00x-Mw",
-      "https://www.youtube-nocookie.com/embed/VfCYZ3pks48",
-      "https://www.youtube-nocookie.com/embed/Xh-71XzC8pw",
-      "https://www.youtube-nocookie.com/embed/R37bwKO9gBA",
-      "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
-      "https://www.youtube-nocookie.com/embed/ZZ5LpwO-An4",
-      "https://www.youtube-nocookie.com/embed/Li4j82QbBvk",
-      "https://www.youtube-nocookie.com/embed/VqB1uoDTdKM",
-      "https://www.youtube-nocookie.com/embed/QrGrOK8oZG8",
-      "https://www.youtube-nocookie.com/embed/RvVMz7PsWqg",
-      "https://www.youtube-nocookie.com/embed/Ivgx5x1dob8",
-      "https://www.youtube-nocookie.com/embed/IfatKHskzZc",
-      "https://www.youtube-nocookie.com/embed/EY2kBBXi0XY",
-      "https://www.youtube-nocookie.com/embed/rICeCUzaY-g",
-      "https://www.youtube-nocookie.com/embed/1Ceh-TkR75g",
-      "https://www.youtube-nocookie.com/embed/yOFhvi68KW0",
-      "https://www.youtube-nocookie.com/embed/UO2sYTkFB0k",
-      "https://www.youtube-nocookie.com/embed/JGS4AVRtwr8",
-      "https://www.youtube-nocookie.com/embed/wBl45GPoGHY",
-      "https://www.youtube-nocookie.com/embed/iBQRjiAHUX8",
-      "https://www.youtube-nocookie.com/embed/e1bEWoblGZA",
-      "https://www.youtube-nocookie.com/embed/MMY_SUuobww",
-      "https://www.youtube-nocookie.com/embed/hd2uvPjMRy4",
-      "https://www.youtube-nocookie.com/embed/dNOztYZdT6A",
-      "https://www.youtube-nocookie.com/embed/mdsS7dLR-d8",
-      "https://www.youtube-nocookie.com/embed/3QyMXAu-kt0",
-      "https://www.youtube-nocookie.com/embed/kDJs-yV25sA",
-      "https://www.youtube-nocookie.com/embed/hqCbx5LQIlw",
-      "https://www.youtube-nocookie.com/embed/McQ58nhhpHM",
-      "https://www.youtube-nocookie.com/embed/coCNTFSjd_M",
-      "https://www.youtube-nocookie.com/embed/t4Aio5BGleA",
-      "https://www.youtube-nocookie.com/embed/iThGJXTucxY",
-      "https://www.youtube-nocookie.com/embed/AFalBiA5Tf8",
-      "https://www.youtube-nocookie.com/embed/yeNEnvn3JCE",
-      "https://www.youtube-nocookie.com/embed/IqPQZFvO2yM",
-      "https://www.youtube-nocookie.com/embed/UxBAY4nfRBU",
-      "https://www.youtube-nocookie.com/embed/EF8GhC-T_Mo",
-      "https://www.youtube-nocookie.com/embed/kpk2tdsPh0A",
-      "https://www.youtube-nocookie.com/embed/pA2vWc2eeNE",
-      "https://www.youtube-nocookie.com/embed/pYcpZJVmXvU",
-      "https://www.youtube-nocookie.com/embed/bZe5J8SVCYQ",
-      "https://www.youtube-nocookie.com/embed/cJtrHIMmMy4",
-      "https://www.youtube-nocookie.com/embed/xxprbbytUQI",
-      "https://www.youtube-nocookie.com/embed/XKBwItDNrEU",
-      "https://www.youtube-nocookie.com/embed/dKx1wnXClcI",
-      "https://www.youtube-nocookie.com/embed/VyvsXRBHwTA",
-      "https://www.youtube-nocookie.com/embed/2Qu3hZnvfGg",
-      "https://www.youtube-nocookie.com/embed/KgtRRBtSjuo",
-      "https://www.youtube-nocookie.com/embed/0tDz_B-PFpg",
-      "https://www.youtube-nocookie.com/embed/iUJ8r4ReHog",
-      "https://www.youtube-nocookie.com/embed/D1Uhk-QN11M",
-      "https://www.youtube-nocookie.com/embed/5tFZof9EDhc",
-      "https://www.youtube-nocookie.com/embed/EShUeudtaFg",
-      "https://www.youtube-nocookie.com/embed/_-Rji3mip4A",
-      "https://www.youtube-nocookie.com/embed/z5qLgL-E7uY",
-      "https://www.youtube-nocookie.com/embed/_B13yISVHWI",
-      "https://www.youtube-nocookie.com/embed/Q0K_zvlDzmI",
-      "https://www.youtube-nocookie.com/embed/o7SdP-gnfIc",
-      "https://www.youtube-nocookie.com/embed/T-w0h3g07aE",
-      "https://www.youtube-nocookie.com/embed/pC6HZPJH6wE"
-      //"https://www.youtube-nocookie.com/embed/x",
+      "fCmvXCgZr74",
+      "fCmvXCgZr74",
+      "4ZQRHNG1IYE",
+      "_0AlytWWDm",
+      "2REG3-Wb5gM",
+      "2X5hyC62zZ4",
+      "Cb6F14AGrvI",
+      "4DUkS98yw5Y",
+      "vl_aWoPNpJM",
+      "DOWO4gq-whg",
+      "hxpbJ89pHAM",
+      "A7qXoSgYR4c",
+      "bxRzsgtvakY",
+      "Epd4pUxkogw",
+      "ag46jiqISO4",
+      "_xyGvpLOZ1Q",
+      "WFoC3TR5rzI",
+      "juQyy00x-Mw",
+      "VfCYZ3pks48",
+      "Xh-71XzC8pw",
+      "R37bwKO9gBA",
+      "dQw4w9WgXcQ",
+      "ZZ5LpwO-An4",
+      "Li4j82QbBvk",
+      "VqB1uoDTdKM",
+      "QrGrOK8oZG8",
+      "RvVMz7PsWqg",
+      "Ivgx5x1dob8",
+      "IfatKHskzZc",
+      "EY2kBBXi0XY",
+      "rICeCUzaY-g",
+      "1Ceh-TkR75g",
+      "yOFhvi68KW0",
+      "UO2sYTkFB0k",
+      "JGS4AVRtwr8",
+      "wBl45GPoGHY",
+      "iBQRjiAHUX8",
+      "e1bEWoblGZA",
+      "MMY_SUuobww",
+      "hd2uvPjMRy4",
+      "dNOztYZdT6A",
+      "mdsS7dLR-d8",
+      "3QyMXAu-kt0",
+      "kDJs-yV25sA",
+      "hqCbx5LQIlw",
+      "McQ58nhhpHM",
+      "coCNTFSjd_M",
+      "t4Aio5BGleA",
+      "iThGJXTucxY",
+      "AFalBiA5Tf8",
+      "yeNEnvn3JCE",
+      "IqPQZFvO2yM",
+      "UxBAY4nfRBU",
+      "EF8GhC-T_Mo",
+      "kpk2tdsPh0A",
+      "pA2vWc2eeNE",
+      "pYcpZJVmXvU",
+      "bZe5J8SVCYQ",
+      "cJtrHIMmMy4",
+      "xxprbbytUQI",
+      "XKBwItDNrEU",
+      "dKx1wnXClcI",
+      "VyvsXRBHwTA",
+      "2Qu3hZnvfGg",
+      "KgtRRBtSjuo",
+      "0tDz_B-PFpg",
+      "iUJ8r4ReHog",
+      "D1Uhk-QN11M",
+      "5tFZof9EDhc",
+      "EShUeudtaFg",
+      "_-Rji3mip4A",
+      "z5qLgL-E7uY",
+      "_B13yISVHWI",
+      "Q0K_zvlDzmI",
+      "o7SdP-gnfIc",
+      "T-w0h3g07aE",
+      "pC6HZPJH6wE",
+      "BMBcZwoGPw4",
+      "_zzEDrYTkkg",
+      "1EZ9XJssiqY",
+      "qlIlHCjrM_E",
+      "cU0oHq9Y6Ws",
+      "gyW8_MEG6tE",
+      "l2QClcUUlhc",
+      "0MIH948b_uQ",
+      "W_JhpXm5e4g",
+      "0HHh-stDn5k",
+      "DkYQ72lGrew",
+      "_EJsR8mgVWk",
+      "Rc-Jh3Oe0Gc",
+      "5NHaO0NVbAg",
+      "j-GnuHwK8mw",
+      "h7_7w_wL64g",
+      "4ISDUKG-N90",
+      "BX2PRxXQbXE",
+      "2okrgAMdHok",
+      "mJYAvNvve0E",
+      "fV3nflAQ99w",
+      "t4mGPIWbw0c",
+      "0mQCi4LQUQw",
+      "FG7eYo_ozJQ",
+      "heEKi5EjZXA",
+      "xt2OdUfYZbk",
+      "0E_5SynW3aM",
+      "0iUTZajxlWI",
+      "bLHL75H_VEM",
+      "UddCTvioEnw",
+      "ixWybGQnPHQ",
+      "v11SYt_brN8",
+      "hnsNMoor5Ic",
+      "csFf8EiCQ2Y",
+      "d1CRGkDgrrQ",
+      "GjjZacZSWT4",
+      "NYdU1p7kDxY",
+      "6f5ys8VU2ek"
     ];
     var randURL = randURLs[Math.floor(Math.random() * randURLs.length)];
     console.log("video url:" + randURL);
-    document.getElementById('randomframe').src = randURL + "?&autoplay=1";
+    document.getElementById('randomframe').src = "https://www.youtube-nocookie.com/embed/" + randURL + "?&autoplay=1";
   }
   window.onload = stayHere();
+
+  //the following function does not work
+  //there are too many empty video ids on youtube
+  //we will probably have to crawl youtube and build a list that way
+  /*function trueRandom() {
+    var elements = ["a", "b", "c", "d", "e", "f", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U",
+      "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "_"
+    ];
+    var e1 = elements[Math.floor(Math.random() * elements.length)];
+    var e2 = elements[Math.floor(Math.random() * elements.length)];
+    var e3 = elements[Math.floor(Math.random() * elements.length)];
+    var e4 = elements[Math.floor(Math.random() * elements.length)];
+    var e5 = elements[Math.floor(Math.random() * elements.length)];
+    var e6 = elements[Math.floor(Math.random() * elements.length)];
+    var e7 = elements[Math.floor(Math.random() * elements.length)];
+    var e8 = elements[Math.floor(Math.random() * elements.length)];
+    var e9 = elements[Math.floor(Math.random() * elements.length)];
+    var e10 = elements[Math.floor(Math.random() * elements.length)];
+    var e11 = elements[Math.floor(Math.random() * elements.length)];
+    videoid = e1 + e2 + e3 + e4 + e5 + e6 + e7 + e8 + e9 + e10 + e11;
+    fullURL = "https://www.youtube-nocookie.com/embed/" + videoid;
+    console.log("video url:" + fullURL);
+    document.getElementById('randomframe').src = fullURL;
+  }*/
 </script>
 
 </html>
