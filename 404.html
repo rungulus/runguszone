@@ -95,9 +95,7 @@
   </div>
 </nav>
 </head>
-<script>
-document.getElementById("url").innerHTML = window.location.href;
-</script>
+
 <body style="padding-top:30px;">
   <!-- the header -->
   <div class="container">
@@ -105,7 +103,7 @@ document.getElementById("url").innerHTML = window.location.href;
       <div class="row">
         <div class="col-12 col-lg-8 col-md-7 col-sm-9">
           <h1 style="font-size:150px;">you're lost.</span></h1>
-        <h3><span id="url">that page</span> does not exist on this server</h3>
+        <h3><div id="urlhere"></div></h3>
         </div>
       </div>
     </div>
@@ -135,5 +133,7 @@ document.getElementById("url").innerHTML = window.location.href;
 
 
 </body>
-
+<script>
+document.getElementById("urlhere").innerHTML = window.location.href + " does not exist on this server";
+</script>
 </html>
