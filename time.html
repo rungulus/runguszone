@@ -1,650 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SD2H63G7CK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
 
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag('js', new Date());
-
-  gtag('config', 'G-SD2H63G7CK');
-</script>
-<link rel="icon" type="image/gif" href="https://cdn.rungus.zone/profile.gif" />
-<meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name=viewport>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<style>
-  .nav-main {
-    padding: 0
-  }
-
-  .nav-title {
-    float: left
-  }
-
-  .nav-items {
-    float: right;
-    padding-top: 20px
-  }
-
-  .nocss {
-    display: none
-  }
-
-  html {
-    font-family: sans-serif;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%
-  }
-
-  body {
-    margin: 0
-  }
-
-  nav {
-    display: block
-  }
-
-  a {
-    background-color: transparent
-  }
-
-  a:active,
-  a:hover {
-    outline: 0
-  }
-
-  abbr[title] {
-    border-bottom: 1px dotted
-  }
-
-  h1 {
-    font-size: 2em;
-    margin: .67em 0
-  }
-
-  hr {
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    height: 0
-  }
-
-  button {
-    color: inherit;
-    font: inherit;
-    margin: 0
-  }
-
-  button {
-    overflow: visible
-  }
-
-  button {
-    text-transform: none
-  }
-
-  button {
-    -webkit-appearance: button;
-    cursor: pointer
-  }
-
-  button::-moz-focus-inner {
-    border: 0;
-    padding: 0
-  }
-
-  /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
-  @media print {
-
-    *,
-    :after,
-    :before {
-      background: 0 0 !important;
-      color: #000 !important;
-      -webkit-box-shadow: none !important;
-      box-shadow: none !important;
-      text-shadow: none !important
-    }
-
-    a,
-    a:visited {
-      text-decoration: underline
-    }
-
-    a[href]:after {
-      content: " ("attr(href) ")"
-    }
-
-    abbr[title]:after {
-      content: " ("attr(title) ")"
-    }
-
-    h2,
-    h3,
-    p {
-      orphans: 3;
-      widows: 3
-    }
-
-    h2,
-    h3 {
-      page-break-after: avoid
-    }
-  }
-
-  @font-face {
-    font-family: 'Glyphicons Halflings';
-    src: url(fonts/glyphicons-halflings-regular.eot);
-    src: url(fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'), url(fonts/glyphicons-halflings-regular.woff2) format('woff2'), url(fonts/glyphicons-halflings-regular.woff) format('woff'), url(fonts/glyphicons-halflings-regular.ttf) format('truetype'), url(fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg')
-  }
-
-  * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box
-  }
-
-  :after,
-  :before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box
-  }
-
-  html {
-    font-size: 10px;
-    -webkit-tap-highlight-color: transparent
-  }
-
-  body {
-    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #888;
-    background-color: #060606
-  }
-
-  button {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit
-  }
-
-  a {
-    color: #2a9fd6;
-    text-decoration: none
-  }
-
-  a:focus,
-  a:hover {
-    color: #2a9fd6;
-    text-decoration: underline
-  }
-
-  a:focus {
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px
-  }
-
-  hr {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: 0;
-    border-top: 1px solid #282828
-  }
-
-  [role=button] {
-    cursor: pointer
-  }
-
-  h1,
-  h2,
-  h3 {
-    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 500;
-    line-height: 1.1;
-    color: #fff
-  }
-
-  h1,
-  h2,
-  h3 {
-    margin-top: 20px;
-    margin-bottom: 10px
-  }
-
-  h1 {
-    font-size: 56px
-  }
-
-  h2 {
-    font-size: 45px
-  }
-
-  h3 {
-    font-size: 34px
-  }
-
-  p {
-    margin: 0 0 10px
-  }
-
-  .lead {
-    margin-bottom: 20px;
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.4
-  }
-
-  @media (min-width:768px) {
-    .lead {
-      font-size: 21px
-    }
-  }
-
-  .text-muted {
-    color: #888
-  }
-
-  abbr[title] {
-    cursor: help;
-    border-bottom: 1px dotted #888
-  }
-
-  .container {
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px
-  }
-
-  @media (min-width:768px) {
-    .container {
-      width: 750px
-    }
-  }
-
-  @media (min-width:992px) {
-    .container {
-      width: 970px
-    }
-  }
-
-  @media (min-width:1200px) {
-    .container {
-      width: 1170px
-    }
-  }
-
-  .row {
-    margin-left: -15px;
-    margin-right: -15px
-  }
-
-  .col-sm-4 {
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px
-  }
-
-  @media (min-width:768px) {
-    .col-sm-4 {
-      float: left
-    }
-
-    .col-sm-4 {
-      width: 33.33333333%
-    }
-  }
-
-  .btn {
-    display: inline-block;
-    margin-bottom: 0;
-    font-weight: 400;
-    text-align: center;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    background-image: none;
-    border: 1px solid transparent;
-    white-space: nowrap;
-    padding: 8px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    border-radius: 4px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none
-  }
-
-  .btn:active:focus,
-  .btn:focus {
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px
-  }
-
-  .btn:focus,
-  .btn:hover {
-    color: #fff;
-    text-decoration: none
-  }
-
-  .btn:active {
-    outline: 0;
-    background-image: none;
-    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125)
-  }
-
-  .btn-default {
-    color: #fff;
-    background-color: #424242;
-    border-color: #424242
-  }
-
-  .btn-default:focus {
-    color: #fff;
-    background-color: #282828;
-    border-color: #020202
-  }
-
-  .btn-default:hover {
-    color: #fff;
-    background-color: #282828;
-    border-color: #232323
-  }
-
-  .btn-default:active {
-    color: #fff;
-    background-color: #282828;
-    border-color: #232323
-  }
-
-  .btn-default:active:focus,
-  .btn-default:active:hover {
-    color: #fff;
-    background-color: #161616;
-    border-color: #020202
-  }
-
-  .btn-default:active {
-    background-image: none
-  }
-
-  .btn-primary {
-    color: #fff;
-    background-color: #2a9fd6;
-    border-color: #2a9fd6
-  }
-
-  .btn-primary:focus {
-    color: #fff;
-    background-color: #2180ac;
-    border-color: #15506c
-  }
-
-  .btn-primary:hover {
-    color: #fff;
-    background-color: #2180ac;
-    border-color: #1f79a3
-  }
-
-  .btn-primary:active {
-    color: #fff;
-    background-color: #2180ac;
-    border-color: #1f79a3
-  }
-
-  .btn-primary:active:focus,
-  .btn-primary:active:hover {
-    color: #fff;
-    background-color: #1b698e;
-    border-color: #15506c
-  }
-
-  .btn-primary:active {
-    background-image: none
-  }
-
-  .navbar-fixed-top {
-    position: fixed;
-    right: 0;
-    left: 0;
-    z-index: 1030
-  }
-
-  @media (min-width:768px) {
-    .navbar-fixed-top {
-      border-radius: 0
-    }
-  }
-
-  .navbar-fixed-top {
-    top: 0;
-    border-width: 0 0 1px
-  }
-
-  .jumbotron {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    margin-bottom: 30px;
-    color: inherit;
-    background-color: #151515
-  }
-
-  .jumbotron h1 {
-    color: inherit
-  }
-
-  .jumbotron p {
-    margin-bottom: 15px;
-    font-size: 21px;
-    font-weight: 200
-  }
-
-  .container .jumbotron {
-    border-radius: 6px;
-    padding-left: 15px;
-    padding-right: 15px
-  }
-
-  @media screen and (min-width:768px) {
-    .jumbotron {
-      padding-top: 48px;
-      padding-bottom: 48px
-    }
-
-    .container .jumbotron {
-      padding-left: 60px;
-      padding-right: 60px
-    }
-
-    .jumbotron h1 {
-      font-size: 63px
-    }
-  }
-
-  .container:after,
-  .container:before,
-  .row:after,
-  .row:before {
-    content: " ";
-    display: table
-  }
-
-  .container:after,
-  .row:after {
-    clear: both
-  }
-
-  @-ms-viewport {
-    width: device-width
-  }
-
-  .jumbotron h1 {
-    color: #fff
-  }
-</style>
-<d class="container">
-  <div class="alert alert-dark" role="alert">
-    <h2 class="alert-heading">hey, listen</h2>
-    <h4>this page hasn't been updated with my new styling (rungus zone v2), so it's going to look out of place until i do that<br>
-      thank you for understanding</h4>
-  </div>
-  </div>
+<head>
+  <meta charset="utf-8">
+  <!--styling and bootstrap stuff-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.rungus.zone/v2/css/darkbootstrap.min.css">
+  <!--javascript i use for one thing, should probably declutter it or something-->
+  <script src="https://cdn.rungus.zone/v2/js/jquery.min.js"></script>
+  <script src="https://cdn.rungus.zone/v2/js/bootstrap.bundle.min.js"></script>
+  <!--favicon hell-->
+  <link rel="apple-touch-icon" sizes="120x120" href="https://cdn.rungus.zone/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.rungus.zone/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.rungus.zone/favicons/favicon-16x16.png">
+  <link rel="manifest" href="https://cdn.rungus.zone/favicons/site.webmanifest">
+  <link rel="mask-icon" href="https://cdn.rungus.zone/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="https://cdn.rungus.zone/favicons/favicon.ico">
+  <meta name="apple-mobile-web-app-title" content="rungus zone">
+  <meta name="application-name" content="rungus zone">
+  <meta name="msapplication-TileColor" content="#69f0ae">
+  <meta name="msapplication-config" content="https://cdn.rungus.zone/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#69f0ae">
+  <!--opengraph hell-->
+  <meta property="og:title" content="time converter - rungus zone">
+  <meta property="og:url" content="https://rungus.zone">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://cdn.rungus.zone/profile.gif">
+  <meta property="og:description" content="a website that is a testament to stubborness">
+  <meta name="theme-color" content="#69f0ae" />
+  <!--popovers need this to activate
+  i hate javascript-->
   <script>
-    var masterTimeUTC = new Date,
-      utcHours = masterTimeUTC.getUTCHours(),
-      utcMinutes = masterTimeUTC.getUTCMinutes(),
-      utcSeconds = masterTimeUTC.getUTCSeconds(),
-      utcMinutesLead = masterTimeUTC.getUTCMinutes();
-
-    function manualTime() {
-      var e = new Date,
-        t = e.getHours(),
-        m = e.getMinutes(),
-        s = e.getSeconds(),
-        o = masterTimeUTC.getUTCHours();
-      masterTimeUTC.getUTCMinutes(), masterTimeUTC.getUTCSeconds(), m < 10 && (m = "0" + m), 0 === m && (m = "00"), s < 10 && (s = "0" + s), t < 10 && (t = "0" + t);
-      var T = "am";
-      12 < o % 24 && (T = "pm");
-      var i = (o + 11) % 12 + 1 + ":" + m + " " + T;
-      document.getElementById("clocksingle").innerHTML = t + ":" + m + "." + s, document.getElementById("ist").innerHTML = i, setTimeout(manualTime, 1e3), setTimeout(solveSmaller, 1e3), console.log("manualTime complete")
-    }
-
-    function solveSmaller() {
-      solveTime(-8), solveTime(-7), solveTime(-6), solveTime(-5), solveTime(0), solveTime(8), solveTime(9), solveTime(10), solveTime(1), solveTime(2), console.log("solveSmaller complete")
-    }
-
-    function solveTime(e) {
-      var t = new Date,
-        m = t.getUTCHours(),
-        s = t.getUTCMinutes(),
-        o = s;
-      if (s < 10 && (o = "0" + utcMinutesLead), (s = 0) && (o = "00"), e < 0) var T = 24 + e;
-      else T = e;
-      var i = "am";
-      12 < (m + T) % 24 && (i = "pm");
-      var l = (m + e + 11) % 12 + 1 + ":" + o + " " + i;
-      document.getElementById(e).innerHTML = l
-    }
-    setTimeout(manualTime, 1e3), setTimeout(solveSmaller, 1e3), window.onload = solveSmaller
+    $(function() {
+      $('[data-toggle="popover"]').popover()
+    })
   </script>
-  <title>time - rungus.zone</title><noscript>
-    <div class=noscript>
+  <!--analytics hell-->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SD2H63G7CK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-SD2H63G7CK');
+  </script>
+  <!-- how did we let it get this way -->
+  <!--noCSS warning notice-->
+  <!--detects if CSS is not loading from the CDN with a class that the CSS from the CDN hides by default-->
+  <!--can break on slower connections, but most if not all connections can load this page quick enough with the optimizations i've done-->
+  <div class="nocss" style="font-family:sans-serif;">
+    <hr>
+    <center>
+      <h1 style="font-size:50px;">something has gone wrong</h1>
+    </center>
+    <p style="font-size:150%;">this page is being loaded without any styling. you either have a slow connection, the cdn is down, or you're looking at the source code. at least it still looks alright, but this is not the design of the actual page.
+      <!-- hello! -->
+      <br>
       <center>
-        <h1>You don't have JavaScript enabled...</h1>
-      </center><br>
-      <p>It's required to load all of the times on this page. <br>
-      <p>Anyway, please reconsider whitelisting this page or this site. Or not. Up to you.</p>
-    </div>
-  </noscript>
-  <div class=container>
-    <div class=nocss>
-      <center>
-        <h1>It seems something has gone wrong</h1>
+        <h3 style="font-size:150%">maybe try <a href="https://rungus.zone">refreshing?</a></h3>
       </center>
-      <h2>Your browser is not properly rendering this page, or the CDN is down</h2><br>
-      <p>Something has messed up, and you're viewing this page without any styling. This could be because the CDN is down, something blocked the stylesheet from loading, or something else entirely.</p><br>
-      <p>Anyway, click <a href=https://rungus.zone/time>here </a> to try to refresh the page, and maybe it'll be fine.
-    </div>
-    <div class=navbar-fixed-top id=nav style=background:#060606>
-      <div class=container>
-        <nav class=nav-main>
-          <div class=nav-title>
-            <h3 style=float:left><span style=color:#fff>rungus</span></h3>
-            <h3 style=float:left class=text-muted>.zone</h3>
-          </div>
-          <div class=nav-items><a href="https://rungus.zone" class="btn btn-default" role=button>back home</a></div>
-        </nav>
-      </div>
-      <hr>
+    </p>
+    <hr>
+  </div>
+</head>
+<script src="https://cdn.rungus.zone/main/js/time.js"></script>
+<title>time - rungus.zone</title><noscript>
+  <div class=noscript>
+    <center>
+      <h1>You don't have JavaScript enabled...</h1>
+    </center><br>
+    <p>It's required to load all of the times on this page. <br>
+    <p>Anyway, please reconsider whitelisting this page or this site. Or not. Up to you.</p>
+  </div>
+</noscript>
+<!-- the meat and potatoes-->
+
+<!--the navbar-->
+<!--should probably keep this consistent amongst pages, but mainly i just replace the links on "weirder" pages with a "go home" button-->
+<!--don't tell anyone i said its ok to do web design like this-->
+<nav class="navbar navbar-expand-lg fixed-bottom navbar-dark bg-dark">
+  <a href="../" class="navbar-brand" style="font-size:200%;"><span style="color:#69f0ae;">r</span>ungus<span class="text-muted">.zone</span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="https://blog.rungus.zone">blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="popover" title="my portfolio is coming soon" data-placement="top"
+          data-content="ok look i just started this website and i have to consolidate so many other ones for this so give me some time thank you">portfolio</a>
+      </li>
+      <li class="nav-item dropdown dropup">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download">experiments <span class="caret"></span></a>
+        <div class="dropdown-menu" aria-labelledby="download">
+          <a class="dropdown-item" href="randomizer">enter the randomizer</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="time">time</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown dropup">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download">socials <span class="caret"></span></a>
+        <div class="dropdown-menu" aria-labelledby="download">
+          <a class="dropdown-item" href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">subscribe on youtube</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="https://twitter.com/_rungus" role="button">follow on twitter</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="https://d.rungus.zone/" role="button">join my discord</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+</head>
+
+<body style="padding-top:50px;">
+  <!--why 30px?-->
+  <!--i dont know! but any less and the content will be too high on most screens-->
+  <!--i love css.-->
+  <div class="container">
+    <div class="page-header" id="banner">
+      <d class="row">
+        <div class="col">
+          <h1 id=clocksingle style="font-size:120px">Loading...</h1>
+          <p class=lead>the current time, according to your device</p>
+        </div>
+        <div class="col">
+          <h2 id=ist style="font-size:70px">Loading...</h2>
+          <p class=lead>standard time (for easier planning)</p>
+          <p class="lead">except for these two clocks up here, this script does not follow DST. you've been warned</p>
+        </div>
     </div>
   </div>
+  <hr>
+  <div class=container>
+    <h3>America</h3>
+    <div class=row>
 
-  <body style=padding-top:110px>
-    <div class=container>
-      <div class=jumbotron>
-        <center>
-          <h1 id=clocksingle style=font-size:400%>Loading...</h1>
-        </center>
-        <center>
-          <p class=lead>Thats the current time for where you are, according to your device.</p>
-        </center>
+      <div class=col>
+        <h3>
+          <div class="page-header" id=-8>Loading...</div>
+        </h3>West
+      </div>
+      <div class=col>
+        <h3>
+          <div class="page-header" id=-7>Loading...</div>
+        </h3>Mountain
+      </div>
+      <div class=col>
+        <h3>
+          <div class="page-header" id=-6>Loading...</div>
+        </h3>Central
+      </div>
+      <div class=col>
+        <h3>
+          <div class="page-header" id=-5>Loading...</div>
+        </h3>East
       </div>
     </div>
-    <center>
-      <h2 id=ist>Loading...</h2>
-      <p class=lead>Internet Standard Time (use this for easier planning)</p>
-    </center>
-    <center>
-      <div class=container>
-        <div class=row>
-          <div class=col>
-            <h3>
-              <div id=-8>Loading...</div>
-            </h3>US West
-          </div>
-          <div class=col>
-            <h3>
-              <div id=-7>Loading...</div>
-            </h3>US Mountain
-          </div>
-          <div class=col>
-            <h3>
-              <div id=-6>Loading...</div>
-            </h3>US Central
-          </div>
-          <div class=col>
-            <h3>
-              <div id=-5>Loading...</div>
-            </h3>US East
-          </div>
-        </div>
-        <div class=row>
-          <div class=col-sm-4>
-            <h3>
-              <div id=0>Loading...</div>
-            </h3>United Kingdom
-          </div>
-          <div class=col-sm-4>
-            <h3>
-              <div id=2>Loading...</div>
-            </h3>France
-          </div>
-          <div class=col-sm-4>
-            <h3>
-              <div id=1>Loading...</div>
-            </h3>Netherlands
-          </div>
-        </div>
-        <div class=row>
-          <div class=col-sm-4>
-            <h3>
-              <div id=8>Loading...</div>
-            </h3>Western Australia
-          </div>
-          <div class=col-sm-4>
-            <h3>
-              <div id=9>Loading...</div>
-            </h3>Adelaide
-          </div>
-          <div class=col-sm-4>
-            <h3>
-              <div id=10>Loading...</div>
-            </h3><abbr title="the lame part">The Rest of Australia</abbr>
-          </div>
-        </div>
-      </div>
-    </center><br>
-    <center><button class="btn btn-primary" onclick=solveSmaller() type=button>Update Times Manually</button></center>
     <hr>
-  </body>
+    <h3>Europe</h3>
+    <div class=row>
+      <div class=col>
+        <h3>
+          <div class="page-header" id=0>Loading...</div>
+        </h3>United Kingdom
+      </div>
+      <div class=col>
+        <h3>
+          <div class="page-header" id=2>Loading...</div>
+        </h3>France
+      </div>
+      <div class=col>
+        <h3>
+          <div class="page-header" id=1>Loading...</div>
+        </h3>Netherlands
+      </div>
+    </div>
+    <hr>
+    <h3>Australia</h3>
+    <div class=row>
+      <div class=col>
+        <h3>
+          <div class="page-header" id=8>Loading...</div>
+        </h3>Western Australia
+      </div>
+      <div class=col>
+        <h3>
+          <div class="page-header" id=9>Loading...</div>
+        </h3>Adelaide
+      </div>
+      <div class=col>
+        <h3>
+          <div class="page-header" id=10>Loading...</div>
+        </h3><abbr title="the lame part">The Rest of Australia</abbr>
+      </div>
+    </div>
+
+    <br>
+    <div class="row">
+      <div class="col">
+        <h3 class="page-header">what is this?</h3>
+        <p class="lead">welcome to my quick and dirty time converter. it works just ok. you can view the source code for this <a href="https://cdn.rungus.zone/main/js/time.js">here</a></p>
+        <p class="lead">i made this a while ago, please dont think all my stuff is this bad</p>
+      </div>
+    </div>
+    <center><button class="btn btn-outline btn-outline-secondary" onclick=solveSmaller() type=button>click here if the times stop updating</button></center>
+    <hr>
+  </div>
+</body>
+</div>
 
 </html>
 <!--
