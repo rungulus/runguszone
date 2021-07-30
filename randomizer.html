@@ -107,10 +107,13 @@
   <!-- the header -->
   <div class="container">
     <div class="row">
-      <div class="col">
+      <div class="col-12 col-lg-8 col-md-7 col-sm-9">
         <div class="page-header" id="banner">
           <h3 data-toggle="modal" data-target="#changelog">the randomizer</h3>
         </div>
+      </div>
+      <div class="col-lg-4 col-md-5" style="padding-top:5px;">
+        <button class="btn btn-block btn-outline-dark" onclick="stayHere()">re-roll</button>
       </div>
     </div>
     <div class="modal fade" id="changelog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -127,6 +130,7 @@
               <li class="list-group-item active">
                 <h5>v2.1 (current)</h5>
                 <p class="lead">more videos
+                  <br>moved the re-roll button to a more sensible place
                   <br>more logging (for debugging, not the creepy kind)
                   <br>this sick changelog
                 </p>
@@ -147,6 +151,7 @@
         </div>
       </div>
     </div>
+
     <!--<div class="row">
       <div class="col">
         <span class="d-inline-block" data-toggle="popover" data-content="coming soon" data-placement="bottom">
@@ -178,7 +183,7 @@
         </div>
       </div>
       <br>
-      <button class="btn btn-block btn-outline-dark" onclick="stayHere()">re-roll</button>
+
       <br>
       <h4>what is this?</h4>
       <p class="lead">this is the randomizer, every time you open this page (or hit the re-roll button) it will randomly pull a youtube video from my list
