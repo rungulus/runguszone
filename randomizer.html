@@ -60,54 +60,90 @@
 <!-- the meat and potatoes-->
 <title>rungus zone</title>
 <nav class="navbar navbar-expand-lg fixed-bottom navbar-dark bg-dark">
-  <a href="../" class="navbar-brand" style="font-size:200%;"><span style="color:#69f0ae;">r</span>ungus<span class="text-muted">.zone</span></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarResponsive">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="https://blog.rungus.zone">blog</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="popover" title="my portfolio is coming soon" data-placement="top"
-          data-content="ok look i just started this website and i have to consolidate so many other ones for this so give me some time thank you">portfolio</a>
-      </li>
-      <li class="nav-item dropdown dropup">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download">experiments <span class="caret"></span></a>
-        <div class="dropdown-menu" aria-labelledby="download">
-          <a class="dropdown-item active" href="randomizer">enter the randomizer</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="time">time</a>
+  <div class="container">
+    <a href="../" class="navbar-brand" style="font-size:200%;"><span style="color:#69f0ae;">r</span>ungus<span class="text-muted">.zone</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://blog.rungus.zone">blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="popover" title="my portfolio is coming soon" data-placement="top"
+            data-content="ok look i just started this website and i have to consolidate so many other ones for this so give me some time thank you">portfolio</a>
+        </li>
+        <li class="nav-item dropdown dropup">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download">experiments <span class="caret"></span></a>
+          <div class="dropdown-menu" aria-labelledby="download">
+            <a class="dropdown-item active" href="randomizer">enter the randomizer</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="time">time</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown dropup">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download">socials <span class="caret"></span></a>
+          <div class="dropdown-menu" aria-labelledby="download">
+            <a class="dropdown-item" href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">subscribe on youtube</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://twitter.com/_rungus" role="button">follow on twitter</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://d.rungus.zone/" role="button">join my discord</a>
+          </div>
+        </li>
+      </ul>
+      <li class="navbar-right" style="list-style-type: none;">
+        <div class="btn-nav"><a class="nav-link btn btn-outline-dark" href="https://rungus.zone">back home</a>
         </div>
       </li>
-      <li class="nav-item dropdown dropup">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download">socials <span class="caret"></span></a>
-        <div class="dropdown-menu" aria-labelledby="download">
-          <a class="dropdown-item" href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">subscribe on youtube</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="https://twitter.com/_rungus" role="button">follow on twitter</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="https://d.rungus.zone/" role="button">join my discord</a>
-        </div>
-      </li>
-    </ul>
-    <li class="navbar-right" style="list-style-type: none;">
-      <div class="btn-nav"><a class="nav-link btn btn-outline-dark" href="https://rungus.zone">back home</a>
-      </div>
-    </li>
+    </div>
   </div>
 </nav>
 </head>
 
 
-<body>
+<body style="padding-top:10px;">
   <!-- the header -->
   <div class="container">
     <div class="row">
       <div class="col">
         <div class="page-header" id="banner">
-          <h3>the randomizer</h3>
+          <h3 data-toggle="modal" data-target="#changelog">the randomizer</h3>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="changelog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">changelog</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ul class="list-group">
+              <li class="list-group-item active">
+                <h5>v2.1 (current)</h5>
+                <p class="lead">more videos
+                  <br>more logging (for debugging, not the creepy kind)
+                  <br>this sick changelog
+                </p>
+              </li>
+              <li class="list-group-item">
+                <h5>v2.0</h5>
+                <p class="lead">move page styling over to rungus zone v2 style</p>
+              </li>
+              <li class="list-group-item">
+                <h5>v1.0</h5>
+                <p class="lead">initial release</p>
+              </li>
+            </ul>
+          </div>
+          <!--<div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>-->
         </div>
       </div>
     </div>
@@ -169,7 +205,8 @@
               <a href="https://d.rungus.zone">discord</a> -
               <a href="https://twitter.com/_rungus">twitter</a> -
               <a href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">youtube</a> -
-              <a href="https://cdn.rungus.zone">cdn</a>
+              <a href="https://cdn.rungus.zone">cdn</a> -
+
             </p>
           </div>
         </div>

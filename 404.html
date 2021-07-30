@@ -60,38 +60,44 @@
 <!-- the meat and potatoes-->
 <title>rungus zone</title>
 <nav class="navbar navbar-expand-lg fixed-bottom navbar-dark bg-dark">
-  <a href="https://rungus.zone" class="navbar-brand" style="font-size:200%;"><span style="color:#69f0ae;">r</span>ungus<span class="text-muted">.zone</span></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarResponsive">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="https://blog.rungus.zone">blog</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="popover" title="my portfolio is coming soon" data-placement="top"
-          data-content="ok look i just started this website and i have to consolidate so many other ones for this so give me some time thank you">portfolio</a>
-      </li>
-      <li class="nav-item dropdown dropup">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download">experiments <span class="caret"></span></a>
-        <div class="dropdown-menu" aria-labelledby="download">
-          <a class="dropdown-item" href="randomizer">enter the randomizer</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="time">time</a>
+  <div class="container">
+    <a href="../" class="navbar-brand" style="font-size:200%;"><span style="color:#69f0ae;">r</span>ungus<span class="text-muted">.zone</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://blog.rungus.zone">blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="popover" title="my portfolio is coming soon" data-placement="top"
+            data-content="ok look i just started this website and i have to consolidate so many other ones for this so give me some time thank you">portfolio</a>
+        </li>
+        <li class="nav-item dropdown dropup">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download">experiments <span class="caret"></span></a>
+          <div class="dropdown-menu" aria-labelledby="download">
+            <a class="dropdown-item active" href="randomizer">enter the randomizer</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="time">time</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown dropup">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download">socials <span class="caret"></span></a>
+          <div class="dropdown-menu" aria-labelledby="download">
+            <a class="dropdown-item" href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">subscribe on youtube</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://twitter.com/_rungus" role="button">follow on twitter</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://d.rungus.zone/" role="button">join my discord</a>
+          </div>
+        </li>
+      </ul>
+      <li class="navbar-right" style="list-style-type: none;">
+        <div class="btn-nav"><a class="nav-link btn btn-outline-dark" href="https://rungus.zone">back home</a>
         </div>
       </li>
-      <li class="nav-item dropdown dropup">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download">socials <span class="caret"></span></a>
-        <div class="dropdown-menu" aria-labelledby="download">
-          <a class="dropdown-item" href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">subscribe on youtube</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="https://twitter.com/_rungus" role="button">follow on twitter</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="https://d.rungus.zone/" role="button">join my discord</a>
-        </div>
-      </li>
-    </ul>
+    </div>
   </div>
 </nav>
 </head>
@@ -103,7 +109,9 @@
       <div class="row">
         <div class="col-12 col-lg-8 col-md-7 col-sm-9">
           <h1 style="font-size:150px;">you're lost.</span></h1>
-        <h3><div id="urlhere"></div></h3>
+          <h3>
+            <div id="urlhere"></div>
+          </h3>
         </div>
       </div>
     </div>
@@ -116,8 +124,8 @@
             <h5>404 Error -The Server</h5>
           </div>
           <p class="lead">basically that file doesn't exist, has been moved, or the timeline containing that file has been severed from ours.
-<br>if you think thats wrong, message me on twitter or discord and i'll get you sorted out.
-</p>
+            <br>if you think thats wrong, message me on twitter or discord and i'll get you sorted out.
+          </p>
         </div>
       </div>
       <div class="row">
@@ -134,6 +142,7 @@
 
 </body>
 <script>
-document.getElementById("urlhere").innerHTML = window.location.href + " isn't real";
+  document.getElementById("urlhere").innerHTML = window.location.href + " isn't real";
 </script>
+
 </html>
