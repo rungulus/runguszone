@@ -181,6 +181,8 @@
 </body>
 <!-- i tried-->
 <script>
+  console.warn("please send the video id for any broken links");
+	console.warn("send them to me on discord, rungus#0001 - or twitter, @_rungus");
   function stayHere() {
     var randURLs = [
       "fCmvXCgZr74",
@@ -313,11 +315,17 @@
       "SyzM3yjkQko",
       "mJUvIhI_jpo",
       "z94lg7dGkw4",
-      "h6OKgREcHFM"
+      "h6OKgREcHFM",
+      "E7w_v9J7iOc",
+      
     ];
+    console.time('time');
+		console.log("choosing from " + randURLs.length + " ids");
     var randURL = randURLs[Math.floor(Math.random() * randURLs.length)];
-    console.log("video url:" + randURL);
-    document.getElementById('randomframe').src = "https://www.youtube-nocookie.com/embed/" + randURL + "?&autoplay=1";
+    console.log("video id: " + randURL + ", setting in frame");
+    document.getElementById('randomframe').src = "https://www.youtube-nocookie.com/embed/" + randURL + "?&autoplay=1");
+    console.log("success, full url is https://www.youtube-nocookie.com/embed/" + randURL + "?&autoplay=1");
+		console.timeEnd('time');
   }
   window.onload = stayHere();
 
