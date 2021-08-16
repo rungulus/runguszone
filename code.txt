@@ -1,0 +1,1 @@
+cscript %installdir%\Program Files\Microsoft Office\Office15\ospp.vbs /act
