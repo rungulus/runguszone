@@ -37,6 +37,7 @@
     $(function() {
       $('[data-toggle="popover"]').popover()
     })
+    $('.collapse').collapse()
   </script>
   <!--analytics hell-->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SD2H63G7CK"></script>
@@ -74,8 +75,10 @@
 <!--the navbar-->
 <!--should probably keep this consistent amongst pages, but mainly i just replace the links on "weirder" pages with a "go home" button-->
 <!--don't tell anyone i said its ok to do web design like this-->
-<nav class="navbar navbar-expand-lg fixed-bottom navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg fixed-bottom navbar-dark bg-dark accordion">
+
   <div class="container">
+
     <a href="../" class="navbar-brand" style="font-size:200%;"><span style="color:#69f0ae;">r</span>ungus<span class="text-muted">.zone</span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -107,10 +110,33 @@
             <a class="dropdown-item" href="https://d.rungus.zone/" role="button">join my discord</a>
           </div>
         </li>
+
+        </li>
+
       </ul>
+
+      <li class="navbar-right" style="list-style-type: none;">
+        <div class="btn-nav">
+          <a class="nav-link btn btn-outline-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">aren't you moving the site?</a>
+        </div>
+
+      </li>
+
+    </div>
+
+</nav>
+<div class="collapse" id="collapseExample">
+  <div class="container">
+    <div class="alert alert-info">
+      <h4 class="alert-heading">yes.</h4>
+      <p class="mb-0">i'm trying to find a cheaper host, google is more expensive than i thought</p>
+      <p class="mb-0">isn't this dropdown cool?</p>
+      <hr>
+      <p class="lead">you are currently using <b>GitHub</b> as the hosting provider</p>
     </div>
   </div>
-</nav>
+</div>
+</div>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9HJXDGK4ET"></script>
 <script>
@@ -132,23 +158,7 @@
   <!-- the header -->
   <!--best practice would be to put this in <head>
   we don't follow those here-->
-  <div class="container">
-    <div class="alert alert-info" role="alert">
-      <center>
-        <h2 class="alert-heading"><span>hey, listen!</span></h2>
 
-        <h5>i'm moving out of github pages into an actual hosting service</h5>
-      </center>
-      <p class="mb-0">this will make it easier for me to do more web experiments and other neat things.
-        <br>
-        since this site is mostly just stateless, static pages, nothing should break. i'm sorry if they do.
-      </p>
-      <hr>
-      <h5>
-        <center>you are currently using <b>GitHub</b> as the hosting provider</center>
-      </h5>
-    </div>
-  </div>
   <div class="container">
     <div class="page-header" id="banner">
       <div class="row">

@@ -101,60 +101,38 @@
   </div>
 </nav>
 </head>
+<div class="collapse" id="changelog">
+  <div class="container">
+    <div class="card card-body">
+      <center>
+        <h5 class="card-title">debug stuff</h5>
+      </center>
+      <hr>
+      <p class="lead"> video id is: <span id="videoid"><kbd>not set</kbd></span><br>
+        the full url of the embed is: <span id="fullurl"><kbd>not set</kbd></span><br>
+        youtube link to video: <a href="#" id="friendlyurl"></a><br>
+        your video was selected from <span id="totalcount"><kbd>not set</kbd></span> ids<br>
+        you are using <kbd>version 2.1</kbd> of the randomizer
+      </p>
+    </div>
+  </div>
+</div>
+<br>
 
-
-<body style="padding-top:10px;">
+<body>
   <!-- the header -->
   <div class="container">
     <div class="row">
       <div class="col-12 col-lg-8 col-md-7 col-sm-9">
         <div class="page-header" id="banner">
-          <h3 data-toggle="modal" data-target="#changelog">the randomizer</h3>
+          <h3 data-toggle="collapse" data-target="#changelog">the randomizer</h3>
         </div>
       </div>
       <div class="col-lg-4 col-md-5" style="padding-top:5px;">
         <button class="btn btn-block btn-outline-dark" onclick="stayHere()">re-roll</button>
       </div>
     </div>
-    <div class="modal fade" id="changelog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">changelog</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <ul class="list-group">
-              <li class="list-group-item active">
-                <h5>v2.1.1 (current)</h5>
-                <p class="lead">quick hotfix to fix some styling issues</p>
-              </li>
-              <li class="list-group-item">
-                <h5>v2.1</h5>
-                <p class="lead">more videos
-                  <br>moved the re-roll button to a more sensible place
-                  <br>more logging (for debugging, not the creepy kind)
-                  <br>this sick changelog
-                </p>
-              </li>
-              <li class="list-group-item">
-                <h5>v2.0</h5>
-                <p class="lead">move page styling over to rungus zone v2 style</p>
-              </li>
-              <li class="list-group-item">
-                <h5>v1.0</h5>
-                <p class="lead">initial release</p>
-              </li>
-            </ul>
-          </div>
-          <!--<div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>-->
-        </div>
-      </div>
-    </div>
+
 
     <!--<div class="row">
       <div class="col">
@@ -364,7 +342,7 @@
       "E7w_v9J7iOc",
       "0UR3bAfuNyg",
       "SoZ41i2dSIw"
-      
+
     ];
     console.time('time');
     console.log("choosing from " + randURLs.length + " ids");
@@ -372,6 +350,12 @@
     console.log("video id: " + randURL + ", setting in frame");
     document.getElementById('randomframe').src = "https://www.youtube-nocookie.com/embed/" + randURL + "?&autoplay=1";
     console.log("success, full url is https://www.youtube-nocookie.com/embed/" + randURL + "?&autoplay=1");
+    document.getElementById('videoid').innerHTML = "<kbd>" + randURL + "</kbd>";
+    document.getElementById('totalcount').innerHTML = "<kbd>" + randURLs.length + "</kbd>";
+    document.getElementById('fullurl').innerHTML = "<kbd>" + "https://www.youtube-nocookie.com/embed/" + randURL + "?&autoplay=1" + "</kbd>";
+    document.getElementById('friendlyurl').innerHTML = "https://www.youtube.com/watch?v=" + randURL;
+    friendlyurl = "https://www.youtube.com/watch?v=" + randURL;
+    document.getElementById('friendlyurl').href = friendlyurl;
     console.timeEnd('time');
   }
   window.onload = stayHere();
