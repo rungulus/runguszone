@@ -3,11 +3,14 @@
 <html lang="en">
 
 <head>
+  <!-- bootstrap needs this-->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--styling-->
   <link rel="stylesheet" href="https://cdn.rungus.zone/v2/css/darkbootstrap.min.css">
   <script src="https://cdn.rungus.zone/v2/js/jquery.min.js"></script>
   <script src="https://cdn.rungus.zone/v2/js/bootstrap.bundle.min.js"></script>
+  <!--favicon hell-->
   <link rel="apple-touch-icon" sizes="120x120" href="https://cdn.rungus.zone/favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.rungus.zone/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.rungus.zone/favicons/favicon-16x16.png">
@@ -18,6 +21,7 @@
   <meta name="application-name" content="rungus zone">
   <meta name="msapplication-TileColor" content="#69f0ae">
   <meta name="msapplication-config" content="https://cdn.rungus.zone/favicons/browserconfig.xml">
+  <!--opengraph hell-->
   <meta name="theme-color" content="#69f0ae">
   <meta property="og:title" content="the randomizer - rungus zone">
   <meta property="og:url" content="https://rungus.zone">
@@ -26,6 +30,8 @@
   <meta property="og:description" content="waste your time for free">
   <meta name="theme-color" content="#69f0ae" />
   <!-- how did we let it get this way -->
+  <!--this lil script enables popovers, which i use for one something
+  best practices who?-->
   <script>
     $(function() {
       $('[data-toggle="popover"]').popover()
@@ -42,6 +48,9 @@
 
     gtag('config', 'G-SD2H63G7CK');
   </script>
+  <!--nocss warn
+i have this set to display:none in the css file, so if it doesn't load we can show a message to the user
+ -->
   <div class="nocss" style="font-family:sans-serif;">
     <hr>
     <center>
@@ -59,6 +68,7 @@
 </head>
 <!-- the meat and potatoes-->
 <title>rungus zone</title>
+<!--welcome to navbar hell-->
 <nav class="navbar navbar-expand-lg fixed-bottom navbar-dark bg-dark">
   <div class="container">
     <a href="../" class="navbar-brand" style="font-size:200%;"><span style="color:#69f0ae;">r</span>ungus<span class="text-muted">.zone</span></a>
@@ -135,6 +145,7 @@
 
   <div class="container">
     <div class="bs-docs-section clearfix">
+<!--youtube videos load in this iframe-->
       <div class="row">
         <div class="col">
           <div class="page-header">
@@ -147,6 +158,7 @@
           </div>
         </div>
       </div>
+<!--nerd stuff for debugging-->
       <div class="collapse" id="changelog">
         <br>
         <div class="card card-body">
@@ -160,7 +172,7 @@
         </div>
       </div>
       <br>
-
+<!--some text underneath the youtube video goes here-->
       <br>
       <h4>what is this?</h4>
       <p class="lead">this is the randomizer, every time you open this page (or hit the re-roll button) it will randomly pull a youtube video from my list
@@ -181,13 +193,14 @@
       <footer id="footer">
         <div class="row">
           <div class="col-lg-12">
+            <hr>
             <p>
-              <span class="float--right">&copy; 2021 rungus</span>
+              <span class="float-right">&copy; rungus</span>
               <a href="https://rungus.zone/terms">terms of service</a> -
               <a href="https://d.rungus.zone">discord</a> -
               <a href="https://twitter.com/_rungus">twitter</a> -
               <a href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">youtube</a> -
-              <a href="https://cdn.rungus.zone">cdn</a> -
+              <a href="https://cdn.rungus.zone">cdn</a>
 
             </p>
           </div>
@@ -203,7 +216,9 @@
   console.warn("please send the video id for any broken links");
   console.warn("send them to me on discord, rungus#0001 - or twitter, @_rungus");
   console.warn("you can also view all this info by clicking on 'the randomizer' at the top there");
-
+//yes i know there are better ways to do this
+//i will move all these to a txt file someday so i dont have to update this whole page when adding new videos
+//but js didn't play nice the first time i tried, so we're doing it this way
   function stayHere() {
     var randURLs = [
       "fCmvXCgZr74",
@@ -351,6 +366,7 @@
       "wbfu39l0kxg",
       "3fG8rNHUspU"
     ];
+//im sure theres a better way to do this
     console.time('time');
     console.log("choosing from " + randURLs.length + " ids");
     var randURL = randURLs[Math.floor(Math.random() * randURLs.length)];
