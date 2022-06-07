@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--required business procedures-->
+<html lang="en">
+<title>rungus zone</title>
+
+<head>
+  <meta charset="utf-8">
+  <!--styling and bootstrap stuff-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.rungus.zone/v2/css/darkbootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.rungus.zone/v2/css/animations.css">
+  <!--javascript i use for one thing, should probably declutter it or something-->
+  <script src="https://cdn.rungus.zone/v2/js/jquery.min.js"></script>
+  <script src="https://cdn.rungus.zone/v2/js/bootstrap.bundle.min.js"></script>
+  <!--favicon hell-->
+  <link rel="apple-touch-icon" sizes="120x120" href="https://cdn.rungus.zone/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.rungus.zone/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.rungus.zone/favicons/favicon-16x16.png">
+  <link rel="manifest" href="https://cdn.rungus.zone/favicons/site.webmanifest">
+  <link rel="mask-icon" href="https://cdn.rungus.zone/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="https://cdn.rungus.zone/favicons/favicon.ico">
+  <meta name="apple-mobile-web-app-title" content="rungus zone">
+  <meta name="application-name" content="rungus zone">
+  <meta name="msapplication-TileColor" content="#69f0ae">
+  <meta name="msapplication-config" content="https://cdn.rungus.zone/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#69f0ae">
+  <!--opengraph hell-->
+  <meta property="og:title" content="rungus zone">
+  <meta property="og:url" content="https://rungus.zone">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://cdn.rungus.zone/profile.gif">
+  <meta property="og:description" content="look mom i'm in an open graph">
+  <meta name="theme-color" content="#69f0ae" />
+  <!--popovers need this to activate
+  i hate javascript-->
+  <script>
+    $(function() {
+      $('[data-toggle="popover"]').popover()
+    })
+    $('.collapse').collapse()
+  </script>
+  <!--analytics hell-->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SD2H63G7CK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-SD2H63G7CK');
+  </script>
+  <!-- how did we let it get this way -->
+  <!--noCSS warning notice-->
+  <!--detects if CSS is not loading from the CDN with a class that the CSS from the CDN hides by default-->
+  <!--can break on slower connections, but most if not all connections can load this page quick enough with the optimizations i've done-->
+  <div class="nocss" style="font-family:sans-serif;">
+    <hr>
+    <center>
+      <h1 style="font-size:50px;">something has gone wrong</h1>
+    </center>
+    <p style="font-size:150%;">this page is being loaded without any styling. you either have a slow connection, the cdn is down, or you're looking at the source code. at least it still looks alright, but this is not the design of the actual page.
+      <!-- hello! -->
+      <br>
+      <center>
+        <h3 style="font-size:150%">maybe try <a href="https://rungus.zone">refreshing?</a></h3>
+      </center>
+    </p>
+    <hr>
+  </div>
+</head>
+<!-- the meat and potatoes-->
+
+<!--the navbar-->
+<!--should probably keep this consistent amongst pages, but mainly i just replace the links on "weirder" pages with a "go home" button-->
+<!--don't tell anyone i said its ok to do web design like this-->
+<nav class="navbar navbar-expand-lg fixed-bottom navbar-dark bg-dark accordion">
+
+  <div class="container">
+
+    <a href="../" class="navbar-brand" style="font-size:200%;"><span style="color:#005bbb;">rungus</span>.<span style="color:#ffd500">zone</span></a>
+    <!--<a href="../" class="navbar-brand" style="font-size:200%;"><span style="color:#69f0ae;">r</span>ungus<span class="text-muted">.zone</span></a>-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://rungus.zone/randomizer">randomizer</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/_rungus">twitter</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://discord.gg/2VuJFdEcwM">discord</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">youtube</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://rungus.zone/time">time converter</a>
+        </li>
+      </ul>
+      <li class="navbar-right" style="list-style-type: none;">
+        <div class="btn-nav">
+          <a class="nav-link btn btn-outline-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">aren't you moving the site?</a>
+        </div>
+
+      </li>
+
+    </div>
+
+</nav>
+<!-- this is the dropdown that shows up when you click the button, pretty neat! -->
+<div class="collapse" id="collapseExample">
+  <div class="container">
+    <div class="alert alert-info">
+      <h4 class="alert-heading">yes.</h4>
+      <p class="mb-0">i'm trying to find a cheaper host, google is more expensive than i thought</p>
+      <p class="mb-0">isn't this dropdown cool?</p>
+      <hr>
+      <p class="lead">you are currently using <b>GitHub</b> as the hosting provider</p>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9HJXDGK4ET"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'G-9HJXDGK4ET');
+</script>
+<!--get your own site tag-->
+</head>
+<!--why 30px?-->
+<!--i dont know! but any less and the content will be too high on most screens-->
+<!--i love css.-->
+
+<body style="padding-top:30px;">
+  <!-- the header -->
+  <!--best practice would be to put this in <head>
+  we don't follow those here-->
+
+  <div class="container">
+    <div class="page-header" id="banner">
+      <div class="row">
+        <div class="col-12 col-lg-8 col-md-7 col-sm-9">
+          <h1 style="font-size:150px" class="slide-in-blurred-left">hello.</span></h1>
+          <h3 class="">welcome to the rungus zone</h3>
+        <p class="lead">now with more uptime than facebook</p>
+        </div>
+        <div class="col-lg-4 col-md-5" style="padding-top:20px">
+          <!--commented out while we rethink this design
+          <video autoplay>
+            <source src=" https://cdn.rungus.zone/fast/crimes2.mp4" type="video/mp4" />
+            there would be a cool video of my profile picture but your browser doesnt support it
+          </video>-->
+          <a class="btn btn-block btn-outline-dark" role="button" href="https://rungus.zone/randomizer">randomizer</a>
+          <a class="btn btn-block btn-outline-dark" role="button" href="https://rungus.zone/time">time converter</a>
+          <a class="btn btn-block btn-outline-dark" role="button" href="https://twitter.com/_rungus">twitter</a>
+          <a class="btn btn-block btn-outline-dark" role="button" href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">youtube</a>
+          <a class="btn btn-outline-dark btn-block" role="button" href="https://discord.rungus.zone">discord</a>
+        </div>
+      </div>
+      <!--<div class="row">
+        <span id="cyhere">
+          cy
+        </span>
+      </div>-->
+      <div class="row">
+        <div class="col">
+
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <hr>
+    <!-- the body -->
+    <!--presenting a simple row setup to make some content responsive
+    this is not the best way to do this, but i was tired-->
+    <div class="bs-docs-section clearfix">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            <h1>i'm rungus</h1>
+          </div>
+          <p class="lead">welcome to my site. i make dumb things sometimes and put them on here.
+          <br>
+        currently the dumbest thing i have is the <a href="randomizer">randomizer</a>, but i'm still making dumb stuff.</p>
+        </div>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            <h3>discord</h3>
+          </div>
+          <p class="lead">i have a discord server that you can join if you want. you can <a href="https://discord.gg/2VuJFdEcwM">click here</a> to join it if you want. you should join it.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            <h3>youtube</h3>
+          </div>
+          <p class="lead">i also got a youtube channel where i post videos sometimes. you should susbcribe <a href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">here</a>.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            <h3>contact me</h3>
+          </div>
+          <p class="lead">if you want to reach out to me for some reason, you can contact me on <a href="https://twitter.com/_rungus" role="button">twitter</a>, or message me on discord (<code>rungus#0001</code>)
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            <h3>fifth section heading</h3>
+          </div>
+          <p class="lead">i dont really know what else to put here, so <a href="https://twitter.com/_rungus" role="button">follow me on twitter</a>, or <a href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA" role="button">susbcribe to me
+              on youtube</a> or <a href="https://discord.gg/2VuJFdEcwM">join the rungus zone discord</a>
+          </p>
+        </div>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            <h5>ok bye</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <!-- the footnotes -->
+    <div class="container">
+      <footer id="footer" style="padding-bottom:100px;">
+        <div class="row">
+          <div class="col-lg-12">
+            <p>
+
+              <a href="https://rungus.zone/terms">terms of service</a> -
+              <a href="https://discord.gg/2VuJFdEcwM">discord</a> -
+              <a href="https://twitter.com/_rungus">twitter</a> -
+              <a href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">youtube</a> -
+              <a href="https://cdn.rungus.zone">cdn</a>
+              <span class="float-lg-right">&copy; rungus</span>
+
+            </p>
+            <p>this site is open source, so you can mess around with it if you want. check out the source code for some info.</p>
+          </div>
+        </div>
+    </div>
+    </footer>
+  </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!--required business procedures-->
+<html lang="en">
+
+<head>
+  <!-- bootstrap needs this-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--styling-->
+  <link rel="stylesheet" href="https://cdn.rungus.zone/v2/css/darkbootstrap.min.css">
+  <script src="https://cdn.rungus.zone/v2/js/jquery.min.js"></script>
+  <script src="https://cdn.rungus.zone/v2/js/bootstrap.bundle.min.js"></script>
+  <!--favicon hell-->
+  <link rel="apple-touch-icon" sizes="120x120" href="https://cdn.rungus.zone/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.rungus.zone/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.rungus.zone/favicons/favicon-16x16.png">
+  <link rel="manifest" href="https://cdn.rungus.zone/favicons/site.webmanifest">
+  <link rel="mask-icon" href="https://cdn.rungus.zone/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="https://cdn.rungus.zone/favicons/favicon.ico">
+  <meta name="apple-mobile-web-app-title" content="rungus zone">
+  <meta name="application-name" content="rungus zone">
+  <meta name="msapplication-TileColor" content="#69f0ae">
+  <meta name="msapplication-config" content="https://cdn.rungus.zone/favicons/browserconfig.xml">
+  <!--opengraph hell-->
+  <meta name="theme-color" content="#69f0ae">
+  <meta property="og:title" content="the randomizer - rungus zone">
+  <meta property="og:url" content="https://rungus.zone">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://cdn.rungus.zone/profile.gif">
+  <meta property="og:description" content="waste your time for free">
+  <meta name="theme-color" content="#69f0ae" />
+  <!-- how did we let it get this way -->
+  <!--this lil script enables popovers, which i use for one something
+  best practices who?-->
+  <script>
+    $(function() {
+      $('[data-toggle="popover"]').popover()
+    })
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SD2H63G7CK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-SD2H63G7CK');
+  </script>
+  <!--nocss warn
+i have this set to display:none in the css file, so if it doesn't load we can show a message to the user
+ -->
+  <div class="nocss" style="font-family:sans-serif;">
+    <hr>
+    <center>
+      <h1 style="font-size:50px;">something has gone wrong</h1>
+    </center>
+    <p style="font-size:150%;">this page is being loaded without any styling. you either have a slow connection, the cdn is down, or you're looking at the source code. at least it still looks alright, but this is not the design of the actual page.
+      <!-- hello! -->
+      <br>
+      <center>
+        <h3 style="font-size:150%">maybe try <a href="https://rungus.zone">refreshing?</a></h3>
+      </center>
+    </p>
+    <hr>
+  </div>
+</head>
+<!-- the meat and potatoes-->
+<title>rungus zone</title>
+<!--welcome to navbar hell-->
+<nav class="navbar navbar-expand-lg fixed-bottom navbar-dark bg-dark">
+  <div class="container">
+
+    <a href="../" class="navbar-brand" style="font-size:200%;"><span style="color:#005bbb;">rungus</span>.<span style="color:#ffd500">zone</span></a>
+    <!--<a href="../" class="navbar-brand" style="font-size:200%;"><span style="color:#69f0ae;">r</span>ungus<span class="text-muted">.zone</span></a>-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link disabled" href="https://rungus.zone/randomizer">randomizer</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/_rungus">twitter</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://discord.gg/2VuJFdEcwM">discord</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">youtube</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://rungus.zone/time">time converter</a>
+        </li>
+      </ul>
+      <li class="navbar-right" style="list-style-type: none;">
+        <div class="btn-nav"><a class="nav-link btn btn-outline-dark" href="https://rungus.zone">back home</a>
+        </div>
+      </li>
+    </div>
+  </div>
+</nav>
+</head>
+
+<br>
+
+<body>
+  <!-- the header -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-8 col-md-7 col-sm-9">
+        <div class="page-header" id="banner">
+          <h3 data-toggle="collapse" data-target="#changelog">the randomizer</h3>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-5" style="padding-top:5px;">
+        <button class="btn btn-block btn-outline-dark" onclick="stayHere()">re-roll</button>
+      </div>
+    </div>
+
+
+    <!--<div class="row">
+      <div class="col">
+        <span class="d-inline-block" data-toggle="popover" data-content="coming soon" data-placement="bottom">
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" disabled id="randomSwitch">
+            <label class="custom-control-label" for="randomSwitch" id="randomLabel">true random</label>
+          </div>
+        </span>
+      </div>
+    </div>-->
+  </div>
+  </div>
+  <!-- the body -->
+
+  <div class="container">
+    <div class="bs-docs-section clearfix">
+<!--youtube videos load in this iframe-->
+      <div class="row">
+        <div class="col">
+          <div class="page-header">
+            <div class="embed-responsive embed-responsive-16by9">
+              <div id="randomdiv">
+                <iframe class="embed-responsive-item" id="randomframe" src="https://rungus.zone/x/deadman.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--nerd stuff for debugging-->
+      <div class="collapse" id="changelog">
+        <br>
+        <div class="card card-body">
+          <h5 class="card-title">nerd stuff:</h5>
+          <p class="lead"> video id is: <span id="videoid"><kbd>not set</kbd></span><br>
+            the full url of the embed is: <span id="fullurl"><kbd>not set</kbd></span><br>
+            youtube link to video: <a href="#" id="friendlyurl"></a><br>
+            your video was selected from <span id="totalcount"><kbd>not set</kbd></span> ids<br>
+            you are using <kbd>version 2.1</kbd> of the randomizer
+          </p>
+        </div>
+      </div>
+      <br>
+<!--some text underneath the youtube video goes here-->
+      <br>
+      <h4>what is this?</h4>
+      <p class="lead">this is the randomizer, every time you open this page (or hit the re-roll button) it will randomly pull a youtube video from my list
+        <br><br>
+        most of them are kinda funny, some are sad and some are weird. thanks for visiting
+        <br><br>
+        share with your friends please, i need them clicks
+      </p>
+      <h4>ok can i submit videos too</h4>
+      <p class="lead">hell yeah brother, send me a message on discord (rungus#0001) or on twitter (@_rungus) and i can add it for ya.<br><br> it has to be weird, funny, or strange. if you get all 3 you win.
+      </p>
+    </div>
+  </div>
+  <hr>
+  <!-- the footnotes -->
+  <footer style="padding-bottom: 100px;">
+    <div class="container">
+      <footer id="footer">
+        <div class="row">
+          <div class="col-lg-12">
+            <hr>
+            <p>
+
+              <a href="https://rungus.zone/terms">terms of service</a> -
+              <a href="https://discord.gg/2VuJFdEcwM">discord</a> -
+              <a href="https://twitter.com/_rungus">twitter</a> -
+              <a href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">youtube</a> -
+              <a href="https://cdn.rungus.zone">cdn</a>
+              <span class="float-lg-right">&copy; rungus</span>
+
+            </p>
+            <p>this site is open source, so you can mess around with it if you want. check out the source code for some info.</p>
+          </div>
+        </div>
+    </div>
+  </footer>
+  </div>
+
+
+</body>
+<!-- i tried-->
+<script>
+  console.warn("please send the video id for any broken links");
+  console.warn("send them to me on discord, rungus#0001 - or twitter, @_rungus");
+  console.warn("you can also view all this info by clicking on 'the randomizer' at the top there");
+//yes i know there are better ways to do this
+//i will move all these to a txt file someday so i dont have to update this whole page when adding new videos
+//but js didn't play nice the first time i tried, so we're doing it this way
+  function stayHere() {
+    var randURLs = [
+      "fCmvXCgZr74",
+      "fCmvXCgZr74",
+      "4ZQRHNG1IYE",
+      "_0AlytWWDm",
+      "2REG3-Wb5gM",
+      "2X5hyC62zZ4",
+      "Cb6F14AGrvI",
+      "4DUkS98yw5Y",
+      "vl_aWoPNpJM",
+      "DOWO4gq-whg",
+      "hxpbJ89pHAM",
+      "A7qXoSgYR4c",
+      "bxRzsgtvakY",
+      "Epd4pUxkogw",
+      "ag46jiqISO4",
+      "_xyGvpLOZ1Q",
+      "WFoC3TR5rzI",
+      "juQyy00x-Mw",
+      "VfCYZ3pks48",
+      "Xh-71XzC8pw",
+      "R37bwKO9gBA",
+      "dQw4w9WgXcQ",
+      "ZZ5LpwO-An4",
+      "Li4j82QbBvk",
+      "VqB1uoDTdKM",
+      "QrGrOK8oZG8",
+      "RvVMz7PsWqg",
+      "Ivgx5x1dob8",
+      "IfatKHskzZc",
+      "EY2kBBXi0XY",
+      "rICeCUzaY-g",
+      "1Ceh-TkR75g",
+      "yOFhvi68KW0",
+      "UO2sYTkFB0k",
+      "JGS4AVRtwr8",
+      "wBl45GPoGHY",
+      "iBQRjiAHUX8",
+      "e1bEWoblGZA",
+      "MMY_SUuobww",
+      "hd2uvPjMRy4",
+      "dNOztYZdT6A",
+      "mdsS7dLR-d8",
+      "3QyMXAu-kt0",
+      "kDJs-yV25sA",
+      "hqCbx5LQIlw",
+      "McQ58nhhpHM",
+      "coCNTFSjd_M",
+      "t4Aio5BGleA",
+      "iThGJXTucxY",
+      "AFalBiA5Tf8",
+      "yeNEnvn3JCE",
+      "IqPQZFvO2yM",
+      "UxBAY4nfRBU",
+      "EF8GhC-T_Mo",
+      "kpk2tdsPh0A",
+      "pA2vWc2eeNE",
+      "pYcpZJVmXvU",
+      "bZe5J8SVCYQ",
+      "cJtrHIMmMy4",
+      "xxprbbytUQI",
+      "XKBwItDNrEU",
+      "dKx1wnXClcI",
+      "VyvsXRBHwTA",
+      "2Qu3hZnvfGg",
+      "KgtRRBtSjuo",
+      "0tDz_B-PFpg",
+      "iUJ8r4ReHog",
+      "D1Uhk-QN11M",
+      "5tFZof9EDhc",
+      "EShUeudtaFg",
+      "_-Rji3mip4A",
+      "z5qLgL-E7uY",
+      "_B13yISVHWI",
+      "Q0K_zvlDzmI",
+      "o7SdP-gnfIc",
+      "T-w0h3g07aE",
+      "pC6HZPJH6wE",
+      "BMBcZwoGPw4",
+      "_zzEDrYTkkg",
+      "1EZ9XJssiqY",
+      "qlIlHCjrM_E",
+      "cU0oHq9Y6Ws",
+      "gyW8_MEG6tE",
+      "l2QClcUUlhc",
+      "0MIH948b_uQ",
+      "W_JhpXm5e4g",
+      "0HHh-stDn5k",
+      "DkYQ72lGrew",
+      "_EJsR8mgVWk",
+      "Rc-Jh3Oe0Gc",
+      "5NHaO0NVbAg",
+      "j-GnuHwK8mw",
+      "h7_7w_wL64g",
+      "4ISDUKG-N90",
+      "BX2PRxXQbXE",
+      "2okrgAMdHok",
+      "mJYAvNvve0E",
+      "fV3nflAQ99w",
+      "t4mGPIWbw0c",
+      "0mQCi4LQUQw",
+      "FG7eYo_ozJQ",
+      "heEKi5EjZXA",
+      "xt2OdUfYZbk",
+      "0E_5SynW3aM",
+      "0iUTZajxlWI",
+      "bLHL75H_VEM",
+      "UddCTvioEnw",
+      "ixWybGQnPHQ",
+      "v11SYt_brN8",
+      "hnsNMoor5Ic",
+      "csFf8EiCQ2Y",
+      "d1CRGkDgrrQ",
+      "GjjZacZSWT4",
+      "NYdU1p7kDxY",
+      "6f5ys8VU2ek",
+      "MDM304JW_NA",
+      "UfNRWh4s_ag",
+      "4ONHOwTBbNw",
+      "oNjD7ogr--g",
+      "YKAPZgtYzIs",
+      "LYSPaCiKpQw",
+      "_oVm2jtv6q8",
+      "HKVoN-SjZ-Q",
+      "6dfM7Hiah4s",
+      "7FiiEZ9Z3aQ",
+      "IanEey1mEIg",
+      "qCIlcC6c1i8",
+      "SyzM3yjkQko",
+      "mJUvIhI_jpo",
+      "z94lg7dGkw4",
+      "h6OKgREcHFM",
+      "E7w_v9J7iOc",
+      "0UR3bAfuNyg",
+      "SoZ41i2dSIw",
+      "-sk9kXyfGvU",
+      "dvOjGkfea_w",
+      "bmFGbBmlyKQ",
+      "IxTAJNifDAI",
+      "NnDe2u5M7e8",
+      "y7wyfTsIm1k",
+      "T-VZ1kL8ZgE",
+      "Udk8YHOy0EU",
+      "wbfu39l0kxg",
+      "3fG8rNHUspU"
+    ];
+//im sure theres a better way to do this
+    console.time('time');
+    console.log("choosing from " + randURLs.length + " ids");
+    var randURL = randURLs[Math.floor(Math.random() * randURLs.length)];
+    console.log("video id: " + randURL + ", setting in frame");
+    document.getElementById('randomframe').src = "https://www.youtube-nocookie.com/embed/" + randURL + "?&autoplay=1";
+    console.log("success, full url is https://www.youtube-nocookie.com/embed/" + randURL + "?&autoplay=1");
+    document.getElementById('videoid').innerHTML = "<kbd>" + randURL + "</kbd>";
+    document.getElementById('totalcount').innerHTML = "<kbd>" + randURLs.length + "</kbd>";
+    document.getElementById('fullurl').innerHTML = "<kbd>" + "https://www.youtube-nocookie.com/embed/" + randURL + "?&autoplay=1" + "</kbd>";
+    document.getElementById('friendlyurl').innerHTML = "https://www.youtube.com/watch?v=" + randURL;
+    friendlyurl = "https://www.youtube.com/watch?v=" + randURL;
+    document.getElementById('friendlyurl').href = friendlyurl;
+    console.timeEnd('time');
+  }
+  window.onload = stayHere();
+
+  //the following function does not work
+  //there are too many empty video ids on youtube
+  //we will probably have to crawl youtube and build a list that way
+  /*function trueRandom() {
+    var elements = ["a", "b", "c", "d", "e", "f", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U",
+      "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "_"
+    ];
+    var e1 = elements[Math.floor(Math.random() * elements.length)];
+    var e2 = elements[Math.floor(Math.random() * elements.length)];
+    var e3 = elements[Math.floor(Math.random() * elements.length)];
+    var e4 = elements[Math.floor(Math.random() * elements.length)];
+    var e5 = elements[Math.floor(Math.random() * elements.length)];
+    var e6 = elements[Math.floor(Math.random() * elements.length)];
+    var e7 = elements[Math.floor(Math.random() * elements.length)];
+    var e8 = elements[Math.floor(Math.random() * elements.length)];
+    var e9 = elements[Math.floor(Math.random() * elements.length)];
+    var e10 = elements[Math.floor(Math.random() * elements.length)];
+    var e11 = elements[Math.floor(Math.random() * elements.length)];
+    videoid = e1 + e2 + e3 + e4 + e5 + e6 + e7 + e8 + e9 + e10 + e11;
+    fullURL = "https://www.youtube-nocookie.com/embed/" + videoid;
+    console.log("video url:" + fullURL);
+    document.getElementById('randomframe').src = fullURL;
+  }*/
+</script>
+
+</html>
