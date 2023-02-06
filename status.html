@@ -1,0 +1,146 @@
+<!doctype html>
+<!--we're nice to screenreaders, so we'll tell them what language this is-->
+<html lang="en">
+
+<head>
+    <!--where the hell are we-->
+    <title>status - rungus zone</title>
+    <!--welcome to meta zone-->
+    <meta charset="utf-8">
+    <!--tell search engines who we are-->
+    <meta name="description" content="the randomizer is a little experiment with javascript to show you youtube videos">
+    <!--bootstrap wants this to be responsive, cool! -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- tell the browser we can support both light and dark themes -->
+    <meta name="color-scheme" content="light dark">
+    <!--load critical css first-->
+    <!--this isn't the best way to do this, we should wrap this stylesheet in <style>, but i didn't want to make this page super long. cloudflare is still quick enough to return this file-->
+    <link href="https://cdn.rungus.zone/v3/css/lite.css" rel="stylesheet">
+    <!--defer loading the rest until page is loaded fully-->
+    <!-- special light/dark stylesheet thanks to https://github.com/vinorodrigues/bootstrap-dark-5-->
+    <!--future releases (5.3) of bootstrap will have dark mode built in, should reasses using this then-->
+    <link rel="preload" href="https://cdn.rungus.zone/v3/css/bootstrap5.2.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.rungus.zone/v3/css/bootstrap5.2.css"></noscript>
+    <!--and some custom css to round it all out-->
+    <link rel="preload" href="https://cdn.rungus.zone/v3/css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.rungus.zone/v3/css/custom.css"></noscript>
+    <!-- ios app icon -->
+    <link rel="apple-touch-icon" sizes="120x120" href="https://cdn.rungus.zone/favicons/apple-touch-icon.png">
+    <!-- browser bar -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.rungus.zone/favicons/favicon-32x32.png">
+    <!-- browser bar -->
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.rungus.zone/favicons/favicon-16x16.png">
+    <!-- pwa support (none) -->
+    <link rel="manifest" href="https://cdn.rungus.zone/favicons/site.webmanifest">
+    <!-- safari pinned tabs -->
+    <link rel="mask-icon" href="https://cdn.rungus.zone/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <!-- and finally, the simple icon -->
+    <link rel="shortcut icon" href="https://cdn.rungus.zone/favicons/favicon.ico">
+    <!-- now to tell the browser who we are -->
+    <meta name="apple-mobile-web-app-title" content="rungus zone">
+    <meta name="application-name" content="rungus zone">
+    <!-- now about who we are -->
+    <meta name="msapplication-TileColor" content="#69f0ae">
+    <meta name="msapplication-config" content="https://cdn.rungus.zone/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#69f0ae">
+    <!-- but what if they only speak opengraph? here u go -->
+    <meta property="og:title" content="rungus zone status">
+    <meta property="og:url" content="https://rungus.zone">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://cdn.rungus.zone/profile.gif">
+    <meta property="og:description" content="where to go if something is wrong">
+    <!-- lastly, the theme color -->
+    <meta name="theme-color" content="#69f0ae" />
+    <!-- you are now leaving the meta zone -->
+    <!-- make sure to add nocss back -->
+</head>
+<nav class="navbar nav navbar-expand-lg fixed-bottom navbar-dark bg-dark accordion">
+  <div class="container">
+      <a href="../" class="navbar-brand"><span style="color: #69f0ae">r</span>ungus<span class="text-muted"
+        >.zone</span
+      ></a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarResponsive"
+      aria-controls="navbarResponsive"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="https://rungus.zone/randomizer"
+            >randomizer</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://rungus.zone/time">time</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="https://rungus.zone/cow">cow</a>
+      </li>
+      </ul>
+      <ul class="navbar-nav">
+          <li class="nav-item">
+              <a class="nav-link" href="https://twitter.com/_rungus">twitter</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="https://discord.gg/2VuJFdEcwM">discord</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="https://www.youtube.com/@rungus">youtube</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+<div class="container">
+    <div class="bs-docs-section clearfix ">
+      <br>
+
+      <h1>service status</h1>
+        <p class="lead">keep an eye on some things i host</p>
+        <hr>
+        <div class="row">
+          <div class="col"><h3>rungus.zone</h3></div><div class="col-2"><div class="alert alert-success">online</div></div>
+          <p class="lead"></p>
+        </div><hr>
+        <div class="row">
+          <div class="col"><h3>rungus zone cdn</h3></div><div class="col-2"><div class="alert alert-success">online</div></div>
+          <p class="lead"></p>
+        </div><hr>
+        <div class="row">
+          <div class="col"><h3>snacks</h3></div><div class="col-2"><div class="alert alert-warning">maintenance soon</div></div>
+          <p class="lead">i'm upgrading this server once a copy is complete on my main machine</p>
+        </div>
+        <div class="container"><div class="container"><div class="container"><hr></div></div></div><!--i did *not* say it was ok to do web design like this-->
+          <p class="text-muted">snacks is the server that runs the following services:</p>
+          <p class="text-muted">rungnet</p>
+          <p class="text-muted">minecraft</p>
+          <p class="text-muted">map.rungus.zone</p>
+        </div>
+    </div>
+</div>
+<!-- the footnotes -->
+<div class="container ">
+    <hr>
+    <footer id="footer " style="padding-bottom:100px; ">
+        <div class="row ">
+            <div class="col-6 ">
+            </div>
+            <div class="col offset-3 ">
+                <p class="text-muted ">&copy; 2023 rungus</p>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+</html>
