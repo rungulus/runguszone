@@ -11,6 +11,7 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet"> 
+      <script src="https://cdn.rungus.zone/v4/js/bootstrap.bundle.min.js"></script>
       <!-- this should not go into production -->
       <!-- definetley minimize and purge what we're not using from this hell -->
       <style>
@@ -78,7 +79,7 @@
       <meta property="twitter:image" content="https://cdn.rungus.zone/profile.gif" />
     </tags>
   </head>
-  <sidebar class="stickyBar z-3 alert">
+  <sidebar class="stickyBar z-3 d-none d-lg-block">
     <!-- i wrangled with css and bootstrap for like 2 days to get this to work good -->
     <!-- turns out im a dumbass, there is no margin-left (ml) in bootstrap, its ms for margin-start -->
     <!-- why? who the hell knows -->
@@ -132,6 +133,62 @@
     </div> 
     <!-- this is probably terrible on *really* ultrawide monitors -->
   </sidebar>
+  <smallsidebar class="stickyBar z-3 d-lg-none">
+    <!-- i wrangled with css and bootstrap for like 2 days to get this to work good -->
+    <!-- turns out im a dumbass, there is no margin-left (ml) in bootstrap, its ms for margin-start -->
+    <!-- why? who the hell knows -->
+    <div class="p-0 ps-1 pt-3 pb-1 alert alert-dark">
+      <div>
+        <div class="runguszone ps-1">         
+          <span class="sidewaysText">
+            <span class="fs-2">
+              <span style="color:#69f0ae">r</span>ungus<span class="text-muted">.zone</span>
+            </span>
+
+
+          </span>
+          
+        </div>
+      </div>
+      <hr class="m-0 mt-2 me-1 p-0">
+      <div class="d-grid mt-1 pe-1 pb-1 pt-1 btn-group-vertical">
+      <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarLinks" aria-controls="sidebarLinks" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-arrow-down"></i>
+      </button>
+    </div>
+  
+      <div class="collapse navbar-collapse" id="sidebarLinks">
+      <hr class="m-0 mt-2 me-1 p-0">
+      <div class="text-center d-grid mt-1 pe-1 pb-1 pt-1 btn-group-vertical">
+        <a class="btn btn-light" href="https://news.rungus.zone" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right">
+          <i class="bi bi-newspaper"></i>
+          <br>
+        </a>
+        <a class="btn btn-primary" href="https://rungus.zone/randomizer">
+          <i class="bi bi-shuffle"></i>
+          <br>
+        </a>
+        <a class="btn btn-warning" href="https://rungus.zone/time">
+          <i class="bi bi-clock-history"></i>
+          <br>
+        </a>
+        <a class="btn btn-success" href="https://rungus.zone/cow">
+          <i class="bi bi-chat-quote"></i>
+          <br>
+        </a>
+            
+      </div>
+      <hr class="m-0 mt-2 me-1 p-0">
+      <div class="fs-3 btn-group-vertical d-grid mt-1 pe-1 pb-1 pt-1">
+        <a class="bi-youtube link-danger pt-1 mb-n" href="https://www.youtube.com/@rungus"></a>
+        <a class="bi bi-discord link-primary pt-1 m-0" href="https://discord.gg/2VuJFdEcwM"></a>
+        <a rel="me" class="bi bi-mastodon link-success pt-1 m-0" href="https://wetdry.world/@rungus"></a>
+        <a class="bi bi-twitter link-info pt-1 m-0" href="https://twitter.com/_rungus"></a>
+        <a class="bi bi-steam link-light pt-1 m-0" href="https://steamcommunity.com/id/rungus"></a>
+      </div>
+    </div> 
+  </div>
+  </smallsidebar>
   <body> 
     <div class="container-fluid z-n1 position-absolute spaceBG">
       <!-- this way edits on the sidebar(s) do not affect placement of elements on the main area -->
