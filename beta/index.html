@@ -14,10 +14,42 @@
       <!-- this should not go into production -->
       <!-- definetley minimize and purge what we're not using from this hell -->
       <style>
-        .coverText{
-          font-family: 'Roboto Slab', serif;
+        /* should push this into its own css file at some point though */
+        .stickyBar{
           color:white;
+          position: fixed;
+        }
+        .runguszone{
+          font-family: 'Roboto Slab', serif;
+        }
+        .sidewaysText{
           writing-mode: vertical-lr;
+          text-orientation: mixed;
+        }
+        .spaceBG{
+          height: 100vh;
+          min-height: 500px;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://cdn.rungus.zone/v3/img/bg.webp');
+        }
+        .ml-n {
+          margin-left: -2rem !important;
+        }
+        .mt-n {
+          margin-top: -1rem !important;
+        }
+        .mb-n {
+          margin-bottom: -0.3rem !important;
+        }
+        .siteText{
+          font-size: 350%;
+        }
+        .smallLink{
+          font-size: 75%;
+          padding: -1rem !important;
         }
       </style>
     </include>
@@ -28,14 +60,12 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="description" content="the premiere website on the internet" />
-
       <!-- opengraph -->
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://rungus.zone" />
       <meta property="og:title" content="rungus zone" />
       <meta property="og:description" content="the premiere website on the internet" />
       <meta property="og:image" content="https://cdn.rungus.zone/profile.gif" />
-
       <!-- twitter -->
       <!-- of course twitter has their own -->
       <meta property="twitter:card" content="summary_large_image" />
@@ -45,38 +75,281 @@
       <meta property="twitter:image" content="https://cdn.rungus.zone/profile.gif" />
     </tags>
   </head>
-  <body>
-    <p class="d-lg-none alert alert-success p-2 text-center" onclick="stayHere()"><span class="alert-link">re-roll the randomizer</p>
-    <logo>
-        <div class="float-start coverText pt-3 pb-1 z-3">
-          <p class="text-start m-0 p-0 alert alert-dark pt-3 pb-4 fs-3">
-            <span style="color:#69f0ae">r</span>ungus<span class="text-muted">.zone</span>
-          </p>
+  <sidebar class="stickyBar z-3 alert">
+    <!-- i wrangled with css and bootstrap for like 2 days to get this to work good -->
+    <!-- turns out im a dumbass, there is no margin-left (ml) in bootstrap, its ms for margin-start -->
+    <!-- why? who the hell knows -->
+    <div class="p-0 ps-1 pt-3 pb-1 alert alert-dark">
+      <div>
+        <div class="runguszone">         
+          <span class="sidewaysText">
+            <span class="fs-2">
+              <span style="color:#69f0ae">r</span>ungus<span class="text-muted">.zone</span>
+            </span>
+            <div class="fs-3">
+              <a class="bi-youtube link-danger pt-1 mb-n" href="https://www.youtube.com/@rungus"></a>
+              <!-- for some reason youtube has a big margin on the bottom -->
+              <a class="bi bi-discord link-primary pt-1 m-0" href="https://discord.gg/2VuJFdEcwM"></a>
+              <a class="bi bi-mastodon link-success pt-1 m-0" href="https://wetdry.world/@rungus"></a>
+              <a class="bi bi-twitter link-info pt-1 m-0" href="https://twitter.com/_rungus"></a>
+              <a class="bi bi-steam link-light pt-1 m-0" href="https://steamcommunity.com/id/rungus"></a>
+            </div>
 
+          </span>
+          
         </div>
-    </logo>
-    <div class="container d-lg-none">
-      <div class="ratio ratio-16x9 position-absolute top-50 start-50 translate-middle z-n1">
-      <iframe
-        title="randomizer video"
-        id="randomframe"
-        src="https://rungus.zone/x/loadframe.html"
-        allowfullscreen
-      ></iframe>
-    </div>
-    <span class="d-lg-none start-50"></span>
-    </div>
-    <div class="container d-none d-lg-block position-absolute top-50 start-50 translate-middle z-n1">
-      <div class="ratio ratio-16x9 ">
-        <iframe
-          title="randomizer video"
-          id="randomframe"
-          src="https://rungus.zone/x/loadframe.html"
-          allowfullscreen
-        ></iframe>
       </div>
-      <button class="btn btn-block btn-success mt-3 text-center" onclick="stayHere()"> re-roll </button>
-    </div>      
+      <hr class="m-0 mt-2 me-1 p-0">
+      <div class="text-center d-grid mt-1 pe-1 pb-1 pt-1 btn-group-vertical">
+        <a class="btn btn-light" href="https://news.rungus.zone" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right">
+          <i class="bi bi-newspaper"></i>
+          <br>
+          <span class="smallLink">rungnews</span>
+        </a>
+        <a class="btn btn-primary" href="https://rungus.zone/randomizer">
+          <i class="bi bi-shuffle"></i>
+          <br>
+          <span class="smallLink">randomizer</span>
+        </a>
+        <a class="btn btn-warning" href="https://rungus.zone/time">
+          <i class="bi bi-clock-history"></i>
+          <br>
+          <span class="smallLink">time</span>
+        </a>
+        <a class="btn btn-success" href="https://rungus.zone/cow">
+          <i class="bi bi-chat-quote"></i>
+          <br>
+          <span class="smallLink">cow advice</span>
+        </a>
+        
+      </div>
+    </div> 
+    <!-- this is probably terrible on *really* ultrawide monitors -->
+  </sidebar>
+  <body>
+    
+    <div class="container-fluid z-n1 position-absolute spaceBG">
+      <!-- this way edits on the sidebar(s) do not affect placement of elements on the main area -->
+      <div class="container">
+        <!-- and then keep everything centered, let the sidebars use the whitespace -->
+        <p class="pt-3 fs-3 text-center text-wrap text-light">welcome to the</p>
+        <p class="text-center runguszone text-light mt-n siteText"><span style="color:#69f0ae">r</span>ungus zone</p>
+        <div class="container text-center">
+        <div class="ratio ratio-16x9">
+          <div id="player">
+            <div class="placeholder placeholder-wave ratio">
+              <iframe
+                title="randomizer video"
+                id="randomframe"
+                class="ratio ratio-16x9"
+
+                src="https://rungus.zone/x/loadframe.html"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+        <br>
+        <button class="btn btn-primary" onclick="reroll();">re-roll</button>
+      </div>
+
     </div>
+    </div>
+
+        
   </body>
+  <script>
+    //randomizer 3.0
+    //lets use that youtube api
+    //yes i know there are better ways to do this
+    //i will move all these to a txt file someday so i dont have to update this whole page when adding new videos
+    //but js didn't play nice the first time i tried, so we're doing it this way
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '270',
+          width: '480',
+          videoId: randURLs[Math.floor(Math.random() * randURLs.length)],
+          playerVars: {
+            'playsinline': 1
+          },
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.ENDED) {
+          setTimeout(reroll, 1500);
+        }
+      }
+      function reroll() {
+        player.loadVideoById(randURLs[Math.floor(Math.random() * randURLs.length)]);
+      }
+      var randURLs = [
+        "fCmvXCgZr74",
+        "fCmvXCgZr74",
+        "4ZQRHNG1IYE",
+        "_0AlytWWDm",
+        "2REG3-Wb5gM",
+        "2X5hyC62zZ4",
+        "Cb6F14AGrvI",
+        "4DUkS98yw5Y",
+        "vl_aWoPNpJM",
+        "DOWO4gq-whg",
+        "hxpbJ89pHAM",
+        "A7qXoSgYR4c",
+        "bxRzsgtvakY",
+        "Epd4pUxkogw",
+        "ag46jiqISO4",
+        "_xyGvpLOZ1Q",
+        "WFoC3TR5rzI",
+        "juQyy00x-Mw",
+        "VfCYZ3pks48",
+        "Xh-71XzC8pw",
+        "R37bwKO9gBA",
+        "dQw4w9WgXcQ",
+        "ZZ5LpwO-An4",
+        "Li4j82QbBvk",
+        "VqB1uoDTdKM",
+        "QrGrOK8oZG8",
+        "Ivgx5x1dob8",
+        "IfatKHskzZc",
+        "EY2kBBXi0XY",
+        "rICeCUzaY-g",
+        "1Ceh-TkR75g",
+        "yOFhvi68KW0",
+        "UO2sYTkFB0k",
+        "JGS4AVRtwr8",
+        "wBl45GPoGHY",
+        "iBQRjiAHUX8",
+        "e1bEWoblGZA",
+        "MMY_SUuobww",
+        "hd2uvPjMRy4",
+        "dNOztYZdT6A",
+        "mdsS7dLR-d8",
+        "3QyMXAu-kt0",
+        "kDJs-yV25sA",
+        "hqCbx5LQIlw",
+        "McQ58nhhpHM",
+        "coCNTFSjd_M",
+        "t4Aio5BGleA",
+        "iThGJXTucxY",
+        "AFalBiA5Tf8",
+        "yeNEnvn3JCE",
+        "IqPQZFvO2yM",
+        "UxBAY4nfRBU",
+        "EF8GhC-T_Mo",
+        "kpk2tdsPh0A",
+        "pA2vWc2eeNE",
+        "pYcpZJVmXvU",
+        "bZe5J8SVCYQ",
+        "cJtrHIMmMy4",
+        "xxprbbytUQI",
+        "XKBwItDNrEU",
+        "dKx1wnXClcI",
+        "VyvsXRBHwTA",
+        "2Qu3hZnvfGg",
+        "KgtRRBtSjuo",
+        "0tDz_B-PFpg",
+        "iUJ8r4ReHog",
+        "D1Uhk-QN11M",
+        "5tFZof9EDhc",
+        "EShUeudtaFg",
+        "_-Rji3mip4A",
+        "z5qLgL-E7uY",
+        "_B13yISVHWI",
+        "Q0K_zvlDzmI",
+        "o7SdP-gnfIc",
+        "T-w0h3g07aE",
+        "pC6HZPJH6wE",
+        "BMBcZwoGPw4",
+        "_zzEDrYTkkg",
+        "1EZ9XJssiqY",
+        "qlIlHCjrM_E",
+        "cU0oHq9Y6Ws",
+        "gyW8_MEG6tE",
+        "l2QClcUUlhc",
+        "0MIH948b_uQ",
+        "W_JhpXm5e4g",
+        "0HHh-stDn5k",
+        "DkYQ72lGrew",
+        "_EJsR8mgVWk",
+        "Rc-Jh3Oe0Gc",
+        "5NHaO0NVbAg",
+        "j-GnuHwK8mw",
+        "h7_7w_wL64g",
+        "4ISDUKG-N90",
+        "BX2PRxXQbXE",
+        "2okrgAMdHok",
+        "mJYAvNvve0E",
+        "fV3nflAQ99w",
+        "t4mGPIWbw0c",
+        "0mQCi4LQUQw",
+        "FG7eYo_ozJQ",
+        "heEKi5EjZXA",
+        "xt2OdUfYZbk",
+        "0E_5SynW3aM",
+        "0iUTZajxlWI",
+        "bLHL75H_VEM",
+        "UddCTvioEnw",
+        "ixWybGQnPHQ",
+        "v11SYt_brN8",
+        "hnsNMoor5Ic",
+        "csFf8EiCQ2Y",
+        "d1CRGkDgrrQ",
+        "GjjZacZSWT4",
+        "NYdU1p7kDxY",
+        "6f5ys8VU2ek",
+        "MDM304JW_NA",
+        "UfNRWh4s_ag",
+        "4ONHOwTBbNw",
+        "oNjD7ogr--g",
+        "YKAPZgtYzIs",
+        "LYSPaCiKpQw",
+        "_oVm2jtv6q8",
+        "HKVoN-SjZ-Q",
+        "6dfM7Hiah4s",
+        "7FiiEZ9Z3aQ",
+        "IanEey1mEIg",
+        "qCIlcC6c1i8",
+        "SyzM3yjkQko",
+        "mJUvIhI_jpo",
+        "z94lg7dGkw4",
+        "h6OKgREcHFM",
+        "E7w_v9J7iOc",
+        "0UR3bAfuNyg",
+        "SoZ41i2dSIw",
+        "-sk9kXyfGvU",
+        "dvOjGkfea_w",
+        "bmFGbBmlyKQ",
+        "IxTAJNifDAI",
+        "NnDe2u5M7e8",
+        "y7wyfTsIm1k",
+        "T-VZ1kL8ZgE",
+        "Udk8YHOy0EU",
+        "wbfu39l0kxg",
+        "3fG8rNHUspU",
+        "FOtgipv4oa8",
+        "VDP6RCJSsMg",
+        "etfsKeog6S4",
+        "YG8vtggc1Ok",
+        "RBGW9J3sx1g",
+        "VCNskcGD1Oc",
+        "OBEiYEk3zD4",
+        "QBK3QpQVnaw",
+        "0tdyU_gW6WE",
+        "VqB1uoDTdKM",
+        "SNvDUO42Hys",
+        "j13HG2HiEAk",
+        "sdmsRcsl_xA"
+    ];
+  </script>
 </html>
