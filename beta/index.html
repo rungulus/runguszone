@@ -48,6 +48,9 @@
         .mb-n {
           margin-bottom: -0.3rem !important;
         }
+        .mb-n2 {
+          margin-bottom: -0rem !important;
+        }
         .siteText{
           font-size: 350%;
         }
@@ -57,7 +60,7 @@
         }
         .hello{
           font-family: 'Nanum Pen Script', cursive;
-          font-size: 650%;
+          font-size: 800%;
         }
         .frostedglass:before{
           content: "";
@@ -166,10 +169,7 @@
             <span class="fs-2">
               <span style="color:#69f0ae">r</span>ungus<span class="text-muted">.zone</span>
             </span>
-
-
           </span>
-          
         </div>
       </div>
       <div class="collapse navbar-collapse" id="s-sidebarLinks">
@@ -212,10 +212,7 @@
             <span class="fs-2 text-center ps-1">
               <span style="color:#69f0ae">r</span><span class="text-muted">z</span>
             </span>
-
-
-          </span>
-          
+          </span>     
         </div>
       </div>
       <div class="collapse navbar-collapse" id="xs-sidebarLinks">
@@ -264,8 +261,15 @@
             </div>
           </announcement>
         </pagelogo>
+        <helloarea>
+          <div class="container alert frostedglass">
+            <h1 class="hello text-center margin-negative-for-main-text">hello!</h1>
+              <p class="text-center margin-negative-for-main-text fs-5 mb-n">welcome to the rungus zone!</p>
+          </div>
+        </helloarea>
         <randomizer>
           <div class="container text-center frostedglass pt-3">
+            <p class="fs-3 mb-n2">the randomizer</p>
             <div class="ratio ratio-16x9">
               <div id="player" style="border-radius: 10px;">
                 <div class="placeholder placeholder-wave ratio">
@@ -279,15 +283,16 @@
               </div>
             </div>
             <br>
-            <button class="btn btn-outline-light mb-2 mt-n" onclick="reroll();">re-roll</button>
+            <button class="btn btn-outline-info mb-2 mt-n" onclick="reroll();">re-roll</button> 
+            <a class="btn btn-outline-light mb-2 mt-n" href="/randomizer/">visit the randomizer</a>
           </div>
         </randomizer>
         <br>
         <maincontent>
+
           <div class="container alert frostedglass">
             <div class="align-content-center">
-              <h1 class="hello text-center">hello!</h1>
-              <p class="text-center margin-negative-for-main-text fs-5">welcome to the rungus zone!</p>
+              
               <hr>
               <!-- this will be using rows eventually, probably in my next update -->
               <div class="text-center">
