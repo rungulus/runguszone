@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- we're nice to browsers, so lets tell them that this is html, and in english -->
-<html lang="en" data-bs-theme="dark">
+<html lang="en" data-bs-theme="dark" class="spaceBG">
   <!-- coding in these weird tags so i can close them bc i dont need to mess with them too often -->
   <!-- try it, its fun -->
   <!-- cloudflare is going to minify this anyway -->
@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet"> 
+      <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Roboto+Slab&display=swap" rel="stylesheet"> 
       <script src="https://cdn.rungus.zone/v4/js/bootstrap.bundle.min.js"></script>
       <!-- this should not go into production -->
       <!-- definetley minimize and purge what we're not using from this hell -->
@@ -43,7 +43,7 @@
           margin-top: -1rem !important;
         }
         .margin-negative-for-main-text{
-          margin-top: -2.5rem !important;
+          margin-top: -1.5rem !important;
         }
         .mb-n {
           margin-bottom: -0.3rem !important;
@@ -54,6 +54,31 @@
         .smallLink{
           font-size: 75%;
           padding: -1rem !important;
+        }
+        .hello{
+          font-family: 'Nanum Pen Script', cursive;
+          font-size: 650%;
+        }
+        .frostedglass:before{
+          content: "";
+          position: absolute;
+          background: inherit;
+          z-index: -1;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.321);
+          filter: blur(10px);
+          margin: -20px;
+        }
+        .frostedglass{
+          box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+          border-radius: 5px;
+          position: relative;
+          z-index: 1;
+          background: inherit;
+          overflow: hidden;
         }
       </style>
     </include>
@@ -83,7 +108,7 @@
     <!-- i wrangled with css and bootstrap for like 2 days to get this to work good -->
     <!-- turns out im a dumbass, there is no margin-left (ml) in bootstrap, its ms for margin-start -->
     <!-- why? who the hell knows -->
-    <div class="p-0 ps-1 pt-3 pb-1 alert alert-dark">
+    <div class="p-0 ps-1 pt-3 pb-1 btn btn-dark">
       <div>
         <div class="runguszone">         
           <span class="sidewaysText">
@@ -96,7 +121,7 @@
               <a class="bi bi-discord link-primary pt-1 m-0" href="https://discord.gg/2VuJFdEcwM"></a>
               <a rel="me" class="bi bi-mastodon link-success pt-1 m-0" href="https://wetdry.world/@rungus"></a>
               <a class="bi bi-twitter link-info pt-1 m-0" href="https://twitter.com/_rungus"></a>
-              <a class="bi bi-steam link-light pt-1 m-0" href="https://steamcommunity.com/id/rungus"></a>
+              <a class="bi bi-github link-light pt-1 m-0" href="https://github.com/runguszone"></a>
             </div>
 
           </span>
@@ -133,8 +158,8 @@
     </div> 
     <!-- this is probably terrible on *really* ultrawide monitors -->
   </sidebar>
-  <smallsidebar class="stickyBar z-3 d-lg-none d-sm-block d-none">
-    <div class="p-0 ps-1 pt-3 pb-1 alert alert-dark">
+  <s-sidebar class="stickyBar z-3 d-lg-none d-sm-block d-none m-1">
+    <div class="p-0 ps-1 pt-3 pb-1 btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#s-sidebarLinks">
       <div>
         <div class="runguszone ps-1">         
           <span class="sidewaysText">
@@ -147,13 +172,7 @@
           
         </div>
       </div>
-      <hr class="m-0 mt-2 me-1 p-0">
-      <div class="d-grid mt-1 pe-1 pb-1 pt-1 btn-group-vertical">
-      <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarLinks" aria-controls="sidebarLinks" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="bi bi-list"></i>
-      </button>
-    </div>
-      <div class="collapse navbar-collapse" id="sidebarLinks">
+      <div class="collapse navbar-collapse" id="s-sidebarLinks">
       <hr class="m-0 mt-2 me-1 p-0">
       <div class="text-center d-grid mt-1 pe-1 pb-1 pt-1 btn-group-vertical">
         <a class="btn btn-light" href="https://news.rungus.zone" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right">
@@ -180,17 +199,17 @@
         <a class="bi bi-discord link-primary pt-1 m-0" href="https://discord.gg/2VuJFdEcwM"></a>
         <a rel="me" class="bi bi-mastodon link-success pt-1 m-0" href="https://wetdry.world/@rungus"></a>
         <a class="bi bi-twitter link-info pt-1 m-0" href="https://twitter.com/_rungus"></a>
-        <a class="bi bi-steam link-light pt-1 m-0" href="https://steamcommunity.com/id/rungus"></a>
+        <a class="bi bi-github link-light pt-1 m-0" href="https://github.com/runguszone"></a>
       </div>
     </div> 
   </div>
-  </smallsidebar>
-  <smallestsidebar class="stickyBar z-3 d-lg-none d-sm-none d-block m-1">
-    <div class="p-0 pe-1 pb-1 alert alert-dark">
+  </s-sidebar>
+  <xs-sidebar class="stickyBar z-3 d-lg-none d-sm-none d-block m-1">
+    <div class="p-0 pe-1 pb-1 btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#xs-sidebarLinks">
       <div>
-        <div class="runguszone ps-1 pt-2 text-center">         
-          <span class="">
-            <span class="fs-2">
+        <div class="runguszone ms-3 me-3 text-center">         
+          <span class="text-center">
+            <span class="fs-2 text-center ps-1">
               <span style="color:#69f0ae">r</span><span class="text-muted">z</span>
             </span>
 
@@ -199,13 +218,7 @@
           
         </div>
       </div>
-      <hr class="m-0 mt-2 ms-1">
-      <div class="d-grid mt-1 pe-1 pb-1 pt-1 btn-group-vertical ps-2">
-      <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarLinks" aria-controls="sidebarLinks" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="bi bi-list"></i>
-      </button>
-    </div>
-      <div class="collapse navbar-collapse" id="sidebarLinks">
+      <div class="collapse navbar-collapse" id="xs-sidebarLinks">
       <hr class="m-0 mt-2 me-1 p-0 ms-1">
       <div class="text-center d-grid mt-1 pe-1 pb-1 pt-1 btn-group-vertical ms-1 m-0 p-0">
         <a class="btn btn-light" href="https://news.rungus.zone" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right">
@@ -232,41 +245,80 @@
         <a class="bi bi-discord link-primary pt-1 m-0" href="https://discord.gg/2VuJFdEcwM"></a>
         <a rel="me" class="bi bi-mastodon link-success pt-1 m-0" href="https://wetdry.world/@rungus"></a>
         <a class="bi bi-twitter link-info pt-1 m-0" href="https://twitter.com/_rungus"></a>
-        <a class="bi bi-steam link-light pt-1 m-0" href="https://steamcommunity.com/id/rungus"></a>
+        <a class="bi bi-github link-light pt-1 m-0" href="https://github.com/runguszone"></a>
       </div>
     </div> 
   </div>
-  </smallestsidebar>
+  </xs-sidebar>
   <body> 
-    <div class="container-fluid z-n1 position-absolute spaceBG">
-      <!-- this way edits on the sidebar(s) do not affect placement of elements on the main area -->
+    <div class="container-fluid z-n1 position-absolute">
+      <!-- this way edits on the sidebars do not affect placement of elements on the main area -->
       <div class="container">
-        <!-- and then keep everything centered, let the sidebars use the whitespace -->
-        <p class="pt-3 fs-3 text-center text-wrap text-light">welcome to the</p>
-        <p class="text-center runguszone text-light margin-negative-for-main-text siteText"><span style="color:#69f0ae">r</span>ungus zone</p>
-        <div class="text-center mb-3" style="margin-top: -1rem !important">
-          <span class="badge rounded-pill text-bg-warning">rungus zone v4 is in beta, <a class="alert-link" href="https://github.com/runguszone/runguszone">wanna help me out?</a></span>
-        </div>
-        <div class="container text-center">
-        <div class="ratio ratio-16x9">
-          <div id="player">
-            <div class="placeholder placeholder-wave ratio">
-              <iframe
-                title="randomizer video"
-                id="randomframe"
-                class="ratio ratio-16x9"
-
-                src="https://rungus.zone/x/loadframe.html"
-              ></iframe>
+        <pagelogo>
+          <!-- top of screen info, used for a welcome message and rungus zone yeah cool -->
+          <p class="text-center runguszone text-light siteText"><span style="color:#69f0ae">r</span>ungus zone</p>
+          <!-- can use this for announcements -->
+          <announcement>
+            <div class="text-center mb-3" style="margin-top: -1rem !important">
+              <span class="badge rounded-pill text-bg-info">rungus zone v4 is in beta, <a class="alert-link" href="https://github.com/runguszone/runguszone">wanna help me out?</a></span>
+            </div>
+          </announcement>
+        </pagelogo>
+        <randomizer>
+          <div class="container text-center frostedglass pt-3">
+            <div class="ratio ratio-16x9">
+              <div id="player" style="border-radius: 10px;">
+                <div class="placeholder placeholder-wave ratio">
+                  <iframe
+                    title="randomizer video"
+                    id="randomframe"
+                    class="ratio ratio-16x9"
+                    src="https://rungus.zone/x/loadframe.html"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+            <br>
+            <button class="btn btn-outline-light mb-2 mt-n" onclick="reroll();">re-roll</button>
+          </div>
+        </randomizer>
+        <br>
+        <maincontent>
+          <div class="container alert frostedglass">
+            <div class="align-content-center">
+              <h1 class="hello text-center">hello!</h1>
+              <p class="text-center margin-negative-for-main-text fs-5">welcome to the rungus zone!</p>
+              <hr>
+              <!-- this will be using rows eventually, probably in my next update -->
+              <div class="text-center">
+                <h4>I'm rungus</h4>
+                  <p>Welcome to my little corner. I make silly things and put them on here sometimes.</p>
+                  <p>My favorite is probably <a class="alert-link" href="/randomizer">the randomizer</a>, but I've made other dumb things.</p>
+                <hr>
+                <h5>Current Projects</h5>
+                <p>Right now I'm working on my own RSS Aggregator to show news feeds, but serverless!<br>
+                If you'd like to help, you can <a href="https://github.com/runguszone/rungnews" class="alert-link">check out the project on github!</a></p>
+                <h5>Where is rungus</h5>
+                  <p>You can find me on serveral places! I'm on <i class="bi bi-twitter"></i> and <i class="bi bi-discord"></i> as <kbd>@_rungus</kbd>
+                  <br>
+                  i'm also on <i class="bi bi-mastodon"></i>Mastodon: <kbd><a href="https://wetdry.world/@rungus" class="alert-link">@rungus@wetdry.world</a></kbd>
+                  <br>
+                  GitHub: <kbd><a href="https://github.com/runguszone" class="alert-link"><i class="bi bi-github"></i>/runguszone</a></kbd>
+                  <br>
+                  and finally, YouTube: <kbd><a href="https://youtube.com/@rungus" class="alert-link"><i class="bi bi-youtube"></i>/@rungus</a></kbd> 
+                  </p>
+                <hr>
+                <h5>Discord</h5>
+                <p>And of course I have my own Discord server, what early 20s failboy doesn't have one? <br><a href="https://discord.gg/2VuJFdEcwM" class="alert-link">You can click here to join it, if you want</a>.</p>
+              </div>
+              <!-- although, im not really sold on this at all honestly. its just a bunch of text in line. there's gotta be a cooler way to show this? -->
             </div>
           </div>
-        </div>
-        <br>
-        <button class="btn btn-primary" onclick="reroll();">re-roll</button>
-      </div>
+        </maincontent>
+    </div>
 
-    </div>
-    </div>
+  </div>
+
 
         
   </body>
