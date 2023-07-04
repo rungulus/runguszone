@@ -5,23 +5,24 @@
   <!-- try it, its fun -->
   <!-- cloudflare is going to minify this anyway -->
   <head>
+    <!-- these meta tags cannot be nested in a module, so they're out here -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- needs to be out here or ELSE -->
+    <title>rungus zone</title>
+    <meta name="title" content="rungus zone" />
+    <meta charset="utf-8">
+    <meta name="description" content="the premiere website on the internet" />
     <include>
+      <!-- load critical css first -->
       <link rel="preload" href="https://cdn.rungus.zone/v4/css/essential.css" as="style">
       <link rel="stylesheet" href="https://cdn.rungus.zone/v4/css/essential.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+      <!-- defer icons until page is loaded -->
+      <link rel="preload" href="https://cdn.rungus.zone/v4/icons/bicons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+      <noscript><link rel="stylesheet" href="https://cdn.rungus.zone/v4/icons/bicons.css"></noscript>
+      <!-- also defer scripts until page is loaded -->
       <script src="https://cdn.rungus.zone/v4/js/bootstrap.bundle.min.js" defer></script>
       <script src="https://cdn.rungus.zone/v4/js/randomizer.js" defer></script>
-      <!-- this should not go into production -->
-      <!-- definetley minimize and purge what we're not using from this hell -->
     </include>
     <tags>
-      <!-- browser stuff (also google) -->
-      <title>rungus zone</title>
-      <meta name="title" content="rungus zone" />
-      <meta charset="utf-8">
-      <meta name="description" content="the premiere website on the internet" />
       <!-- opengraph -->
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://rungus.zone" />
@@ -36,15 +37,15 @@
       <meta property="twitter:description" content="the premiere website on the internet" />
       <meta property="twitter:image" content="https://cdn.rungus.zone/profile.gif" />
     </tags>
+    <nocss class="nocss">
+      <center>
+        <p style="font-size:300%;font-family: sans-serif;margin-bottom:-1rem;">oh shit!</p><br>
+        <p style="font-family: sans-serif;">looks like the css isnt loading. <br>i've tried my best to have the page work without css, but it's not super great.<br>
+        maybe try refreshing?<br>
+        i could've also broken something, maybe let me know but i'm sure im working on it</p>
+      </center>
+    </nocss>
   </head>
-  <nocss class="nocss">
-    <center>
-      <p style="font-size:300%;font-family: sans-serif;margin-bottom:-1rem;">oh shit!</p><br>
-      <p style="font-family: sans-serif;">looks like the css isnt loading. <br>i've tried my best to have the page work without css, but it's not super great.<br>
-      maybe try refreshing?<br>
-      i could've also broken something, maybe let me know but i'm sure im working on it</p>
-    </center>
-  </nocss>
   <sidebar class="stickyBar z-3 d-none d-lg-block alert">
     <!-- i wrangled with css and bootstrap for like 2 days to get this to work good -->
     <!-- turns out im a dumbass, there is no margin-left (ml) in bootstrap, its ms for margin-start -->
@@ -256,7 +257,7 @@
         </maincontent>
         <div class="container alert frostedglass">
           <div class="align-content-center text-center">
-              rungus zone is open source, you can check out the code <a href="https://github.com/runguszone/runguszone" class="alert-link">here</a>.
+              rungus zone is open source, you can check out the code <a href="https://github.com/runguszone/runguszone" class="alert-link">on github</a>.
             <hr>
             &copy; rungus<br>
             <a href="https://rungus.zone/terms" class="alert-link">terms and licenses</a> - 
