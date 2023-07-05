@@ -1,7 +1,7 @@
 <!doctype html>
 <!-- we're nice to browsers, so lets tell them that this is html, and in english -->
 <html lang="en" data-bs-theme="dark" class="spaceBG">
-  <!-- coding in these weird tags so i can close them bc i dont need to mess with them too often -->
+  <!-- coding in these weird tags so i can close them in vscode bc i dont need to mess with them too often -->
   <!-- try it, its fun -->
   <!-- cloudflare is going to minify this anyway -->
   <head>
@@ -45,6 +45,7 @@
       </center>
     </nocss>
   </head>
+  <!-- lg-xl sidebar (desktops) -->
   <sidebar class="stickyBar z-3 d-none d-lg-block alert">
     <!-- i wrangled with css and bootstrap for like 2 days to get this to work good -->
     <!-- turns out im a dumbass, there is no margin-left (ml) in bootstrap, its ms for margin-start -->
@@ -99,6 +100,7 @@
     </div> 
     <!-- this is probably terrible on *really* ultrawide monitors -->
   </sidebar>
+  <!-- sm-md sidebar (tablets, some laptops) -->
   <s-sidebar class="stickyBar z-3 d-lg-none d-sm-block d-none m-1">
     <div class="p-0 ps-1 pt-3 pb-1 btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#s-sidebarLinks">
       <div>
@@ -142,6 +144,7 @@
     </div> 
   </div>
   </s-sidebar>
+  <!-- xs sidebar (phones) -->
   <xs-sidebar class="stickyBar z-3 d-lg-none d-sm-none d-block m-1">
     <div class="p-0 pe-1 pb-1 btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#xs-sidebarLinks">
       <div>
@@ -190,14 +193,16 @@
       <!-- this way edits on the sidebars do not affect placement of elements on the main area -->
       <div class="container">
         <pagelogo>
-          <!-- top of screen info, used for a welcome message and rungus zone yeah cool -->
-          <p class="text-center runguszone text-light siteText"><span style="color:#69f0ae">r</span>ungus zone</p>
-          <!-- can use this for announcements -->
-          <announcement>
-            <div class="text-center mb-3" style="margin-top: -1rem !important">
-              <span class="badge rounded-pill text-bg-info">rungus zone v4 is in beta, <a class="alert-link" href="https://github.com/runguszone/runguszone">wanna help me out?</a></span>
-            </div>
-          </announcement>
+            <div class="alert container frostedglass ">
+              <!-- top of screen info, used for a welcome message and rungus zone yeah cool -->
+              <p class="text-center runguszone text-light siteText"><span style="color:#69f0ae">r</span>ungus zone</p>
+              <!-- can use this for announcements -->
+              <announcement>
+                <div class="text-center mb-3" style="margin-top: -1rem !important">
+                  <span class="badge rounded-pill text-bg-info">rungus zone v4 is in beta, <a class="alert-link" href="https://github.com/runguszone/runguszone">wanna help me out?</a></span>
+                </div>
+            </announcement>
+          </div>
         </pagelogo>
         <helloarea>
           <div class="container alert frostedglass">
@@ -205,34 +210,47 @@
               <p class="text-center margin-negative-for-main-text fs-5 mb-n">welcome to the rungus zone!</p>
           </div>
         </helloarea>
-        <randomizer>
-          <div class="container text-center frostedglass pt-3">
-            <p class="fs-3 mb-n2 runguszone">the <span style="color:#69f0ae">r</span>andomizer</p>
-            <div class="ratio ratio-16x9">
-              <div id="player" style="border-radius: 10px;">
-                <div class="ratio" id="placeholder">
-                  <button class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#randomizercontrols" aria-expanded="false" aria-controls="randomizercontrols" aria-label="load randomizer"><i class="bi bi-play" style="font-size:1000%"></i></button>
-                </div>
-              </div>
-            </div>
-            <br>
-            <div class="collapse" id="randomizercontrols">
-              <button class="btn btn-outline-info mb-2 mt-n" onclick="reroll();">re-roll</button> 
-              <a class="btn btn-outline-light mb-2 mt-n" href="/randomizer/">visit the randomizer</a>
-            </div>
-          </div>
-        </randomizer>
-        <br>
         <maincontent>
-
           <div class="container alert frostedglass">
             <div class="align-content-center">
               <!-- this will be using rows eventually, probably in my next update -->
               <div class="text-center">
                 <p class="fs-1 runguszone mb-n mt-n">i'm <span style="color:#69f0ae">r</span>ungus</p>
                   <p>Welcome to my little corner. I make silly things and put them on here sometimes.</p>
-                  <p>My favorite is probably <a class="alert-link" href="/randomizer">the randomizer</a>, but I've made other dumb things.</p>
-                <hr class="m-0">
+                  <p>My favorite is probably <a class="alert-link" id="placeholder" data-bs-toggle="collapse" href="#randomizerwindow" role="button" aria-expanded="false" aria-controls="randomizerShow">the randomizer</a>, but I've made other dumb things.</p>
+                  <randomizer>
+                    <div class="collapse" id="randomizerwindow">
+                      <div class="container frostedglass pt-3 pb-2 mb-3">
+                        <p class="fs-3 mb-n2 mt-n runguszone">the <span style="color:#69f0ae">r</span>andomizer</p>
+                        <div class="ratio ratio-16x9">
+                          <div id="player" style="border-radius: 10px;">
+                            <div class="ratio" id="placeholder">
+                              <button class="btn" 
+                                type="button" 
+                                data-bs-toggle="collapse" 
+                                data-bs-target="#randomizercontrols" 
+                                aria-expanded="false" 
+                                aria-controls="randomizercontrols" 
+                                aria-label="load randomizer">
+                                  <i class="bi bi-play-circle-fill" style="font-size:500%"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="btn-group-sm">
+                          <button class="btn btn-success mb-2 mt-n" onclick="reroll();">re-roll</button> 
+                          <button class="btn btn-danger mb-2 mt-n" type="button" 
+                          data-bs-toggle="collapse" 
+                          data-bs-target="#randomizerwindow" 
+                          aria-expanded="true" 
+                          aria-controls="randomizercontrols" 
+                          aria-label="load randomizer">close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </randomizer>
+                  <hr class="m-0">
                 <p class="fs-2 runguszone mb-n">current p<span style="color:#69f0ae">r</span>ojects</p>
                 <p>Right now I'm working on my own RSS Aggregator to show news feeds, but serverless!<br>
                 If you'd like to help, you can <a href="https://github.com/runguszone/rungnews" class="alert-link">check out the project on GitHub!</a></p>
