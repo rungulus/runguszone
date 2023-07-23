@@ -1,6 +1,11 @@
 <!doctype html>
-<!-- we're nice to browsers, so lets tell them that this is html, and in english -->
 <html lang="en" data-bs-theme="dark" class="spaceBG">
+  <script>
+    //let me guess, you want to see the source code?
+    //i'm not insane, there are comments here
+    //you can go see them at https://github.com/runguszone/runguszone/
+    //ok bye
+  </script>
   <!-- coding in these weird tags so i can close them in vscode bc i dont need to mess with them too often -->
   <!-- try it, its fun -->
   <!-- cloudflare is going to minify this anyway -->
@@ -19,9 +24,8 @@
       <!-- also defer scripts until page is loaded -->
       <script src="https://cdn.rungus.zone/v4/js/bootstrap.bundle.min.js" defer></script>
       <script src="https://cdn.rungus.zone/v4/js/randomizer.js" defer></script>
-      <!-- defer the background image as well -->
-      <link rel="preload" href="https://cdn.rungus.zone/v4/backdroponly.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-      <noscript><link rel="stylesheet" href="https://cdn.rungus.zone/v4/backdroponly.css"></noscript>
+      <!-- deferring this makes cloudflare break, :/ -->
+      <link href="https://cdn.rungus.zone/v4/backdroponly.css">
     </include>
     <tags>
       <!-- opengraph -->
