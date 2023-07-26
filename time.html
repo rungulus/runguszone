@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en" data-bs-theme="dark" class="spaceBG">
   <script>
     //let me guess, you want to see the source code?
     //i'm not insane, there are comments here
@@ -9,10 +9,10 @@
   <head>
     <!-- these meta tags cannot be nested in a module, so they're out here -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>cow advice - rungus zone</title>
+    <title>time converter - rungus zone</title>
     <meta name="title" content="rungus zone" />
     <meta charset="utf-8">
-    <meta name="description" content="sage wisdom from a bovine friend" />
+    <meta name="description" content="whats the time on mars" />
     <!-- preload critical css first -->
     <!-- long stylesheet time! -->
     <link rel="stylesheet" href="https://cdn.rungus.zone/v4/css/bootstrap.min.css">
@@ -39,16 +39,16 @@
     <tags>
       <!-- opengraph -->
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://rungus.zone/cow" />
-      <meta property="og:title" content="cow advice - rungus zone" />
-      <meta property="og:description" content="sage wisdom froma bovine friend" />
+      <meta property="og:url" content="https://rungus.zone/time" />
+      <meta property="og:title" content="time converter - rungus zone" />
+      <meta property="og:description" content="whats the time on mars" />
       <meta property="og:image" content="https://cdn.rungus.zone/profile.gif" />
       <!-- twitter -->
       <!-- of course twitter has their own -->
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content="https://rungus.zone/cow" />
-      <meta property="twitter:title" content="cow advice - rungus zone" />
-      <meta property="twitter:description" content="sage wisdom froma bovine friend" />
+      <meta property="twitter:url" content="https://rungus.zone/time" />
+      <meta property="twitter:title" content="time converter - rungus zone" />
+      <meta property="twitter:description" content="whats the time on mars" />
       <meta property="twitter:image" content="https://cdn.rungus.zone/profile.gif" />
     </tags>
     <script src="https://cdn.rungus.zone/cow/private.js"></script>
@@ -215,78 +215,110 @@
   </div>
   </xs-sidebar>
 <!-- the body -->
-<div class="container">
-    <div class="bs-docs-section clearfix ">
-        <br>
-        <h1 style="font-size:300%">time</h1><hr>
-    <div class="row">     
-        <div class="col-6">
-            <h1 id="earthTime">loading<div class="spinner-border" role="status">
-            </div></h1>
-            <h2  id="earthMDY">local date</h2>
-            <p class="lead">that's the current time, according to your device</p>
-        </div>
-        <div class="col-auto">
-            <h1 id="marsTime">loading<div class="spinner-border" role="status">
-            </div></h1>
-            <h2 id="marsMDY">mars date</h2>
-            <p class="lead">time (and date) on mars</p>
-        </div>
+<body> 
+    <div class="container-fluid z-n1 position-absolute">
+      <!-- this way edits on the sidebars do not affect placement of elements on the main area -->
+      <div class="container">
+        <pagelogo>
+            <div class="container">
+              <!-- top of screen info, used for a welcome message and rungus zone yeah cool -->
+              <div class="">
+                <p class="text-center m-0"><span class="runguszone text-light siteText">time conve<span style="color:#69f0ae">r</span>ter</span></span></p>        
+              </div>
+              <!-- can use this for announcements -->
+              <announcement>
+                <!-- <nocss class="nocss text-center mt-n">
+                  <p class="text-center mt-n mb-n2">seems like everything didn't load successfully<br>
+                    you should try refreshing</p>
+                </nocss> -->
+              </announcement> 
+          </div>
+          </pagelogo>
+        </pagelogo>
+        <maincontent>
+            <div class="container alert frostedglass">
+                <div class="row">    
+                    <div class="col-auto">                    
+                        <h1 id="earthTime">loading<div class="spinner-border" role="status"></h1>
+                        <h2  id="earthMDY">local date</h2>
+                        <p class="lead">that's the current time, according to your device</p>
+                    </div> 
+                    <div class="col-auto">
+                        <h1 id="marsTime">loading<div class="spinner-border" role="status"></h1>
+                        <h2 id="marsMDY">mars date</h2>
+                        <p class="lead">time (and date) on mars</p>
+                    </div>
+                    
+                </div>
+            </div>
+          <div class="container alert frostedglass">
+          <h3>america (mainland)</h3>
+          <div class="row">
+              <div class="col-auto">
+                  <h1 id="-5">eastern time</h1>
+                  <p>eastern time</p>
+              </div>
+              <div class="col-auto">
+                  <h1 id="-6">central time</h1>
+                  <p>central time</p>
+              </div>
+              <div class="col-auto">
+                  <h1 id="-7">mountain time</h1>
+                  <p>mountain time</p>
+              </div>
+              <div class="col-auto">
+                  <h1 id="-8">pacific time</h1>
+                  <p>pacific time</p>
+              </div>
+          </div></div>
+          <div class="container alert frostedglass">
+          <h3>europe</h3>
+          <div class="row">
+              <div class="col-auto">
+                  <h1 id="0">uk time</h1>
+                  <p>uk time</p>
+              </div>
+              <div class="col-auto">
+                  <h1 id="2">france time</h1>
+                  <p>france time</p>
+              </div>
+              <div class="col-auto">
+                  <h1 id="1">netherlands time</h1>
+                  <p>netherlands time</p>
+              </div>
+          </div></div>
+          <div class="container alert frostedglass">
+          <h3>australia</h3>
+          <div class="row">
+              <div class="col-auto">
+                  <h1 id="8">western time</h1>
+                  <p>western australia time</p>
+              </div>
+              <div class="col-auto">
+                  <h1 id="9">adelaide time</h1>
+                  <p>central time</p>
+              </div>
+              <div class="col-auto">
+                  <h1 id="10">the rest time</h1>
+                  <p>the rest of australia</p>
+              </div>
+          </div>
+        </maincontent>
+      </div>
+      <div class="container alert frostedglass">
+        <span class="runguszone" style="margin-bottom:-0.2rem;">
+        <a href="https://rungus.zone/terms" class="alert-link">tos</a> - 
+        <a href="https://cdn.rungus.zone" class="alert-link">cdn</a> 
+        <span class="position-absolute top-50 start-50 translate-middle">
+            <i class="bi bi-heart-fill"></i> - 
+            <i class="bi bi-github"></i> 
+            <i class="bi bi-bootstrap"></i> 
+            <i class="bi bi-google"></i></span>
+        <span class="float-end">&copy; rungus</span>
+      </div>
     </div>
-    <hr>
-    <h3>america (mainland)</h3>
-    <div class="row">
-        <div class="col-auto">
-            <h1 id="-5">eastern time</h1>
-            <p>eastern time</p>
-        </div>
-        <div class="col-auto">
-            <h1 id="-6">central time</h1>
-            <p>central time</p>
-        </div>
-        <div class="col-auto">
-            <h1 id="-7">mountain time</h1>
-            <p>mountain time</p>
-        </div>
-        <div class="col-auto">
-            <h1 id="-8">pacific time</h1>
-            <p>pacific time</p>
-        </div>
-    </div>
-    <hr>
-    <h3>europe</h3>
-    <div class="row">
-        <div class="col-auto">
-            <h1 id="0">uk time</h1>
-            <p>uk time</p>
-        </div>
-        <div class="col-auto">
-            <h1 id="2">france time</h1>
-            <p>france time</p>
-        </div>
-        <div class="col-auto">
-            <h1 id="1">netherlands time</h1>
-            <p>netherlands time</p>
-        </div>
-    </div>
-    <hr>
-    <h3>australia</h3>
-    <div class="row">
-        <div class="col-auto">
-            <h1 id="8">western time</h1>
-            <p>western australia time</p>
-        </div>
-        <div class="col-auto">
-            <h1 id="9">adelaide time</h1>
-            <p>central time</p>
-        </div>
-        <div class="col-auto">
-            <h1 id="10">the rest time</h1>
-            <p>the rest of australia</p>
-        </div>
-    </div>
-</div>
-</div>
+  </div>
+</body>
 <script src="https://cdn.rungus.zone/v3/js/marsdate.js"></script>
 <script>
 //look, im sorry i looked very hard for the math to actually do this on my own, but i couldnt find it
@@ -313,36 +345,4 @@ setInterval(doTime, 1000);
 window.onload(doTime);
 </script>
 <script src="https://cdn.rungus.zone/main/js/time.js"></script>
-<!-- the footnotes -->
-<div class="container ">
-    <hr>
-    <footer id="footer " style="padding-bottom:100px; ">
-        <div class="row ">
-            <div class="col-6 ">
-                <p>
-
-                    <a href="https://rungus.zone/terms ">terms of service</a> -
-                    <a href="https://discord.gg/2VuJFdEcwM ">discord</a> -
-                    <a href="https://twitter.com/_rungus ">twitter</a> -
-                    <a href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA ">youtube</a> -
-                    <a href="https://cdn.rungus.zone ">cdn</a>
-                </p>
-            </div>
-            <div class="col offset-4 ">
-                <p class="text-muted ">&copy; 2023 rungus</p>
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col ">
-                <p class="text-muted ">oh yeah this site is open source so if you wanna take a peek under the hood feel free</p>
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col ">
-                <p class="text-muted ">that's all folks</p>
-            </div>
-        </div>
-    </footer>
-
-</div>
 </html>
