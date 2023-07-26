@@ -1,0 +1,287 @@
+<!doctype html>
+<!--template for tumblr!-->
+<html lang="en" data-bs-theme="dark" class="spaceBG">
+  <script>
+    //let me guess, you want to see the source code?
+    //i'm not insane, there are comments here
+    //you can go see them at https://github.com/runguszone/runguszone/
+    //ok bye
+  </script>
+  <head>
+    <!-- these meta tags cannot be nested in a module, so they're out here -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>rungus zone</title>
+    <meta name="title" content="rungus zone" />
+    <meta charset="utf-8">
+    <meta name="description" content="the premiere website on the internet" />
+    <!-- preload critical css first -->
+    <!-- long stylesheet time! -->
+    <link rel="stylesheet" href="https://cdn.rungus.zone/v4/css/bootstrap.min.css">
+    <style>
+        .stickyBar{color:#fff;position:fixed}
+        .runguszone{font-family:'Roboto Slab',serif}
+        .sidewaysText{writing-mode:vertical-lr;text-orientation:mixed}
+        .ml-n{margin-left:-2rem!important}
+        .mt-n{margin-top:-1rem!important}
+        .margin-negative-for-main-text{margin-top:-1.5rem!important}
+        .mb-n{margin-bottom:-.3rem!important}
+        .mb-n2{margin-bottom:0!important}
+        .siteText{font-size:350%}
+        .smallLink{font-size:75%}
+        .hello{font-family:'Nanum Pen Script',cursive;font-size:800%}
+        .frostedglass:before{content:"";position:absolute;background:inherit;z-index:-1;top:0;left:0;right:0;bottom:0;box-shadow:inset 0 0 2000px rgba(255,255,255,.321);filter:blur(10px)}.frostedglass{box-shadow:0 0 1rem 0 rgba(0,0,0,.2);border-radius:10px;position:relative;z-index:1;background:inherit;overflow:hidden;backdrop-filter: blur(7px);}
+        p{color:azure;}
+        html{color:azure;}
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Roboto+Slab&display=swap" rel="stylesheet"> 
+    <!-- defer scripts until page is loaded -->
+    <script src="https://cdn.rungus.zone/v4/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdn.rungus.zone/v4/js/randomizer.js" defer></script>
+    <!-- defer backdrop and icons -->
+    <link rel="preload" href="https://cdn.rungus.zone/v4/css/backdroponly.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.rungus.zone/v4/css/backdroponly.css"></noscript>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"></noscript>
+    <tags>
+      <!-- opengraph -->
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://rungus.zone" />
+      <meta property="og:title" content="rungus zone" />
+      <meta property="og:description" content="the premiere website on the internet" />
+      <meta property="og:image" content="https://cdn.rungus.zone/profile.gif" />
+      <!-- twitter -->
+      <!-- of course twitter has their own -->
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content="https://rungus.zone" />
+      <meta property="twitter:title" content="rungus zone" />
+      <meta property="twitter:description" content="the premiere website on the internet" />
+      <meta property="twitter:image" content="https://cdn.rungus.zone/profile.gif" />
+    </tags>
+
+  </head>
+  <!-- lg-xl sidebar (desktops) -->
+  <lg-sidebar class="stickyBar z-3 d-none d-lg-block alert">
+    <!-- i wrangled with css and bootstrap for like 2 days to get this to work good -->
+    <!-- turns out im a dumbass, there is no margin-left (ml) in bootstrap, its ms for margin-start! -->
+    <!-- why? who the hell knows -->
+    <div class="p-0 ps-1 pt-3 pb-1 btn btn-dark">
+      <div>
+        <div class="runguszone">         
+          <span class="sidewaysText">
+            <span class="fs-2">
+              <span style="color:#69f0ae">r</span>ungus<span class="text-muted">.zone</span>
+            </span>
+            <div class="fs-3">
+              <a class="bi-youtube link-danger pt-1 mb-n" href="https://www.youtube.com/@rungus" aria-label="youtube"></a>
+              <!-- for some reason youtube has a big margin on the bottom -->
+              <a class="bi bi-discord link-primary pt-1 m-0" href="https://discord.gg/2VuJFdEcwM" aria-label="discord"></a>
+              <a rel="me" class="bi bi-mastodon link-success pt-1 m-0" href="https://wetdry.world/@rungus" aria-label="mastodon"></a>
+              <a class="bi bi-twitter link-info pt-1 m-0" href="https://twitter.com/_rungus" aria-label="twitter"></a>
+              <a class="bi bi-github link-light pt-1 m-0" href="https://github.com/runguszone" aria-label="github"></a>
+            </div>
+
+          </span>
+          
+        </div>
+      </div>
+      <hr class="m-0 mt-2 me-1 p-0">
+      <div class="text-center d-grid mt-1 pe-1 pb-1 pt-1 btn-group-vertical">
+        <a class="btn btn-danger disabled" href="https://blog.rungus.zone" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right">
+          <i class="bi bi-arrow-left"></i>
+          <br>
+          <span class="smallLink">back home</span>
+        </a>
+        <a class="btn btn-light" href="https://news.rungus.zone" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right">
+          <i class="bi bi-newspaper"></i>
+          <br>
+          <span class="smallLink">rungnews</span>
+        </a>
+        <a class="btn btn-primary" href="https://rungus.zone/randomizer">
+          <i class="bi bi-shuffle"></i>
+          <br>
+          <span class="smallLink">randomizer</span>
+        </a>
+        <a class="btn btn-warning" href="https://rungus.zone/time">
+          <i class="bi bi-clock-history"></i>
+          <br>
+          <span class="smallLink">time</span>
+        </a>
+        <a class="btn btn-success" href="https://rungus.zone/cow">
+          <i class="bi bi-chat-quote"></i>
+          <br>
+          <span class="smallLink">cow advice</span>
+        </a>
+
+      </div>
+    </div> 
+    <!-- this is probably terrible on *really* ultrawide monitors -->
+  </lg-sidebar>
+  <!-- sm-md sidebar (tablets, some laptops) -->
+  <s-sidebar class="stickyBar z-3 d-lg-none d-sm-block d-none m-1">
+    <div class="p-0 ps-1 pt-3 pb-1 btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#s-sidebarLinks">
+      <div>
+        <div class="runguszone ps-1">         
+          <span class="sidewaysText">
+            <span class="fs-2">
+              <span style="color:#69f0ae">r</span>ungus<span class="text-muted">.zone</span>
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="collapse navbar-collapse" id="s-sidebarLinks">
+      <hr class="m-0 mt-2 me-1 p-0">
+      <div class="text-center d-grid mt-1 pe-1 pb-1 pt-1 btn-group-vertical">
+        <a class="btn btn-light" href="https://news.rungus.zone" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right">
+          <i class="bi bi-newspaper"></i>
+          <br>
+        </a>
+        <a class="btn btn-primary" href="https://rungus.zone/randomizer">
+          <i class="bi bi-shuffle"></i>
+          <br>
+        </a>
+        <a class="btn btn-warning" href="https://rungus.zone/time">
+          <i class="bi bi-clock-history"></i>
+          <br>
+        </a>
+        <a class="btn btn-success" href="https://rungus.zone/cow">
+          <i class="bi bi-chat-quote"></i>
+          <br>
+        </a>
+            
+      </div>
+      <hr class="m-0 mt-2 me-1 p-0">
+      <div class="fs-3 btn-group-vertical d-grid mt-1 pe-1 pb-1 pt-1">
+        <a class="bi-youtube link-danger pt-1 mb-n" href="https://www.youtube.com/@rungus" aria-label="youtube"></a>
+        <a class="bi bi-discord link-primary pt-1 m-0" href="https://discord.gg/2VuJFdEcwM" aria-label="discord"></a>
+        <a rel="me" class="bi bi-mastodon link-success pt-1 m-0" href="https://wetdry.world/@rungus" aria-label="mastodon"></a>
+        <a class="bi bi-twitter link-info pt-1 m-0" href="https://twitter.com/_rungus" aria-label="twitter"></a>
+        <a class="bi bi-github link-light pt-1 m-0" href="https://github.com/runguszone" aria-label="github"></a>
+      </div>
+    </div> 
+  </div>
+  </s-sidebar>
+  <!-- xs sidebar (phones) -->
+  <xs-sidebar class="stickyBar z-3 d-lg-none d-sm-none d-block m-1">
+    <div class="p-0 pe-1 pb-1 btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#xs-sidebarLinks">
+      <div>
+        <div class="runguszone ms-3 me-3 text-center">         
+          <span class="text-center">
+            <span class="fs-2 text-center ps-1">
+              <span style="color:#69f0ae">r</span><span class="text-muted">z</span>
+            </span>
+          </span>     
+        </div>
+      </div>
+      <div class="collapse navbar-collapse" id="xs-sidebarLinks">
+      <hr class="m-0 mt-2 me-1 p-0 ms-1">
+      <div class="text-center d-grid mt-1 pe-1 pb-1 pt-1 btn-group-vertical ms-1 m-0 p-0">
+        <a class="btn btn-light" href="https://news.rungus.zone" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right">
+          <i class="bi bi-newspaper"></i>
+          <br>
+        </a>
+        <a class="btn btn-primary" href="https://rungus.zone/randomizer">
+          <i class="bi bi-shuffle"></i>
+          <br>
+        </a>
+        <a class="btn btn-warning" href="https://rungus.zone/time">
+          <i class="bi bi-clock-history"></i>
+          <br>
+        </a>
+        <a class="btn btn-success" href="https://rungus.zone/cow">
+          <i class="bi bi-chat-quote"></i>
+          <br>
+        </a>
+            
+      </div>
+      <hr class="m-0 mt-2 me-1 p-0 ms-1">
+      <div class="fs-3 btn-group-vertical d-grid mt-1 pe-1 pb-1 pt-1">
+        <a class="bi-youtube link-danger pt-1 mb-n" href="https://www.youtube.com/@rungus" aria-label="youtube"></a>
+        <a class="bi bi-discord link-primary pt-1 m-0" href="https://discord.gg/2VuJFdEcwM" aria-label="discord"></a>
+        <a rel="me" class="bi bi-mastodon link-success pt-1 m-0" href="https://wetdry.world/@rungus" aria-label="mastodon"></a>
+        <a class="bi bi-twitter link-info pt-1 m-0" href="https://twitter.com/_rungus" aria-label="twitter"></a>
+        <a class="bi bi-github link-light pt-1 m-0" href="https://github.com/runguszone" aria-label="github"></a>
+      </div>
+    </div> 
+  </div>
+  </xs-sidebar>
+
+  <body> 
+    <div class="container-fluid z-n1 position-absolute">
+      <!-- this way edits on the sidebars do not affect placement of elements on the main area -->
+      <div class="container">
+        <pagelogo>
+            <div class="container">
+              <!-- top of screen info, used for a welcome message and rungus zone yeah cool -->
+              <div class="">
+                <p class="text-center m-0"><span class="runguszone siteText">the <span style="color:#69f0ae">r</span>ungus blog </span></span></p>        
+              </div>
+              <!-- can use this for announcements -->
+              <announcement>
+                <!-- <nocss class="nocss text-center mt-n">
+                  <p class="text-center mt-n mb-n2">seems like everything didn't load successfully<br>
+                    you should try refreshing</p>
+                </nocss> -->
+              </announcement>
+              
+          </div>
+        </pagelogo>
+        <!--<helloarea>
+          <div class="container alert frostedglass">
+            some text
+          </div>
+        </helloarea>-->
+        <maincontent>
+      <!-- the body -->
+      {block:Posts}
+        {block:Text}
+        <div class="frostedglass p-1">
+            <p class="fs-2 p-1">{Title}</p>
+            <p class="lead p-1">{Body}</p>
+        </div>
+        <br>
+        {/block:Text}
+        {block:Photo}
+        <div class="frostedglass p-1 pt-0">
+              <img class="img-fluid p-2 m-2 rounded" src="{PhotoURL-500}">
+                <h5 class="card-title">{Caption}</h5>
+        </div>
+        <br>
+        {/block:Photo}
+        {block:Quote}
+        <div class="frostedglass text-center">
+          <p class="fs-3 runguszone">{Quote}</p>
+          <p class="smallLink">{Source}</p>
+        </div>
+        <br>
+        {/block:Quote}
+        {/block:Posts}
+        <div class="container alert frostedglass" style="color:azure;">
+                  {block:PreviousPage}
+        <a href="{PreviousPage}" class="alert-link float-start">&#171; previous page</a>
+        {/block:PreviousPage}
+        <span class="position-absolute top-50 start-50 translate-middle">
+              {CurrentPage}/{TotalPages}
+        </span>
+        {block:NextPage}
+        <a href="{NextPage}" class="alert-link float-end">next page &#187;</a>
+        {/block:NextPage}  
+        </div>
+      <div class="container alert frostedglass" style="color:azure;">
+          <span class="runguszone" style="margin-bottom:-0.2rem;">
+          <a href="https://rungus.zone/terms" class="alert-link">tos</a> - 
+          <a href="https://cdn.rungus.zone" class="alert-link">cdn</a> 
+          <span class="position-absolute top-50 start-50 translate-middle">
+              <i class="bi bi-heart-fill"></i> 
+              <i class="bi bi-github"></i> 
+              <i class="bi bi-bootstrap"></i> 
+              <i class="bi bi-google"></i></span>
+          <span class="float-end">&copy; {CopyrightYears} rungus</span><br></span>
+      </div>
+    </div>
+
+
+  </body>
+
+  </html>
