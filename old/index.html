@@ -1,100 +1,348 @@
-<html>
-<meta name="google-site-verification" content="yVBREuOQjIvgGFAbYlHg-vaOeA9K_ILnUuGNWBkD4Kc" />
-<link href="http://cdn.rungus.zone/main/css/bootstrap.min.css" rel="stylesheet">
-<link href="http://cdn.rungus.zone/main/css/darkbootstrap.css" rel="stylesheet">
-<link href="http://cdn.rungus.zone/main/css/anim.css" rel="stylesheet">
-<link href="http://cdn.rungus.zone/main/css/create.css" rel="stylesheet">
-<script src="http://cdn.rungus.zone/js/goaway.js"></script>
-<style>
-  .videoWrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    /* 16:9 */
-    height: 0;
-  }
+<!doctype html>
+<!--we're nice to screenreaders, so we'll tell them what language this is-->
+<html lang="en">
 
-  .videoWrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-</style>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>rungus zone</title>
-<div class="container">
-  <div class="nocss">
-    <center>
-      <h1>somethings fucked up</h1>
-      <br>
-      <p>the css isnt loaded
-        <!--or you're looking at the code. owo--> so this page is looking all sorts of sad
-      </p>
-      <br>
-      <p>click <a href="http://rungus.zone">here</a> to try to refresh the page</p>
-    </center>
-  </div>
-
-  <head>
-    <div class="navbar-fixed-top" id="nav" style="background:#060606;">
-      <div class="container">
-        <div class="center">
-          <h3 style=float:left><span style=color:#fff class="slide-in-blurred-left"><span style="color:#69f0ae">r</span>ungus</span></h3>
-          <h3 style="float:left" class="text-muted">.zone</h3>
-        </div>
-        <!--text-flicker-in-glow-->
+<head>
+    <!--where the hell are we-->
+    <title>rungus zone</title>
+    <!--welcome to meta zone-->
+    <meta charset="utf-8">
+    <!--tell search engines who we are-->
+    <meta name="description" content="showing you the current time and date on mars">
+    <!--bootstrap wants this to be responsive, cool! -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- tell the browser we can support both light and dark themes -->
+    <meta name="color-scheme" content="light dark">
+    <!--load critical css first-->
+    <!--this isn't the best way to do this, we should wrap this stylesheet in <style>, but i didn't want to make this page super long. cloudflare is still quick enough to return this file-->
+    <link href="https://cdn.rungus.zone/v3/css/lite.css" rel="stylesheet">
+    <!--defer loading the rest until page is loaded fully-->
+    <!-- special light/dark stylesheet thanks to https://github.com/vinorodrigues/bootstrap-dark-5-->
+    <!--future releases (5.3) of bootstrap will have dark mode built in, should reasses using this then-->
+    <link rel="preload" href="https://cdn.rungus.zone/v3/css/bootstrap5.2.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.rungus.zone/v3/css/bootstrap5.2.css"></noscript>
+    <!--and some custom css to round it all out-->
+    <link rel="preload" href="https://cdn.rungus.zone/v3/css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.rungus.zone/v3/css/custom.css"></noscript>
+    <!-- ios app icon -->
+    <link rel="apple-touch-icon" sizes="120x120" href="https://cdn.rungus.zone/favicons/apple-touch-icon.png">
+    <!-- browser bar -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.rungus.zone/favicons/favicon-32x32.png">
+    <!-- browser bar -->
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.rungus.zone/favicons/favicon-16x16.png">
+    <!-- pwa support (none) -->
+    <link rel="manifest" href="https://cdn.rungus.zone/favicons/site.webmanifest">
+    <!-- safari pinned tabs -->
+    <link rel="mask-icon" href="https://cdn.rungus.zone/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <!-- and finally, the simple icon -->
+    <link rel="shortcut icon" href="https://cdn.rungus.zone/favicons/favicon.ico">
+    <!-- now to tell the browser who we are -->
+    <meta name="apple-mobile-web-app-title" content="rungus zone">
+    <meta name="application-name" content="rungus zone">
+    <!-- now about who we are -->
+    <meta name="msapplication-TileColor" content="#69f0ae">
+    <meta name="msapplication-config" content="https://cdn.rungus.zone/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#69f0ae">
+    <!-- but what if they only speak opengraph? here u go -->
+    <meta property="og:title" content="rungus zone">
+    <meta property="og:url" content="https://rungus.zone">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://cdn.rungus.zone/profile.gif">
+    <meta property="og:description" content="look mom im in an opengraph">
+    <!-- lastly, the theme color -->
+    <meta name="theme-color" content="#69f0ae" />
+    <!-- you are now leaving the meta zone -->
+    <!-- make sure to add nocss back -->
+</head>
+<nav class="navbar nav navbar-expand-lg fixed-bottom navbar-dark bg-dark accordion">
+    <div class="container">
+      <a href="../" class="navbar-brand"><span style="color: #69f0ae">r</span>ungus<span class="text-muted">.zone</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="https://rungus.zone/randomizer">randomizer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://rungus.zone/time">time</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://rungus.zone/cow">cow</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="https://twitter.com/_rungus">twitter</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://discord.gg/2VuJFdEcwM">discord</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.youtube.com/@rungus">youtube</a>
+          </li>
+        </ul>
       </div>
     </div>
-    <!-- meta tags and favicon -->
-  </head>
+  </nav>
 </div>
+<div class="position-absolute">
+  <div class="container mt-3">
+    <div class="alert alert-warning" role="alert">
+      <h4 class="alert-heading">rungus zone v4 is archived</h4>
+      <p>this page is no longer recieving updates and content here is outdated!</p>
+      <hr class="mb-0 m-0">
+      <p class="mb-0 m-0">go check out the <a href="https://rungus.zone" class="alert-link">new rungus zone</a></p>
+    </div> 
+  </div>
+</div>
+  <header class="masthead">
 
-<body style="padding-top:110px">
-  <center>
-    <div class="container">
-      <div class="container">
-        <div class="jumbotron">
-          <div class="videoWrapper">
-            <iframe src="https://www.youtube-nocookie.com/embed/wbfu39l0kxg?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!--first we make a flexbox-->
+    <div class="container-fluid d-flex flex-column h-100">
+        <!--then mess with the grid system-->
+      <div class="row flex-fill h-100 align-items-center">
+        <!--now we're centered and we have rows!-->
+        <div class="col-lg-5 col-md-12 col-sm-12 offset-lg-1">
+          <h1 style="font-size: 150px; color: #fff" class="slide-in-blurred-left-slow">
+            hello.
+          </h1>
+          <h3 style="color: #fff">
+            welcome to the <span style="color: #69f0ae">r</span>ungus zone
+          </h3>
+          <p style="color: #fff">internet funnyman</p>
+        </div>
+        <!--use rows so we can have vertical centering but have fun on the horizontal side-->
+        <div class="col-lg-5 col-md-12 col-sm-12">
+          <div class="d-flex justify-content-center">
+            <div class="ratio ratio-16x9">
+              <iframe
+                title="randomizer video"
+                id="randomframe"
+                src="https://rungus.zone/x/loadframe.html"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center gap-2" style="margin-top: 7px">
+            <button class="btn btn-block btn-outline-success" onclick="stayHere()"> re-roll </button>
+            <a class="btn btn-outline-warning" role="button " href="https://rungus.zone/randomizer">visit the randomizer</a>
           </div>
         </div>
-        <div class="container">
-          <button type="button" class="btn btn-lg btn-primary btn-block text-center" onclick="goAway()">enter the randomizer</button>
-          <h2 onclick="goAway()">hello</h2>
-          <p class="lead">this is the rungus zone, the place where i store all my dumb projects</p>
+        <!--add an itty bitty column to give the video some padding-->
+        <div class="col-1"></div>
+        <!--dont tell anyone i said it was ok to do web design this way-->
+      </div>
+    </div>
+  </header>
+  <!--here's a simple little deadman switch to let the user know that something has gotten messed up along the way here-->
+  <div class="noextracss">
+    <div class="container" style="padding-top: 5px">
+      <h3>something's wrong</h3>
+      <p>
+        this page has been loaded without all of the stylesheet. this could
+        be:<br />-the cdn is down<br />-you don't allow external requests
+        (why?)<br />-something else<br />honestly, i don't know. there is a
+        backup if you disabled javascript, and if you're seeing this page then
+        cloudflare should at least have a cache of the data. you really messed
+        something up!
+      </p>
+      <p>you can try <a href="https://rungus.zone">refreshing</a></p>
+    </div>
+  </div>
+  <body class="bg-space"></body>
+  <!--check it out, just a simple row of links, but we're using BUTTONS. incredible.-->
+  <div
+    class="container bg-body border rounded-3"
+    style="
+      padding-top: 10px;
+      padding-left: 50px;
+      padding-bottom: 10px;
+      padding-right: 50px;
+    "
+  >
+    <div class="row justify-content-center">
+      <div class="col-1"></div>
+      <div class="col-auto"> 
+        <a
+          class="btn btn-outline-success"
+          role="button "
+          href="https://rungus.zone/time"
+          >time converter</a
+        >
+        <a
+        class="btn btn-outline-danger"
+        role="button "
+        href="https://rungus.zone/mars"
+        >mars time</a
+      >
+        <a
+          class="btn btn-outline-warning"
+          role="button "
+          href="https://rungus.zone/cow"
+          >cow advice</a
+        >
 
-          <br>
-          <h2>neat</h2>
-          <p class="lead">yeah. subscribe to me on <a href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA">youtube</a>
-            <br><br>
+      </div>
+      <div class="col-1"></div>
+    </div>
+    <hr>
+    <div class="row justify-content-center">
+      <div class="col-1"></div>
+      <div class="col-auto">
+        <a
+          class="btn btn-outline-primary"
+          role="button "
+          href="https://discord.rungus.zone"
+          >discord</a
+        >
+        <a
+          class="btn btn-outline-info"
+          role="button "
+          href="https://twitter.com/_rungus"
+          >twitter</a
+        >
+        <a
+          class="btn btn-outline-danger"
+          role="button "
+          href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA"
+          >youtube</a>
+      </div>
+      <div class="col-1"></div>
+    </div>
+    <hr />
+    <div class="bs-docs-section clearfix">
+        <!--and then we have the main site content, this is fairly simple-->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header"><h1>i'm rungus</h1></div>
+          <p class="lead">
+            welcome to my site. i make silly things sometimes and put them on
+            here.<br />currently the dumbest thing i have is the
+            <a href="randomizer">randomizer</a>, but i'm still making dumb
+            stuff.
           </p>
         </div>
       </div>
-  </center>
-</body>
-<hr>
-<foot>
-  <p>&copy; 2020 rungus</p> <a href="terms"> terms of service</a>
-  <br>
-  <hr>
-  <p>and thats all i wrote</p>
-</foot>
-<!-- scripts -->
-<script>
-  (function(i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r;
-    i[r] = i[r] || function() {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date();
-    a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0];
-    a.async = 1;
-    a.src = g;
-    m.parentNode.insertBefore(a, m)
-  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-  ga('create', 'UA-104172809-1', 'auto');
-  ga('send', 'pageview');
-</script>
-
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header"><h3>discord</h3></div>
+        <p class="lead">
+          i have a server that you can join if you want. you can
+          <a href="https://discord.gg/2VuJFdEcwM"
+            >click here to join the discord</a
+          >. you should join it.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header"><h3>youtube</h3></div>
+        <p class="lead">
+          i also got a youtube channel where i post videos sometimes. you should
+          <a href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA"
+            >susbcribe here</a
+          >.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header"><h3>contact me</h3></div>
+        <p class="lead">
+          if you want to reach out to me for some reason, you can contact me on
+          <a href="https://twitter.com/_rungus" role="button ">twitter</a>, or
+          message me on discord (<code>@_rungus</code>)
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header"><h3>fifth section heading</h3></div>
+        <p class="lead">
+          i dont really know what else to put here, so
+          <a href="https://twitter.com/_rungus" role="button "
+            >follow on twitter</a
+          >, or
+          <a
+            href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA"
+            role="button "
+            >susbcribe on youtube</a
+          >
+          , or
+          <a rel="me" href="https://wetdry.world/@rungus">follow on mastodon</a>
+          , or
+          <a href="https://discord.gg/2VuJFdEcwM"
+            >join the rungus zone discord</a
+          >
+        </p>
+      </div>
+    </div>
+    <div class="container">
+        <!--same story here, fairly simple row setup-->
+      <hr />
+      <footer id="footer ">
+        <div class="row">
+          <div class="col-6">
+            <p>
+              <a href="https://rungus.zone/terms">terms of service</a> -
+              <a href="https://discord.gg/2VuJFdEcwM">discord</a> -
+              <a href="https://twitter.com/_rungus">twitter</a> -
+              <a href="https://www.youtube.com/channel/UCt8HTCubhlf6kn0JF9Qw4vA"
+                >youtube</a
+              >
+              - <a href="https://cdn.rungus.zone">cdn</a>
+            </p>
+          </div>
+          <div class="col offset-4">
+            <p class="text-muted">&copy; 2023 rungus</p>
+          </div>
+        </div>
+        <div class="row">
+            <!--now for some "magic"-->
+            <!--bootstrap removed the jumbotron which would've been better for this
+            so we're just going to abuse the alerts system instead.-->
+          <div class="col">
+            <div class="alert alert-secondary" role="alert ">
+              <h5 class="alert-heading position-relative">
+                randomizer info <span class="badge bg-secondary">v2.2</span>
+              </h5>
+              <hr />
+              <p class="font-monospace">
+                video id is: <span id="videoid"><kbd>not set</kbd></span
+                ><br />the full url of the embed is:
+                <span id="fullurl"><kbd>not set</kbd></span
+                ><br />youtube link to video: <a href="#" id="friendlyurl"></a
+                ><br />from
+                <span id="totalcount"><kbd>not set</kbd></span> ids<br />
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="container" style="margin-top: 10px">
+    <div class="row">
+      <div class="col">
+        <p class="lead">
+          oh yeah this site is open source so if you wanna take a peek under the
+          hood feel free <!--yo whats up-->
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col"><p class="text-muted">that's all folks</p></div>
+    </div>
+    <div class="bg-space" style="height: 10vh; min-height: 200px"></div>
+  </div>
+  <script src="https://cdn.rungus.zone/v3/js/randomizer.js"></script>
 </html>
+<!--
+    hey there! you're (hopefully, if cloudlfare did its job) looking at some minifed code. i'm guessing you want to view the actual source code for this site!
+    you can run on over to my github to see the unminified version of this site: https://github.com/runguszone/runguszone
+    oh yeah: there some legal stuff that you should look at: rungus.zone/terms
+-->
