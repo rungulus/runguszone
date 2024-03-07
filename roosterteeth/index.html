@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark" class="spaceBG">
+  <script>
+    //let me guess, you want to see the source code?
+    //i'm not insane, there are comments here
+    //you can go see them at https://github.com/runguszone/runguszone/
+    //ok bye
+  </script>
+  <head>
+    <!-- these meta tags cannot be nested in a module, so they're out here -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RoosterTeeth Archival Project</title>
+    <meta name="title" content="RoosterTeeth Archival Project" />
+    <meta charset="utf-8">
+    <meta name="description" content="Archiving Every* RT Video" />
+    <!-- preload critical css first -->
+    <!-- long stylesheet time! -->
+    <link rel="stylesheet" href="https://cdn.rungus.zone/v4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.rungus.zone/v4/css/custom.css">
+    <!-- defer backdrop and icons -->
+    <link rel="preload" href="https://cdn.rungus.zone/v4/css/backdroponly.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.rungus.zone/v4/css/backdroponly.css"></noscript>
+    <!-- <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"></noscript> -->
+    <tags>
+      <!-- opengraph -->
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://rungus.zone/roosterteeth/" />
+      <meta property="og:title" content="RoosterTeeth Archival Project" />
+      <meta property="og:description" content="Archiving Every* RT Video" />
+      <meta property="og:image" content="https://cdn.rungus.zone/profile.gif" />
+      <!-- twitter -->
+      <!-- of course twitter has their own -->
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content="https://rungus.zone/roosterteeth/" />
+      <meta property="twitter:title" content="RoosterTeeth Archival Project" />
+      <meta property="twitter:description" content="Archiving Every* RT Video" />
+      <meta property="twitter:image" content="https://cdn.rungus.zone/profile.gif" />
+    </tags>
+  </head>
+</head>
+<body>
+  <div class="container-fluid z-n1 position-absolute">
+    <div class="container">
+      <pagelogo>
+          <div class="container">
+            <!-- top of screen info, used for a welcome message and rungus zone yeah cool -->
+            <div class="">
+              <p class="text-center m-0"><span class="runguszone siteText">The RT Archive Project</p>        
+            </div>
+            <!-- can use this for announcements -->
+            <announcement>
+              <!-- <nocss class="nocss text-center mt-n">
+                <p class="text-center mt-n mb-n2">seems like everything didn't load successfully<br>
+                  you should try refreshing</p>
+              </nocss> -->
+            </announcement> 
+        </div>
+      </pagelogo>
+      <rowarea>
+        <div class="container alert frostedglass">
+            <p class="text-center runguszone">Archiving every RoosterTeeth video because WB <em>sucks</em></p>
+            <p class="text-center runguszone mb-n2 fs-5"><a href="https://discord.gg/SHCURNvG8v" class="alert-link">Join the Discord!</a></p>
+        </div>
+      </rowarea>
+      <rowarea>
+        <div class="container alert frostedglass">
+          <p class="fs-1 text-center runguszone" id="big-deals">Big Deals</p>
+            <p class="text-center mt-n runguszone">things that need the most attention right now:</p>
+
+            <div class="row container">
+              <div class="container frostedglass col-5" id="missing-links">
+                <p class="fs-2 runguszone text-center mb-n">
+                  Missing Links</p>
+                <p class="text-center runguszone">
+                  the following shows are missing playlist/episode links!
+                </p>
+                <hr>
+                <p class="fs-5 text-center runguszone">you'd see those here!</p>
+              </div>
+              <div class="container frostedglass col-6" id="needs-dl">
+                <p class="fs-2 runguszone text-center mb-n">Awaiting Download</p>
+                <p class="text-center runguszone">the following shows have not been downloaded
+                </p>
+                <hr>
+                <p class="fs-5 text-center runguszone">they'll go here!</p>
+              </div>
+          </div>
+          </div>
+      </rowarea>
+      <rowarea>
+        <div class="container alert frostedglass">
+          <p class="fs-1 text-center runguszone" id="all-done">Archived</p>
+            <p class="text-center mt-n runguszone">these things are saved! hooray!</p>
+
+            <div class="row container">
+            <div class="container frostedglass" id="archived">
+              <p class="fs-2 runguszone text-center">you'll see those here!</p>
+            </div>
+          </div>
+          </div>
+      </rowarea>
+      <rowarea>
+        <div class="container alert frostedglass">
+          <p class="fs-1 text-center runguszone" id="waiting">Waiting</p>
+            <p class="text-center mt-n runguszone">things that are in progress:</p>
+
+            <div class="row container">
+            <div class="container frostedglass col-5" id="downloading">
+              <p class="fs-2 runguszone text-center mb-n">Downloading</p>
+              <p class="text-center runguszone">the internet is slow
+              </p>
+              <hr>
+            <p class="fs-5 text-center runguszone">you'd see those here!</p>
+            </div>
+            <div class="container frostedglass col-6" id="needs-dl">
+              <p class="fs-2 runguszone text-center mb-n">Downloaded</p>
+              <p class="text-center runguszone">the following shows are ready to be archived <br>(or may be in the process of being archived)
+              </p>
+              <hr>
+            <p class="fs-5 text-center runguszone">they'll go here!</p>
+            </div>
+          </div>
+          </div>
+      </rowarea>
+      <div class="container alert frostedglass" style="color:azure;">
+        <span class="runguszone" style="margin-bottom:-0.2rem;">
+        <a href="https://rungus.zone/terms" class="alert-link">tos</a> - 
+        <span class="alert-link">please don't sue me</span>
+        <span class="float-end">❤, rungus</span><br></span>
+    </div>
+  </div>
+</body>
+
+</html>
