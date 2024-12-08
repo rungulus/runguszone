@@ -82,33 +82,70 @@
         </maincontent>
     </div>
   </body>
+
   <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const textarea = document.getElementById('autosave-textarea');
-    const clearButton = document.getElementById('clear-button');
+    //yeah this seems real complicated for no reason but theres reasons here:
+    /*
+    1) loads anything from local storage (if we have anything) when the DOM is finished loading
+    2) resizes the textbox automatically when the user reaches the bottom of it
+    3) keeps the textbox in view by scrolling if the user is at the last line and overflows it
+    note that the viewport does not scroll when condition 2 is met, this is by design.
+    */
+    document.addEventListener('DOMContentLoaded', function () {
+        const textarea = document.getElementById('autosave-textarea');
+        const clearButton = document.getElementById('clear-button');
 
-    // Check if there's any saved content in local storage
-    const savedContent = localStorage.getItem('autosave_content');
+        // Row buffer height in pixels
+        const rowBufferHeight = 40;
 
-    if (savedContent) {
-        textarea.value = savedContent;
-    }
+        // Load saved content if available
+        const savedContent = localStorage.getItem('autosave_content');
+        if (savedContent) {
+            textarea.value = savedContent;
+            adjustTextareaHeight(false); // Adjust height based on saved content
+        }
 
-    // Add an event listener to save content on input
-    textarea.addEventListener('input', function() {
-        localStorage.setItem('autosave_content', this.value);
-    });
+        // Save content and adjust height on input
+        textarea.addEventListener('input', function () {
+            localStorage.setItem('autosave_content', this.value);
+            adjustTextareaHeight(true); // Adjust height on user input
+        });
 
-    // Add an event listener to clear the content
-    clearButton.addEventListener('click', function() {
-        const confirmClear = confirm("This will remove everything saved, are you sure?");
-        
-        if (confirmClear) {
-            textarea.value = '';
-            localStorage.removeItem('autosave_content');
+        // Clear content
+        clearButton.addEventListener('click', function () {
+            const confirmClear = confirm("This will remove everything saved, are you sure?");
+            if (confirmClear) {
+                textarea.value = '';
+                localStorage.removeItem('autosave_content');
+                adjustTextareaHeight(false); // Reset height
+            }
+        });
+
+        // Adjust textarea height and scroll if necessary
+        function adjustTextareaHeight(scrollIfNeeded) {
+            const previousHeight = textarea.offsetHeight;
+            const scrollTopBefore = window.scrollY;
+
+            textarea.style.height = 'auto'; // Reset height to recalculate
+            const newHeight = textarea.scrollHeight + rowBufferHeight;
+            textarea.style.height = `${newHeight}px`;
+
+            if (scrollIfNeeded) {
+                const viewportHeight = window.innerHeight;
+                const boundingRect = textarea.getBoundingClientRect();
+                const cursorPosition = boundingRect.top + textarea.scrollTop;
+
+                // Check if the cursor is near or below the viewport's bottom
+                if (cursorPosition + rowBufferHeight > window.scrollY + viewportHeight) {
+                    window.scrollBy(0, rowBufferHeight); // Scroll down row-by-row
+                }
+            }
+
+            // Avoid adjusting the scroll position if it's already correct
+            if (!scrollIfNeeded || textarea.offsetHeight === previousHeight) {
+                window.scrollTo(0, scrollTopBefore);
+            }
         }
     });
-});
-
   </script>
   </html>
