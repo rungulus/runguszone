@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Texture Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 300px;
+            margin: auto;
+        }
+        input {
+            width: 80px;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        img {
+            width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Soil Texture Calculator</h2>
+    <div class="container">
+        <label>Sand (g): <input type="number" id="sand" min="0" oninput="updateFromGrams()"></label><br><br>
+        <label>Silt (g): <input type="number" id="silt" min="0" oninput="updateFromGrams()"></label><br><br>
+        <label>Clay (g): <input type="number" id="clay" min="0" oninput="updateFromGrams()"></label><br><br>
+        <label>Total Weight (g): <span id="totalWeight">0</span></label><br><br>
+        <label>Sand (%): <input type="number" id="sandPct" min="0" max="100" oninput="updateFromPercentage()"></label><br><br>
+        <label>Silt (%): <input type="number" id="siltPct" min="0" max="100" oninput="updateFromPercentage()"></label><br><br>
+        <label>Clay (%): <input type="number" id="clayPct" min="0" max="100" oninput="updateFromPercentage()"></label><br><br>
+        <button onclick="calculateSoilType()">Calculate</button>
+        <div id="result"></div>
+        <img src="soil.png" alt="Soil Texture Triangle">
+    </div>
+    
+    <script>
+        function updateFromGrams() {
+            let sand = parseFloat(document.getElementById('sand').value) || 0;
+            let silt = parseFloat(document.getElementById('silt').value) || 0;
+            let clay = parseFloat(document.getElementById('clay').value) || 0;
+            let total = sand + silt + clay;
+            document.getElementById('totalWeight').innerText = total;
+            if (total > 0) {
+                document.getElementById('sandPct').value = ((sand / total) * 100).toFixed(2);
+                document.getElementById('siltPct').value = ((silt / total) * 100).toFixed(2);
+                document.getElementById('clayPct').value = ((clay / total) * 100).toFixed(2);
+            }
+        }
+
+        function updateFromPercentage() {
+            let sandPct = parseFloat(document.getElementById('sandPct').value) || 0;
+            let siltPct = parseFloat(document.getElementById('siltPct').value) || 0;
+            let clayPct = parseFloat(document.getElementById('clayPct').value) || 0;
+            let totalWeight = parseFloat(document.getElementById('totalWeight').innerText) || 100;
+            document.getElementById('sand').value = ((sandPct / 100) * totalWeight).toFixed(2);
+            document.getElementById('silt').value = ((siltPct / 100) * totalWeight).toFixed(2);
+            document.getElementById('clay').value = ((clayPct / 100) * totalWeight).toFixed(2);
+        }
+
+        function calculateSoilType() {
+            let sandPct = parseFloat(document.getElementById('sandPct').value) || 0;
+            let siltPct = parseFloat(document.getElementById('siltPct').value) || 0;
+            let clayPct = parseFloat(document.getElementById('clayPct').value) || 0;
+            
+            if (sandPct + siltPct + clayPct !== 100) {
+                document.getElementById('result').innerText = "The percentages must sum to 100%";
+                return;
+            }
+            
+            let soilType = "Unknown";
+            if (clayPct >= 40) soilType = "Clay";
+            else if (siltPct >= 80) soilType = "Silt";
+            else if (sandPct >= 85) soilType = "Sand";
+            else if (clayPct >= 35 && siltPct >= 25) soilType = "Silty Clay";
+            else if (clayPct >= 35 && sandPct >= 45) soilType = "Sandy Clay";
+            else if (clayPct >= 27 && siltPct >= 28 && sandPct <= 52) soilType = "Clay Loam";
+            else if (siltPct >= 50 && clayPct >= 12 && clayPct < 27) soilType = "Silty Loam";
+            else if (sandPct >= 52 && clayPct >= 7 && clayPct < 27) soilType = "Sandy Loam";
+            else if (sandPct >= 43 && sandPct <= 52 && siltPct >= 28 && siltPct <= 50 && clayPct < 27) soilType = "Loam";
+            
+            document.getElementById('result').innerText = "Soil Type: " + soilType;
+        }
+    </script>
+</body>
+</html>
