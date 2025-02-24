@@ -33,12 +33,11 @@
         <label>Sand (g): <input type="number" id="sand" min="0" oninput="updateFromGrams()"></label><br><br>
         <label>Silt (g): <input type="number" id="silt" min="0" oninput="updateFromGrams()"></label><br><br>
         <label>Clay (g): <input type="number" id="clay" min="0" oninput="updateFromGrams()"></label><br><br>
-        <label>Total Weight (g): <span id="totalWeight">0</span></label><br><br>
+        <label>Total Weight (g): <input type="number" id="totalWeight" min="0" oninput="updateFromTotalWeight()"></label><br><br>
         <label>Sand (%): <input type="number" id="sandPct" min="0" max="100" oninput="updateFromPercentage()"></label><br><br>
         <label>Silt (%): <input type="number" id="siltPct" min="0" max="100" oninput="updateFromPercentage()"></label><br><br>
         <label>Clay (%): <input type="number" id="clayPct" min="0" max="100" oninput="updateFromPercentage()"></label><br><br>
-        <button onclick="calculateSoilType()">Calculate</button>
-        <div id="result"></div>
+        <div id="result">Soil Type: Unknown</div>
         <img src="soil.png" alt="Soil Texture Triangle">
     </div>
     
@@ -48,25 +47,31 @@
             let silt = parseFloat(document.getElementById('silt').value) || 0;
             let clay = parseFloat(document.getElementById('clay').value) || 0;
             let total = sand + silt + clay;
-            document.getElementById('totalWeight').innerText = total;
+            document.getElementById('totalWeight').value = total;
             if (total > 0) {
                 document.getElementById('sandPct').value = ((sand / total) * 100).toFixed(2);
                 document.getElementById('siltPct').value = ((silt / total) * 100).toFixed(2);
                 document.getElementById('clayPct').value = ((clay / total) * 100).toFixed(2);
             }
+            updateSoilType();
         }
 
         function updateFromPercentage() {
             let sandPct = parseFloat(document.getElementById('sandPct').value) || 0;
             let siltPct = parseFloat(document.getElementById('siltPct').value) || 0;
             let clayPct = parseFloat(document.getElementById('clayPct').value) || 0;
-            let totalWeight = parseFloat(document.getElementById('totalWeight').innerText) || 100;
+            let totalWeight = parseFloat(document.getElementById('totalWeight').value) || 100;
             document.getElementById('sand').value = ((sandPct / 100) * totalWeight).toFixed(2);
             document.getElementById('silt').value = ((siltPct / 100) * totalWeight).toFixed(2);
             document.getElementById('clay').value = ((clayPct / 100) * totalWeight).toFixed(2);
+            updateSoilType();
         }
 
-        function calculateSoilType() {
+        function updateFromTotalWeight() {
+            updateFromPercentage();
+        }
+
+        function updateSoilType() {
             let sandPct = parseFloat(document.getElementById('sandPct').value) || 0;
             let siltPct = parseFloat(document.getElementById('siltPct').value) || 0;
             let clayPct = parseFloat(document.getElementById('clayPct').value) || 0;
